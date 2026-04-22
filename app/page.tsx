@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { UserCog } from 'lucide-react'
 
 const SVGLogo = ({ height = 32, color = 'currentColor' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color }}>
@@ -56,6 +57,11 @@ export default function Home() {
             <li><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
             <li><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
             <li><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
+            <li>
+              <a href="https://app.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }} title="Kuratormode">
+                <UserCog size={18} />
+              </a>
+            </li>
           </ul>
           {/* Mobile hamburger */}
           <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
