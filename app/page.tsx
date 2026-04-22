@@ -27,10 +27,14 @@ export default function Home() {
 
   useEffect(() => {
     const img = document.getElementById('hero-img')
-    if (!img) return
+    const hero = document.getElementById('hero-bg')
+    if (!img || !hero) return
     const handleScroll = () => {
       const scrollY = window.scrollY
-      img.style.transform = `translateY(${scrollY * -0.3}px)`
+      const heroHeight = hero.offsetHeight
+      const maxOffset = heroHeight * 0.15
+      const offset = Math.min(scrollY * 0.3, maxOffset)
+      img.style.transform = `translateY(-${offset}px)`
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
