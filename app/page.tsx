@@ -97,10 +97,10 @@ export default function Home() {
         </div>
         <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
-          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem' }}>
+          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
             VideoTube til børn -<br />af forældre<br />til forældre.
           </h1>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', marginBottom: '1.8rem', maxWidth: '44ch' }}>
+          <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '44ch', background: 'rgba(0,0,0,0.45)', display: 'inline-block', padding: '0.6rem 0.8rem', backdropFilter: 'blur(4px)' }}>
             Vi viser rigtige YouTube-videoer og kanaler - men kun dem du har sagt ja til. Ingen overraskelser, ingen evige scroll, ingen algoritme.
           </p>
           <div style={{ display: 'flex', gap: 8, marginBottom: '1.4rem' }}>
