@@ -51,16 +51,11 @@ export default function Home() {
           </a>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8 list-none items-center">
+            <li><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
             <li><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
             <li><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
             <li><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
             <li><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
-            <li>
-              <a href="https://app.yayyoumay.dk" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#E6C65C', color: '#2B2B2B', padding: '0.45rem 1rem', textDecoration: 'none' }}>
-                <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0L10 6L0 12V0Z"/></svg>
-                Spil
-              </a>
-            </li>
           </ul>
           {/* Mobile hamburger */}
           <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
@@ -76,6 +71,7 @@ export default function Home() {
         <div style={{ position: 'fixed', inset: 0, background: TEKST, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
           <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', fontSize: '2rem', cursor: 'pointer', lineHeight: 1 }}>×</button>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
+            <li><a href="https://app.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>Play</a></li>
             {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
               <li key={href}>
                 {href.startsWith('/') ? (
