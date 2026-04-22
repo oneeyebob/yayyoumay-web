@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const SVGLogo = ({ height = 32, color = 'currentColor' }: { height?: number; color?: string }) => (
@@ -25,27 +25,40 @@ const BLÅ = '#6C7C8C'
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  useEffect(() => {
+    const img = document.getElementById('hero-img')
+    if (!img) return
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      img.style.transform = `translateY(${scrollY * 0.3}px)`
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
 
       {/* NAV */}
-      <nav style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 100, padding: '1.2rem 1.25rem 0' }} className="flex items-center justify-between md:max-w-5xl md:mx-auto md:px-8">
-        <a href="/" style={{ color: 'white', display: 'flex' }}>
-          <SVGLogo height={34} color="white" />
-        </a>
-        {/* Desktop links */}
-        <ul className="hidden md:flex gap-8 list-none items-center">
-          <li><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
-          <li><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
-          <li><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
-          <li><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
-        </ul>
-        {/* Mobile hamburger */}
-        <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
-          <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
-          <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
-          <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
-        </button>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: '#2B2B2B', borderBottom: '1px solid rgba(255,255,255,0.08)', height: 56, display: 'flex', alignItems: 'center', padding: '0 1.25rem' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <a href="/" style={{ color: 'white', display: 'flex' }}>
+            <SVGLogo height={34} color="white" />
+          </a>
+          {/* Desktop links */}
+          <ul className="hidden md:flex gap-8 list-none items-center">
+            <li><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
+            <li><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
+            <li><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
+            <li><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
+          </ul>
+          {/* Mobile hamburger */}
+          <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
+            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
+          </button>
+        </div>
       </nav>
 
       {/* MENU OVERLAY */}
@@ -68,16 +81,17 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ background: TEKST, minHeight: '100svh', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+      <section style={{ height: '60vh', minHeight: 400, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
+            id="hero-img"
+            style={{ width: '100%', height: '130%', objectFit: 'cover', objectPosition: 'center 30%', position: 'absolute', top: '-15%', left: 0 }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.85) 0%, rgba(43,43,43,0.2) 50%, rgba(43,43,43,0.1) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         </div>
-        <div style={{ position: 'relative', zIndex: 1, padding: '0 1.25rem 2.5rem' }} className="md:max-w-5xl md:mx-auto md:px-8 md:pb-14 w-full">
+        <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem' }}>
             VideoTube til børn -<br />af forældre<br />til forældre.
@@ -88,11 +102,6 @@ export default function Home() {
           <div style={{ display: 'flex', gap: 8, marginBottom: '1.4rem' }}>
             {[GUL, RØD, FERSKEN, GRØN, BLÅ].map((c, i) => (
               <span key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, display: 'inline-block' }} />
-            ))}
-          </div>
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            {['Ingen reklamer', 'Ingen algoritme', 'Kun godkendt indhold'].map(b => (
-              <span key={b} style={{ fontSize: '0.68rem', fontWeight: 500, color: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.18)', padding: '0.25rem 0.65rem', borderRadius: 20 }}>{b}</span>
             ))}
           </div>
         </div>
