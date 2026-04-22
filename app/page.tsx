@@ -30,7 +30,7 @@ export default function Home() {
     if (!img) return
     const handleScroll = () => {
       const scrollY = window.scrollY
-      img.style.transform = `translateY(${scrollY * 0.3}px)`
+      img.style.transform = `translateY(${scrollY * -0.3}px)`
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
