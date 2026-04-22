@@ -111,7 +111,7 @@ export default function Home() {
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
             VideoTube til børn<br />- af forældre til forældre.
           </h1>
-          <p style={{ fontSize: '1.425rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
+          <p style={{ fontSize: '1.425rem', lineHeight: 1, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Vi viser rigtige YouTube-videoer og kanaler - men kun dem du har sagt ja til. Ingen overraskelser, ingen evige scroll, ingen algoritme.
           </p>
           <div style={{ display: 'flex', gap: 8, marginBottom: '1.4rem' }}>
