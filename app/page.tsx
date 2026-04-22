@@ -69,8 +69,13 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ background: TEKST, minHeight: '100svh', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-          <span style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.08)', border: '1px dashed rgba(255,255,255,0.07)', padding: '0.5rem 1rem' }}>Billede / video / animation</span>
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+          <img
+            src="/iskiosk.png"
+            alt="YAY! iskiosk ved stranden"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.85) 0%, rgba(43,43,43,0.2) 50%, rgba(43,43,43,0.1) 100%)' }} />
         </div>
         <div style={{ position: 'relative', zIndex: 1, padding: '0 1.25rem 2.5rem' }} className="md:max-w-5xl md:mx-auto md:px-8 md:pb-14 w-full">
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
