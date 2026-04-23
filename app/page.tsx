@@ -59,16 +59,16 @@ export default function Home() {
 
       {/* MENU OVERLAY */}
       {menuOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: TEKST, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
-          <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', fontSize: '2rem', cursor: 'pointer', lineHeight: 1 }}>×</button>
+        <div style={{ position: 'fixed', inset: 0, background: PAPIR, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
+          <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(43,43,43,0.35)', fontSize: '2rem', cursor: 'pointer', lineHeight: 1 }}>×</button>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
-            <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>Play</a></li>
+            <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '0.78rem', fontWeight: 500, color: '#2B2B2B', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>Play</a></li>
             {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
               <li key={href}>
                 {href.startsWith('/') ? (
-                  <Link href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>{label}</Link>
+                  <Link href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '0.78rem', fontWeight: 500, color: '#2B2B2B', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>{label}</Link>
                 ) : (
-                  <a href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>{label}</a>
+                  <a href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '0.78rem', fontWeight: 500, color: '#2B2B2B', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>{label}</a>
                 )}
               </li>
             ))}
