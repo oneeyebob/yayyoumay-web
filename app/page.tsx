@@ -29,21 +29,19 @@ export default function Home() {
   useEffect(() => {
     const img = document.getElementById('hero-img') as HTMLImageElement
     if (!img) return
-    const hero = img.closest('section') as HTMLElement
-    if (!hero) return
 
     const handleScroll = () => {
-      const imgNaturalRatio = img.naturalHeight / img.naturalWidth
-      const imgRenderedHeight = img.offsetWidth * imgNaturalRatio
-      const heroHeight = hero.offsetHeight
+      const scrollY = window.scrollY
+      const imgHeight = img.offsetHeight
+      const heroHeight = img.parentElement?.offsetHeight ?? 0
 
-      if (imgRenderedHeight <= heroHeight) {
+      if (imgHeight <= heroHeight) {
         img.style.transform = 'translateY(0)'
         return
       }
 
-      const maxOffset = imgRenderedHeight - heroHeight
-      const offset = Math.min(window.scrollY * 0.3, maxOffset)
+      const maxOffset = imgHeight - heroHeight
+      const offset = Math.min(scrollY * 0.3, maxOffset)
       img.style.transform = `translateY(-${offset}px)`
     }
 
@@ -108,18 +106,18 @@ export default function Home() {
 
       {/* HERO */}
       <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }} id="hero-bg">
-        <div style={{ position: 'relative', overflow: 'hidden', background: '#d4c9a8', maxHeight: '60vh', width: '100%' }}>
+        <div style={{ position: 'relative', width: '100%', maxHeight: '60vh', overflow: 'hidden', background: '#c8b99a' }}>
           <img
             src="/iskiosk.png"
             alt=""
             aria-hidden="true"
-            style={{ width: '100%', height: 'auto', display: 'block', visibility: 'hidden' }}
+            style={{ width: '100%', height: '60vh', display: 'block', objectFit: 'cover', objectPosition: 'bottom center', visibility: 'hidden' }}
           />
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
             id="hero-img"
-            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', bottom: 0, left: 0 }}
+            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', left: 0, bottom: 0 }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         </div>
