@@ -214,7 +214,7 @@ export default function Home() {
       <section id="blog" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
           <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Blog</span>
-          <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Læs mere om børn og YouTube</h2>
+          <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Læs mere om børn og skærm</h2>
           <div className="md:grid md:grid-cols-3 md:gap-8">
             {[
               ['historien-bag-yay', 'Om YAY!', 'Far, må jeg se YouTube? - Historien bag YAY!', 'Hvordan et dagligt spørgsmål fra en ni-årig blev til et forældreværktøj.'],
