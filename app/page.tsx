@@ -123,9 +123,9 @@ export default function Home() {
       </section>
 
       {/* HVAD ER YAY + LOGIN */}
-      <section style={{ background: '#eeede8', padding: '1.5rem 0' }} id="hvad">
-        <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem' }} className="md:px-8">
-          <div style={{ background: 'white', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }} className="md:grid md:grid-cols-2">
+      <section style={{ background: '#eeede8' }} id="hvad">
+        <div style={{ maxWidth: 1080, margin: '0 auto' }} className="md:px-8">
+          <div style={{ background: 'white', overflow: 'hidden' }} className="md:grid md:grid-cols-2">
             {/* Hvad er YAY! */}
             <div style={{ background: PAPIR, padding: '2rem 1.25rem', borderBottom: '1px solid rgba(43,43,43,0.12)' }} className="md:p-10 md:border-b-0 md:border-r md:border-gray-200">
               <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
