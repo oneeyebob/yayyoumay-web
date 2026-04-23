@@ -144,9 +144,9 @@ export default function Home() {
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://app.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: BLÅ, transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = GRØN }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = BLÅ }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#6C7C8C', transition: 'color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#6C7C8C' }}
             >
               <PlayLogo height={40} />
             </a>
