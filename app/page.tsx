@@ -46,29 +46,29 @@ export default function Home() {
     <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
 
       {/* NAV */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: '#2B2B2B', borderBottom: '1px solid rgba(255,255,255,0.08)', height: 56, display: 'flex', alignItems: 'center', padding: '0 1.25rem' }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: '#F5F1E8', borderBottom: '1px solid rgba(0,0,0,0.08)', height: 56, display: 'flex', alignItems: 'center', padding: '0 1.25rem' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <a href="/" style={{ color: 'white', display: 'flex' }}>
-            <SVGLogo height={34} color="white" />
+          <a href="/" style={{ color: '#000000', display: 'flex' }}>
+            <SVGLogo height={34} color="#000000" />
           </a>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8 list-none items-center" style={{ margin: 0, padding: 0 }}>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://app.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }} title="Kuratormode">
+              <a href="https://app.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: '#000000', textDecoration: 'none' }} title="Kuratormode">
                 <UserCog size={18} />
               </a>
             </li>
           </ul>
           {/* Mobile hamburger */}
           <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
-            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
-            <span style={{ display: 'block', width: 22, height: 2, background: 'rgba(255,255,255,0.6)' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#000000' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#000000' }} />
+            <span style={{ display: 'block', width: 22, height: 2, background: '#000000' }} />
           </button>
         </div>
       </nav>
