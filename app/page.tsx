@@ -44,7 +44,7 @@ export default function Home() {
 
       const maxOffset = (imgRenderedHeight - heroHeight) * 0.5
       const offset = Math.min(window.scrollY * 0.25, maxOffset)
-      img.style.transform = `translateY(-${offset}px)`
+      img.style.transform = `translateY(${offset}px)`
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
