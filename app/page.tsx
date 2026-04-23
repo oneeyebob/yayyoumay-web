@@ -138,27 +138,14 @@ export default function Home() {
                 "Albert finder ikke noget i YAY! - som jeg ikke allerede har godkendt."
               </blockquote>
             </div>
-            {/* Login */}
-            <div style={{ background: 'white', padding: '2rem 1.25rem' }} className="md:p-10">
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: TEKST, letterSpacing: '-0.02em', marginBottom: '0.2rem' }}>Log ind</h3>
-              <p style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.4)', marginBottom: '1.5rem' }}>Velkommen tilbage.</p>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: TEKST, marginBottom: '0.3rem' }} htmlFor="brugernavn">Brugernavn</label>
-                <input id="brugernavn" type="text" placeholder="Dit brugernavn" autoComplete="username" style={{ width: '100%', padding: '0.8rem 1rem', border: '1.5px solid rgba(43,43,43,0.12)', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.92rem', color: TEKST, background: PAPIR, outline: 'none' }} />
-              </div>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: 600, color: TEKST, marginBottom: '0.3rem' }} htmlFor="adgangskode">Adgangskode</label>
-                <input id="adgangskode" type="password" placeholder="Din adgangskode" autoComplete="current-password" style={{ width: '100%', padding: '0.8rem 1rem', border: '1.5px solid rgba(43,43,43,0.12)', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.92rem', color: TEKST, background: PAPIR, outline: 'none' }} />
-              </div>
-              <a href="https://app.yayyoumay.dk/login" style={{ display: 'block', width: '100%', background: TEKST, color: 'white', border: 'none', padding: '1rem', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.92rem', fontWeight: 700, textAlign: 'center', textDecoration: 'none', marginBottom: '0.9rem' }}>Log ind</a>
-              <p style={{ textAlign: 'center', fontSize: '0.82rem', color: 'rgba(43,43,43,0.5)', marginBottom: '0.4rem' }}>Ny her? <a href="https://app.yayyoumay.dk/register" style={{ color: TEKST, fontWeight: 700, textDecoration: 'none' }}>Opret konto</a></p>
-              <a href="https://app.yayyoumay.dk/glemt-adgangskode" style={{ display: 'block', textAlign: 'center', fontSize: '0.75rem', color: 'rgba(43,43,43,0.3)', textDecoration: 'none', marginBottom: '0.9rem' }}>Glemt din adgangskode?</a>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', fontSize: '0.75rem', color: 'rgba(43,43,43,0.28)', marginBottom: '0.9rem' }}>
-                <span style={{ flex: 1, height: 1, background: 'rgba(43,43,43,0.1)' }} />
-                eller
-                <span style={{ flex: 1, height: 1, background: 'rgba(43,43,43,0.1)' }} />
-              </div>
-              <a href="https://app.yayyoumay.dk/register" style={{ display: 'block', width: '100%', background: GUL, color: TEKST, padding: '1rem', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.92rem', fontWeight: 700, textAlign: 'center', textDecoration: 'none' }}>Opret gratis konto</a>
+            {/* CTA */}
+            <div style={{ background: 'white', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '1.5rem' }}>
+              <p style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</p>
+              <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 800, color: '#2B2B2B', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Sig YAY!</h3>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(43,43,43,0.6)', maxWidth: '32ch' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
+              <a href="https://app.yayyoumay.dk" style={{ display: 'inline-block', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.88rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1rem 2rem', textDecoration: 'none', width: '100%', textAlign: 'center' }}>Gå til afspiller</a>
+              <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.8rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? Opret gratis konto</a>
+              <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
             </div>
           </div>
         </div>
