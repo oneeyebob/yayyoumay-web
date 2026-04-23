@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { UserCog } from 'lucide-react'
 
@@ -25,20 +25,6 @@ const BLÅ = '#6C7C8C'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const img = document.getElementById('hero-img')
-    if (!img) return
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const imgHeight = img.offsetHeight
-      const maxOffset = imgHeight * 0.1
-      const offset = Math.min(scrollY * 0.2, maxOffset)
-      img.style.transform = `translateY(-${offset}px)`
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
@@ -99,7 +85,7 @@ export default function Home() {
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
-            id="hero-img"
+
             style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 0 }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
