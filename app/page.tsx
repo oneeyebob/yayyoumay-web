@@ -144,10 +144,14 @@ export default function Home() {
             <a
               href="https://app.yayyoumay.dk"
               style={{ display: 'block', width: '100%', textAlign: 'center', textDecoration: 'none' }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.opacity = '0.6' }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.opacity = '1' }}
+              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.filter = 'brightness(0) saturate(100%) invert(45%) sepia(60%) saturate(400%) hue-rotate(40deg) brightness(75%)' }}
+              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.filter = 'brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(400%) hue-rotate(160deg) brightness(90%)' }}
             >
-              <img src="/play.svg" alt="Play YAY!" style={{ height: 80, width: 'auto', transition: 'opacity 0.2s' }} />
+              <img
+                src="/play.svg"
+                alt="Play YAY!"
+                style={{ height: 40, width: 'auto', transition: 'filter 0.2s', filter: 'brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(400%) hue-rotate(160deg) brightness(90%)' }}
+              />
             </a>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
