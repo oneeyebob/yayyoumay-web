@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { UserCog } from 'lucide-react'
-import PlayLogo from './components/PlayLogo'
 
 const SVGLogo = ({ height = 32, color = 'currentColor' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color }}>
@@ -142,18 +141,10 @@ export default function Home() {
           {/* Højre: CTA */}
           <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
-            <a
-              href="https://play.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'flex-start', textDecoration: 'none', color: '#B5523A', padding: '0.5rem', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#B5523A' }}
-            >
-              <PlayLogo height={28} />
-            </a>
             <img
               src="/devices.png"
               alt="YAY! på tablet og telefon"
-              style={{ width: '100%', height: 'auto', marginTop: '0.5rem', marginBottom: '-1rem' }}
+              style={{ width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
             />
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
             <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til play.yayyoumay.dk</a>
