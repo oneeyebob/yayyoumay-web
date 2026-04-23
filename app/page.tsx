@@ -168,12 +168,9 @@ export default function Home() {
                 ['04', 'På tværs af enheder - i realtid', 'Opdater Alberts iPad mens du sidder i sofaen med din iPhone. Ændringer slår igennem med det samme.'],
                 ['05', 'Ingen persondata om dine børn', 'Vi gemmer ingen personoplysninger om børn. Login med brugernavn og password - ingen email.'],
               ].map(([num, titel, tekst]) => (
-                <div key={num} style={{ display: 'grid', gridTemplateColumns: '2rem 1fr', gap: '1rem', padding: '1.3rem 0', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'rgba(255,255,255,0.18)', paddingTop: '0.15rem' }}>{num}</span>
-                  <div>
-                    <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'white', marginBottom: '0.25rem' }}>{titel}</p>
-                    <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.5)' }}>{tekst}</p>
-                  </div>
+                <div key={num} style={{ padding: '1.3rem 0', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'white', marginBottom: '0.25rem' }}>{titel}</p>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.5)' }}>{tekst}</p>
                 </div>
               ))}
               <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', marginTop: 0 }} />
@@ -195,8 +192,7 @@ export default function Home() {
               ['03', 'jun', 'Junior logger ind', 'Brugernavn og password. Junior ser kun det du har godkendt. Ingen anbefalinger, ingen algoritme, ingen vej ud til det åbne YouTube.'],
               ['04', 'løb', 'Juster når du vil', 'Tilføj nye kanaler. Afvis videoer. Alt sker i realtid på tværs af alle enheder - uden at røre Juniors iPad.'],
             ].map(([num, mode, titel, tekst]) => (
-              <div key={num} style={{ display: 'grid', gridTemplateColumns: '2rem 5.5rem 1fr', gap: '1rem 1.5rem', padding: '1.3rem 0', borderTop: '1px solid rgba(43,43,43,0.12)', alignItems: 'start' }}>
-                <span style={{ fontSize: '1rem', fontWeight: 800, color: 'rgba(43,43,43,0.1)', lineHeight: 1, paddingTop: '0.4rem' }}>{num}</span>
+              <div key={num} style={{ display: 'grid', gridTemplateColumns: '5.5rem 1fr', gap: '1rem 1.5rem', padding: '1.3rem 0', borderTop: '1px solid rgba(43,43,43,0.12)', alignItems: 'start' }}>
                 <span style={{
                   fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                   padding: '0.22rem 0.5rem', borderRadius: 3, display: 'inline-block', marginTop: '0.2rem',
