@@ -144,11 +144,11 @@ export default function Home() {
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://play.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#B5523A', border: '2px solid currentColor', padding: '1.2rem', transition: 'color 0.2s, border-color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#808f2d' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#B5523A'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#B5523A' }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'flex-start', textDecoration: 'none', color: '#B5523A', padding: '0.5rem', transition: 'color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#B5523A' }}
             >
-              <PlayLogo height={36} />
+              <PlayLogo height={28} />
             </a>
             <img
               src="/devices.png"
@@ -156,9 +156,8 @@ export default function Home() {
               style={{ width: '100%', height: 'auto', marginTop: '0.5rem', marginBottom: '-1rem' }}
             />
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
-            <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
-            <a href="https://play.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: '#2B2B2B' }}>Opret gratis konto</span></a>
-            <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
+            <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til play.yayyoumay.dk</a>
+            <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata · Ingen binding</p>
           </div>
 
         </div>
