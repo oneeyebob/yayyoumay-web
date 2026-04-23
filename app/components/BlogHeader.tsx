@@ -25,7 +25,7 @@ export default function BlogHeader() {
           <Link href="/#faq" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.5)', textDecoration: 'none' }}>
             FAQ
           </Link>
-          <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#E6C65C', color: '#2B2B2B', padding: '0.45rem 1rem', textDecoration: 'none' }}>
+          <a href="https://play.yayyoumay.dk/register" style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: '#E6C65C', color: '#2B2B2B', padding: '0.45rem 1rem', textDecoration: 'none' }}>
             Kom i gang
           </a>
         </nav>

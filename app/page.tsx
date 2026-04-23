@@ -53,13 +53,13 @@ export default function Home() {
           </a>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8 list-none items-center" style={{ margin: 0, padding: 0 }}>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://play.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://app.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: '#000000', textDecoration: 'none' }} title="Kuratormode">
+              <a href="https://play.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: '#000000', textDecoration: 'none' }} title="Kuratormode">
                 <UserCog size={18} />
               </a>
             </li>
@@ -78,7 +78,7 @@ export default function Home() {
         <div style={{ position: 'fixed', inset: 0, background: TEKST, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
           <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', fontSize: '2rem', cursor: 'pointer', lineHeight: 1 }}>×</button>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
-            <li><a href="https://app.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>Play</a></li>
+            <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: '1.8rem', fontWeight: 800, color: 'white', textDecoration: 'none', padding: '0.7rem 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>Play</a></li>
             {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
               <li key={href}>
                 {href.startsWith('/') ? (
@@ -89,7 +89,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a href="https://app.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ marginTop: '2.5rem', background: '#E6C65C', color: '#2B2B2B', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1rem 1.5rem', textDecoration: 'none', alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ marginTop: '2.5rem', background: '#E6C65C', color: '#2B2B2B', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1rem 1.5rem', textDecoration: 'none', alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
             <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0L10 6L0 12V0Z"/></svg>
             Spil
           </a>
@@ -143,7 +143,7 @@ export default function Home() {
           <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
-              href="https://app.yayyoumay.dk"
+              href="https://play.yayyoumay.dk"
               style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#B5523A', border: '2px solid currentColor', padding: '1.2rem', transition: 'color 0.2s, border-color 0.2s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#808f2d' }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#B5523A'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#B5523A' }}
@@ -156,8 +156,8 @@ export default function Home() {
               style={{ width: '100%', height: 'auto', marginTop: '0.5rem', marginBottom: '-1rem' }}
             />
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
-            <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
-            <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: '#2B2B2B' }}>Opret gratis konto</span></a>
+            <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
+            <a href="https://play.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: '#2B2B2B' }}>Opret gratis konto</span></a>
             <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
           </div>
 
@@ -258,7 +258,7 @@ export default function Home() {
       <section style={{ background: GUL, padding: '3.5rem 1.25rem', textAlign: 'center' }} className="md:py-24">
         <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', fontWeight: 800, color: TEKST, marginBottom: '0.8rem' }}>Sig YAY!</h2>
         <p style={{ fontSize: '0.95rem', color: 'rgba(43,43,43,0.65)', maxWidth: '36ch', margin: '0 auto 1.6rem', lineHeight: 1.7 }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
-        <a href="https://app.yayyoumay.dk/register" style={{ display: 'inline-block', background: TEKST, color: 'white', padding: '1rem 2.4rem', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.88rem', fontWeight: 700, textDecoration: 'none' }}>Opret gratis konto</a>
+        <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', background: TEKST, color: 'white', padding: '1rem 2.4rem', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.88rem', fontWeight: 700, textDecoration: 'none' }}>Opret gratis konto</a>
         <p style={{ marginTop: '1rem', fontSize: '0.72rem', color: 'rgba(43,43,43,0.4)' }}>Ingen kreditkort · Ingen persondata</p>
       </section>
 

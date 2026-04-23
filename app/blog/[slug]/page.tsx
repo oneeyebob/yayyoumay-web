@@ -38,7 +38,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <Link href="/blog" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.4)', textDecoration: 'none' }}>
             ← Alle indlæg
           </Link>
-          <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.8rem', fontWeight: 700, background: '#E6C65C', color: '#2B2B2B', padding: '0.7rem 1.4rem', textDecoration: 'none', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          <a href="https://play.yayyoumay.dk/register" style={{ fontSize: '0.8rem', fontWeight: 700, background: '#E6C65C', color: '#2B2B2B', padding: '0.7rem 1.4rem', textDecoration: 'none', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
             Prøv YAY! gratis
           </a>
         </div>
