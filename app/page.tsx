@@ -122,32 +122,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HVAD ER YAY + LOGIN */}
-      <section style={{ background: '#eeede8' }} id="hvad">
-        <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem' }} className="md:px-8">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 400 }}>
-            {/* Hvad er YAY! */}
-            <div style={{ background: PAPIR, padding: '2rem 1.25rem', borderBottom: '1px solid rgba(43,43,43,0.12)', minHeight: '100%' }} className="md:p-10 md:border-b-0 md:border-r md:border-gray-200">
-              <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800, color: GRØN, marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
-              <div style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
-                <p>YAY! startede med et spørgsmål. Albert, 9 år, spurgte næsten hver dag om han måtte se YouTube. Og tit var svaret nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er uoverskueligt. For meget møj. For lidt kontrol.</p>
-                <p style={{ marginTop: '0.9rem' }}>YAY! blev svaret på det spørgsmål. En webapp der lægger et kuratorlag oven på YouTube, så Junior kun ser det du allerede har godkendt. Ikke en ny streamingtjeneste. Ikke en børne-app. Men et forældreværktøj der giver dig hånden på styret - uden at tage cyklen fra barnet.</p>
-              </div>
-              <blockquote style={{ borderLeft: `3px solid ${GUL}`, paddingLeft: '1.2rem', fontStyle: 'italic', color: 'rgba(43,43,43,0.45)', fontSize: '0.92rem', lineHeight: 1.65, marginTop: '1.5rem' }}>
-                "Albert finder ikke noget i YAY! - som jeg ikke allerede har godkendt."
-              </blockquote>
+      <section id="hvad" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+
+          {/* Venstre: Hvad er YAY! */}
+          <div style={{ background: '#F5F1E8', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12">
+            <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800, color: '#808f2d', marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
+            <div style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
+              <p>YAY! startede med et spørgsmål. Albert, 9 år, spurgte næsten hver dag om han måtte se YouTube. Og tit var svaret nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er uoverskueligt. For meget møj. For lidt kontrol.</p>
+              <p style={{ marginTop: '0.9rem' }}>YAY! blev svaret på det spørgsmål. En webapp der lægger et kuratorlag oven på YouTube, så Junior kun ser det du allerede har godkendt. Ikke en ny streamingtjeneste. Ikke en børne-app. Men et forældreværktøj der giver dig hånden på styret - uden at tage cyklen fra barnet.</p>
             </div>
-            {/* CTA */}
-            <div style={{ background: 'white', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '1.5rem', minHeight: '100%' }}>
-              <p style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</p>
-              <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 800, color: '#2B2B2B', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Sig YAY!</h3>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(43,43,43,0.6)', maxWidth: '32ch' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
-              <a href="https://app.yayyoumay.dk" style={{ display: 'inline-block', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.88rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1rem 2rem', textDecoration: 'none', width: '100%', textAlign: 'center' }}>Gå til afspiller</a>
-              <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.8rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? Opret gratis konto</a>
-              <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
-            </div>
+            <blockquote style={{ borderLeft: '3px solid #E6C65C', paddingLeft: '1.2rem', fontStyle: 'italic', color: 'rgba(43,43,43,0.45)', fontSize: '0.92rem', lineHeight: 1.65, marginTop: '1.5rem' }}>
+              "Albert finder ikke noget i YAY! - som jeg ikke allerede har godkendt."
+            </blockquote>
           </div>
+
+          {/* Højre: CTA */}
+          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
+            <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
+            <h3 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: '#2B2B2B', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Sig YAY!</h3>
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
+            <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
+            <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? Opret gratis konto</a>
+            <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
+          </div>
+
         </div>
       </section>
 
