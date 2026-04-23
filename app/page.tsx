@@ -127,7 +127,7 @@ export default function Home() {
             <img
               src="/devices.png"
               alt="YAY! på tablet og telefon"
-              style={{ width: '70%', height: 'auto', display: 'block', margin: '0 auto' }}
+              style={{ width: '50%', height: 'auto', display: 'block', margin: '0 auto' }}
             />
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
             <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til play.yayyoumay.dk</a>
