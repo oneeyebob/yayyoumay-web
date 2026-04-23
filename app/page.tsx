@@ -140,20 +140,20 @@ export default function Home() {
           </div>
 
           {/* Højre: CTA */}
-          <div style={{ background: '#2B2B2B', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
-            <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}>Klar til at starte?</span>
+          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
+            <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://app.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: 'white', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#E6C65C' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'white' }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: BLÅ, transition: 'color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = GRØN }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = BLÅ }}
             >
               <PlayLogo height={40} />
             </a>
-            <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
-            <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: 'white' }}>Opret gratis konto</span></a>
-            <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)' }}>Ingen kreditkort · Ingen persondata</p>
+            <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: '#2B2B2B' }}>Opret gratis konto</span></a>
+            <p style={{ fontSize: '0.72rem', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata</p>
           </div>
 
         </div>
