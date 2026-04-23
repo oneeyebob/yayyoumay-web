@@ -107,12 +107,12 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh' }} id="hero-bg">
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh', background: '#d4c9a8' }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
             id="hero-img"
-            style={{ width: '100%', height: '100%', minHeight: '100%', objectFit: 'cover', objectPosition: 'center bottom', display: 'block', position: 'relative', zIndex: 0, transition: 'transform 0.1s linear' }}
+            style={{ width: '100%', height: '115%', objectFit: 'cover', objectPosition: 'bottom center', display: 'block', position: 'absolute', bottom: 0, left: 0, zIndex: 0, transition: 'transform 0.1s linear' }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
