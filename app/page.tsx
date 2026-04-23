@@ -81,7 +81,7 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', overflow: 'hidden', minHeight: 'clamp(320px, 55vw, 720px)', background: '#F5F1E8' }} id="hero-bg">
+      <section style={{ position: 'relative', overflow: 'hidden', height: '60vh', background: '#F5F1E8' }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
