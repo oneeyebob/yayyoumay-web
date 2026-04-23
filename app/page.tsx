@@ -52,13 +52,13 @@ export default function Home() {
             <SVGLogo height={34} color="white" />
           </a>
           {/* Desktop links */}
-          <ul className="hidden md:flex gap-8 list-none items-center">
-            <li><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
-            <li><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
-            <li><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
-            <li><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
-            <li><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
-            <li>
+          <ul className="hidden md:flex gap-8 list-none items-center" style={{ margin: 0, padding: 0 }}>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://app.yayyoumay.dk" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}>
               <a href="https://app.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }} title="Kuratormode">
                 <UserCog size={18} />
               </a>
