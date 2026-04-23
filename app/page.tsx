@@ -150,6 +150,11 @@ export default function Home() {
             >
               <PlayLogo height={36} />
             </a>
+            <img
+              src="/devices.png"
+              alt="YAY! på tablet og telefon"
+              style={{ width: '100%', height: 'auto', marginTop: '0.5rem', marginBottom: '-1rem' }}
+            />
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
             <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? <span style={{ color: '#2B2B2B' }}>Opret gratis konto</span></a>
