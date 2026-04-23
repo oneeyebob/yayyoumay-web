@@ -107,7 +107,7 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '70vh' }} id="hero-bg">
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh' }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
