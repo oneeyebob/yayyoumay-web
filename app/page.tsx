@@ -99,7 +99,7 @@ export default function Home() {
         <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr' }} className="md:grid-cols-2">
 
           {/* Venstre: Hvad er YAY! */}
-          <div style={{ background: '#F5F1E8', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12">
+          <div style={{ background: '#F5F1E8', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12 order-last md:order-first">
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
             <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800, color: '#808f2d', marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
             <div style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
 
           {/* Højre: CTA */}
-          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
+          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12 order-first md:order-last">
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <img
               src="/devices.png"
