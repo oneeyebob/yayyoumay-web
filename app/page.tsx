@@ -107,15 +107,21 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh' }} id="hero-bg">
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#d4c9a8' }}>
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }} id="hero-bg">
+        <div style={{ position: 'relative', overflow: 'hidden', background: '#d4c9a8', maxHeight: '60vh', width: '100%' }}>
+          <img
+            src="/iskiosk.png"
+            alt=""
+            aria-hidden="true"
+            style={{ width: '100%', height: 'auto', display: 'block', visibility: 'hidden' }}
+          />
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
             id="hero-img"
-            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', bottom: 0, left: 0, zIndex: 0, transition: 'transform 0.05s linear' }}
+            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', bottom: 0, left: 0 }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)', zIndex: 1 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         </div>
         <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
