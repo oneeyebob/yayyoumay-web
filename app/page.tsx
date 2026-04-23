@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { UserCog } from 'lucide-react'
+import PlayLogo from './components/PlayLogo'
 
 const SVGLogo = ({ height = 32, color = 'currentColor' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color }}>
@@ -143,15 +144,11 @@ export default function Home() {
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://app.yayyoumay.dk"
-              style={{ display: 'block', width: '100%', textAlign: 'center', textDecoration: 'none' }}
-              onMouseEnter={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.filter = 'brightness(0) saturate(100%) invert(45%) sepia(60%) saturate(400%) hue-rotate(40deg) brightness(75%)' }}
-              onMouseLeave={e => { (e.currentTarget.querySelector('img') as HTMLImageElement).style.filter = 'brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(400%) hue-rotate(160deg) brightness(90%)' }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: BLÅ, transition: 'color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = GRØN }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = BLÅ }}
             >
-              <img
-                src="/play.svg"
-                alt="Play YAY!"
-                style={{ height: 40, width: 'auto', transition: 'filter 0.2s', filter: 'brightness(0) saturate(100%) invert(35%) sepia(20%) saturate(400%) hue-rotate(160deg) brightness(90%)' }}
-              />
+              <PlayLogo height={40} />
             </a>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
