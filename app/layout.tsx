@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'YAY! - VideoTube til børn, af forældre til forældre',
   description: 'YAY! er et filterlag oven på YouTube. Du godkender kanaler og videoer - Junior ser kun det, du har valgt. Ingen algoritme, ingen overraskelser.',
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
   },
 }
 
