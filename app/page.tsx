@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { UserCog } from 'lucide-react'
 
@@ -25,6 +25,32 @@ const BLÅ = '#6C7C8C'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const img = document.getElementById('hero-img') as HTMLImageElement
+    if (!img) return
+    const hero = img.closest('section') as HTMLElement
+    if (!hero) return
+
+    const handleScroll = () => {
+      const imgNaturalRatio = img.naturalHeight / img.naturalWidth
+      const imgRenderedHeight = img.offsetWidth * imgNaturalRatio
+      const heroHeight = hero.offsetHeight
+
+      if (imgRenderedHeight <= heroHeight) {
+        img.style.transform = 'translateY(0)'
+        return
+      }
+
+      const maxOffset = (imgRenderedHeight - heroHeight) * 0.5
+      const offset = Math.min(window.scrollY * 0.25, maxOffset)
+      img.style.transform = `translateY(-${offset}px)`
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
@@ -81,12 +107,12 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320 }} id="hero-bg">
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '70vh' }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
-
-            style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 0 }}
+            id="hero-img"
+            style={{ width: '100%', height: '100%', minHeight: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block', position: 'relative', zIndex: 0, transition: 'transform 0.1s linear' }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
