@@ -124,7 +124,7 @@ export default function Home() {
 
       {/* HVAD ER YAY + LOGIN */}
       <section style={{ background: '#eeede8' }} id="hvad">
-        <div style={{ maxWidth: 1080, margin: '0 auto' }} className="md:px-8">
+        <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem' }} className="md:px-8">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 400 }}>
             {/* Hvad er YAY! */}
             <div style={{ background: PAPIR, padding: '2rem 1.25rem', borderBottom: '1px solid rgba(43,43,43,0.12)', minHeight: '100%' }} className="md:p-10 md:border-b-0 md:border-r md:border-gray-200">
