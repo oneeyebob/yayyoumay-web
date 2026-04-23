@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       <section id="hvad" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
-        <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr' }} className="md:grid-cols-2">
 
           {/* Venstre: Hvad er YAY! */}
           <div style={{ background: '#F5F1E8', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12">
