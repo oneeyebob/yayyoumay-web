@@ -144,9 +144,9 @@ export default function Home() {
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://app.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#808f2d', border: '2px solid currentColor', padding: '1.2rem', transition: 'color 0.2s, border-color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#6C7C8C'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#6C7C8C' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#808f2d' }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#B5523A', border: '2px solid currentColor', padding: '1.2rem', transition: 'color 0.2s, border-color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#808f2d' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#B5523A'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#B5523A' }}
             >
               <PlayLogo height={36} />
             </a>
