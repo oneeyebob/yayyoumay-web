@@ -11,7 +11,7 @@
   --fersken: #F2D6C2;
 }
 
-body {
+html, body {
   background: var(--papir);
   color: var(--tekst);
   font-family: 'Inter', sans-serif;
