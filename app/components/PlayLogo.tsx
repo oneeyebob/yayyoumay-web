@@ -11,7 +11,7 @@ export default function PlayLogo({
 }) {
   return (
     <svg
-      viewBox="0 0 1071.84 403.22"
+      viewBox="0 0 1257.51 530.27"
       xmlns="http://www.w3.org/2000/svg"
       style={{ height, width: 'auto', fill: color, ...style }}
     >
