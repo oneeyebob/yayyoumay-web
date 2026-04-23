@@ -139,9 +139,16 @@ export default function Home() {
           </div>
 
           {/* Højre: CTA */}
-          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
+          <div style={{ background: 'white', padding: '3rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '1.2rem' }} className="md:p-12">
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
-            <h3 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: '#2B2B2B', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Sig YAY!</h3>
+            <a
+              href="https://app.yayyoumay.dk"
+              style={{ display: 'block', width: '100%', textAlign: 'center', textDecoration: 'none', transition: 'opacity 0.2s' }}
+              onMouseEnter={e => { const img = e.currentTarget.querySelector('img') as HTMLImageElement; if (img) img.style.filter = 'brightness(0) saturate(100%) invert(45%) sepia(40%) saturate(500%) hue-rotate(40deg) brightness(80%)' }}
+              onMouseLeave={e => { const img = e.currentTarget.querySelector('img') as HTMLImageElement; if (img) img.style.filter = 'none' }}
+            >
+              <img src="/play.svg" alt="Play YAY!" style={{ height: 80, width: 'auto', transition: 'filter 0.2s' }} />
+            </a>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
             <a href="https://app.yayyoumay.dk/register" style={{ fontSize: '0.82rem', color: 'rgba(43,43,43,0.45)', textDecoration: 'none' }}>Ny her? Opret gratis konto</a>
