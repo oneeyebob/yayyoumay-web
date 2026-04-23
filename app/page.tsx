@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { UserCog } from 'lucide-react'
 
@@ -25,30 +25,6 @@ const BLÅ = '#6C7C8C'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const img = document.getElementById('hero-img') as HTMLImageElement
-    if (!img) return
-
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const imgHeight = img.offsetHeight
-      const heroHeight = img.parentElement?.offsetHeight ?? 0
-
-      if (imgHeight <= heroHeight) {
-        img.style.transform = 'translateY(0)'
-        return
-      }
-
-      const maxOffset = imgHeight - heroHeight
-      const offset = Math.min(scrollY * 0.3, maxOffset)
-      img.style.transform = `translateY(-${offset}px)`
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
@@ -105,31 +81,23 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }} id="hero-bg">
-        <div style={{ position: 'relative', width: '100%', maxHeight: '60vh', overflow: 'hidden', background: '#c8b99a' }}>
-          <img
-            src="/iskiosk.png"
-            alt=""
-            aria-hidden="true"
-            style={{ width: '100%', height: '60vh', display: 'block', objectFit: 'cover', objectPosition: 'bottom center', visibility: 'hidden' }}
-          />
-          <img
-            src="/iskiosk.png"
-            alt="YAY! iskiosk ved stranden"
-            id="hero-img"
-            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', left: 0, bottom: 0 }}
-          />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
-        </div>
-        <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
-          <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
-          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
+      <section style={{ position: 'relative', height: '60vh', minHeight: 320, overflow: 'hidden', background: '#c8b99a' }}>
+        <img
+          src="/iskiosk.png"
+          alt="YAY! iskiosk ved stranden"
+          id="hero-img"
+          style={{ position: 'absolute', width: '100%', height: 'auto', bottom: 0, left: 0 }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
+        <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem' }}>
+          <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#E6C65C', display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
+          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem' }}>
             VideoTube til børn<br />- af forældre til forældre.
           </h1>
           <p style={{ fontSize: '1.425rem', lineHeight: 1, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Vi viser rigtige YouTube-videoer og kanaler - men kun dem du har sagt ja til. Ingen overraskelser, ingen evige scroll, ingen algoritme.
           </p>
-          <div style={{ display: 'flex', gap: 8, marginBottom: '1.4rem' }}>
+          <div style={{ display: 'flex', gap: 8 }}>
             {[GUL, RØD, FERSKEN, GRØN, BLÅ].map((c, i) => (
               <span key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, display: 'inline-block' }} />
             ))}
