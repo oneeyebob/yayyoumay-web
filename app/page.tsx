@@ -144,11 +144,11 @@ export default function Home() {
             <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</span>
             <a
               href="https://app.yayyoumay.dk"
-              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#6C7C8C', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#6C7C8C' }}
+              style={{ display: 'flex', width: '100%', justifyContent: 'center', textDecoration: 'none', color: '#808f2d', border: '2px solid currentColor', padding: '1.2rem', transition: 'color 0.2s, border-color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#6C7C8C'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#6C7C8C' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#808f2d'; (e.currentTarget as HTMLAnchorElement).style.borderColor = '#808f2d' }}
             >
-              <PlayLogo height={40} />
+              <PlayLogo height={36} />
             </a>
             <p style={{ fontSize: '0.92rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
             <a href="https://app.yayyoumay.dk" style={{ display: 'block', width: '100%', background: '#E6C65C', color: '#2B2B2B', fontFamily: 'inherit', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til afspiller</a>
