@@ -125,9 +125,9 @@ export default function Home() {
       {/* HVAD ER YAY + LOGIN */}
       <section style={{ background: '#eeede8' }} id="hvad">
         <div style={{ maxWidth: 1080, margin: '0 auto' }} className="md:px-8">
-          <div style={{ background: 'white', overflow: 'hidden' }} className="md:grid md:grid-cols-2">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 400 }}>
             {/* Hvad er YAY! */}
-            <div style={{ background: PAPIR, padding: '2rem 1.25rem', borderBottom: '1px solid rgba(43,43,43,0.12)' }} className="md:p-10 md:border-b-0 md:border-r md:border-gray-200">
+            <div style={{ background: PAPIR, padding: '2rem 1.25rem', borderBottom: '1px solid rgba(43,43,43,0.12)', minHeight: '100%' }} className="md:p-10 md:border-b-0 md:border-r md:border-gray-200">
               <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
               <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800, color: GRØN, marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
               <div style={{ fontSize: '0.92rem', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
@@ -139,7 +139,7 @@ export default function Home() {
               </blockquote>
             </div>
             {/* CTA */}
-            <div style={{ background: 'white', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '1.5rem' }}>
+            <div style={{ background: 'white', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: '1.5rem', minHeight: '100%' }}>
               <p style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)' }}>Klar til at starte?</p>
               <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 800, color: '#2B2B2B', letterSpacing: '-0.02em', lineHeight: 1.1 }}>Sig YAY!</h3>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(43,43,43,0.6)', maxWidth: '32ch' }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
