@@ -42,9 +42,9 @@ export default function Home() {
         return
       }
 
-      const maxOffset = (imgRenderedHeight - heroHeight) * 0.5
-      const offset = Math.min(window.scrollY * 0.25, maxOffset)
-      img.style.transform = `translateY(${offset}px)`
+      const maxOffset = imgRenderedHeight - heroHeight
+      const offset = Math.min(window.scrollY * 0.3, maxOffset)
+      img.style.transform = `translateY(-${offset}px)`
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -107,14 +107,16 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh', background: '#d4c9a8' }} id="hero-bg">
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320, maxHeight: '60vh' }} id="hero-bg">
+        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#d4c9a8' }}>
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
             id="hero-img"
-            style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 0, transition: 'transform 0.1s linear' }}
+            style={{ width: '100%', height: 'auto', display: 'block', position: 'absolute', bottom: 0, left: 0, zIndex: 0, transition: 'transform 0.05s linear' }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)', zIndex: 1 }} />
+        </div>
         <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
