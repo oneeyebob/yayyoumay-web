@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { UserCog } from 'lucide-react'
 
 const SVGLogo = ({ height = 32, color = 'currentColor' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color }}>
@@ -42,11 +41,6 @@ export default function Home() {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: '0.78rem', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://play.yayyoumay.dk/curator" style={{ display: 'inline-flex', alignItems: 'center', color: '#000000', textDecoration: 'none' }} title="Kuratormode">
-                <UserCog size={18} />
-              </a>
-            </li>
           </ul>
           {/* Mobile hamburger */}
           <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
@@ -73,9 +67,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a href="https://play.yayyoumay.dk/curator" onClick={() => setMenuOpen(false)} style={{ marginTop: '2rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(43,43,43,0.5)', textDecoration: 'none', fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            <UserCog size={16} /> Kuratormode
-          </a>
         </div>
       )}
 
