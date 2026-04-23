@@ -73,9 +73,8 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ marginTop: '2.5rem', background: '#E6C65C', color: '#2B2B2B', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1rem 1.5rem', textDecoration: 'none', alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0L10 6L0 12V0Z"/></svg>
-            Spil
+          <a href="https://play.yayyoumay.dk/curator" onClick={() => setMenuOpen(false)} style={{ marginTop: '2rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(43,43,43,0.5)', textDecoration: 'none', fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <UserCog size={16} /> Kuratormode
           </a>
         </div>
       )}
