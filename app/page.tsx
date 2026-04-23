@@ -96,17 +96,15 @@ export default function Home() {
       )}
 
       {/* HERO */}
-      <section style={{ height: '60vh', minHeight: 400, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }} id="hero-bg">
+      <section style={{ position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', minHeight: 320 }} id="hero-bg">
           <img
             src="/iskiosk.png"
             alt="YAY! iskiosk ved stranden"
             id="hero-img"
-            style={{ width: '100%', height: '130%', objectFit: 'cover', objectPosition: 'center 30%', position: 'absolute', top: '-15%', left: 0 }}
+            style={{ width: '100%', height: 'auto', display: 'block', position: 'relative', zIndex: 0 }}
           />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
-        </div>
-        <div style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 1080, margin: '0 auto', padding: '0 1.25rem', textAlign: 'left' }}>
+        <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '0.9rem' }}>af forældre til forældre</span>
           <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
             VideoTube til børn<br />- af forældre til forældre.
