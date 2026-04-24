@@ -198,10 +198,10 @@ export default function Home() {
               ['algoritmen', 'Om algoritmen', 'Algoritmen er ikke på vores hold', 'Det starter altid roligt. En katte-video. Og så sker der noget.'],
             ].map(([slug, kat, titel, uddrag]) => (
               <Link key={slug} href={`/blog/${slug}`} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '1.5rem 0', borderTop: '2px solid rgba(43,43,43,0.1)' }} className="md:border-t-2 md:pt-5 block">
-                <span style={{ fontSize: 'var(--font-blog-cat)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '0.45rem' }}>{kat}</span>
-                <p style={{ fontSize: 'var(--font-blog-title)', fontWeight: 700, lineHeight: 1.35, color: TEKST, marginBottom: '0.5rem' }}>{titel}</p>
-                <p style={{ fontSize: 'var(--font-blog-excerpt)', lineHeight: 1.6, color: 'rgba(43,43,43,0.52)', marginBottom: '0.7rem' }}>{uddrag}</p>
-                <span style={{ fontSize: 'var(--font-read-more)', fontWeight: 600, color: RØD }}>Læs mere →</span>
+                <span style={{ fontSize: 'var(--font-base)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '0.45rem' }}>{kat}</span>
+                <p style={{ fontSize: 'var(--font-base)', fontWeight: 700, lineHeight: 1.35, color: TEKST, marginBottom: '0.5rem' }}>{titel}</p>
+                <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.6, color: 'rgba(43,43,43,0.52)', marginBottom: '0.7rem' }}>{uddrag}</p>
+                <span style={{ fontSize: 'var(--font-base)', fontWeight: 600, color: RØD }}>Læs mere →</span>
               </Link>
             ))}
           </div>
