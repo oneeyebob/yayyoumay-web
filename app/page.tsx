@@ -26,7 +26,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif' }}>
+    <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif', fontSize: '1rem' }}>
 
       {/* NAV */}
       <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: '#F5F1E8', borderBottom: '1px solid rgba(0,0,0,0.08)', height: 56, display: 'flex', alignItems: 'center', padding: '0 1.25rem' }}>
