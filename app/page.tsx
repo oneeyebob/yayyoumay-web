@@ -160,7 +160,7 @@ export default function Home() {
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
           <span className="section-label">Sådan virker YAY!</span>
           <h2 className="section-heading" style={{ marginBottom: '1rem' }}>To tilstande. Én ro.</h2>
-          <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(43,43,43,0.68)', marginBottom: '2rem', maxWidth: '52ch' }}>YAY! har to tilstande - Kuratormode og Juniormode. I Kuratormode godkender du kanaler og videoer. I Juniormode ser Junior kun det, du har valgt. Ikke mere. Ikke andet.</p>
+          <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.75, color: 'rgba(43,43,43,0.68)', marginBottom: '2rem', maxWidth: '52ch' }}>YAY! har to tilstande - Kuratormode og Juniormode. I Kuratormode godkender du kanaler og videoer. I Juniormode ser Junior kun det, du har valgt. Ikke mere. Ikke andet.</p>
           <div>
             {[
               ['01', 'kur', 'Opret en konto og tilføj dit barn', 'Kun brugernavn og password. Ingen email, ingen telefonnummer. Tilføj én profil per barn.'],
@@ -176,8 +176,8 @@ export default function Home() {
                   color: mode === 'jun' ? 'white' : mode === 'løb' ? 'rgba(43,43,43,0.45)' : TEKST,
                 }}>{mode === 'kur' ? 'Kuratormode' : mode === 'jun' ? 'Juniormode' : 'Løbende'}</span>
                 <div>
-                  <p style={{ fontSize: 'var(--font-sm)', fontWeight: 700, marginBottom: '0.25rem', color: TEKST }}>{titel}</p>
-                  <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.6, color: 'rgba(43,43,43,0.55)' }}>{tekst}</p>
+                  <p style={{ fontSize: 'var(--font-base)', fontWeight: 700, marginBottom: '0.25rem', color: TEKST }}>{titel}</p>
+                  <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.6, color: 'rgba(43,43,43,0.55)' }}>{tekst}</p>
                 </div>
               </div>
             ))}
