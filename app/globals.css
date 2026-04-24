@@ -9,6 +9,18 @@
   --rød: #B5523A;
   --blå: #6C7C8C;
   --fersken: #F2D6C2;
+
+  --gron: #808f2d;
+  --rod: #B5523A;
+  --bla: #6C7C8C;
+
+  --font-xs: 0.72rem;
+  --font-sm: 0.85rem;
+  --font-base: 1rem;
+  --font-md: 1.05rem;
+  --font-lg: 1.2rem;
+  --font-label: 0.65rem;
+  --font-nav: 0.78rem;
 }
 
 html, body {

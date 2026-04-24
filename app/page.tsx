@@ -145,8 +145,8 @@ export default function Home() {
                 ['05', 'Ingen persondata om dine børn', 'Vi gemmer ingen personoplysninger om børn. Login med brugernavn og password - ingen email.'],
               ].map(([num, titel, tekst]) => (
                 <div key={num} style={{ padding: '1.3rem 0', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                  <p style={{ fontSize: '1.05rem', fontWeight: 700, color: 'white', marginBottom: '0.25rem' }}>{titel}</p>
-                  <p style={{ fontSize: '1rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.5)' }}>{tekst}</p>
+                  <p style={{ fontSize: 'var(--font-md)', fontWeight: 700, color: 'white', marginBottom: '0.25rem' }}>{titel}</p>
+                  <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.6, color: 'rgba(255,255,255,0.5)' }}>{tekst}</p>
                 </div>
               ))}
               <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', marginTop: 0 }} />
