@@ -259,7 +259,7 @@ export default function Home() {
         </div>
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '1.2rem 1.25rem' }} className="md:px-8">
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.3rem' }}>
-            <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.18)' }}>2025 · yayyoumay.dk</p>
+            <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.18)' }}>2026 · yayyoumay.dk</p>
             <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.18)' }}>YAY! er ikke tilknyttet YouTube eller Google.</p>
           </div>
         </div>
