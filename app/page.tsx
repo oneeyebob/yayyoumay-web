@@ -36,11 +36,11 @@ export default function Home() {
           </a>
           {/* Desktop links */}
           <ul className="hidden md:flex gap-8 list-none items-center" style={{ margin: 0, padding: 0 }}>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://play.yayyoumay.dk" style={{ fontSize: 'var(--font-nav)', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Play</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" style={{ fontSize: 'var(--font-nav)', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Hvad er YAY!</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" style={{ fontSize: 'var(--font-nav)', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Sådan virker det</a></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" style={{ fontSize: 'var(--font-nav)', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Blog</Link></li>
-            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" style={{ fontSize: 'var(--font-nav)', fontWeight: 500, color: 'rgba(0,0,0,0.6)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase' }}>FAQ</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="https://play.yayyoumay.dk" className="nav-link">Play</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#hvad" className="nav-link">Hvad er YAY!</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#saadan" className="nav-link">Sådan virker det</a></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><Link href="/blog" className="nav-link">Blog</Link></li>
+            <li style={{ display: 'flex', alignItems: 'center' }}><a href="#faq" className="nav-link">FAQ</a></li>
           </ul>
           {/* Mobile hamburger */}
           <button className="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-0 cursor-pointer" onClick={() => setMenuOpen(true)} aria-label="Menu">
@@ -56,13 +56,13 @@ export default function Home() {
         <div style={{ position: 'fixed', inset: 0, background: PAPIR, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
           <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(43,43,43,0.35)', fontSize: 'var(--font-close)', cursor: 'pointer', lineHeight: 1 }}>×</button>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
-            <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: 'var(--font-nav)', fontWeight: 500, color: 'var(--tekst)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>Play</a></li>
+            <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} className="menu-link">Play</a></li>
             {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
               <li key={href}>
                 {href.startsWith('/') ? (
-                  <Link href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: 'var(--font-nav)', fontWeight: 500, color: 'var(--tekst)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>{label}</Link>
+                  <Link href={href} onClick={() => setMenuOpen(false)} className="menu-link">{label}</Link>
                 ) : (
-                  <a href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: 'var(--font-nav)', fontWeight: 500, color: 'var(--tekst)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>{label}</a>
+                  <a href={href} onClick={() => setMenuOpen(false)} className="menu-link">{label}</a>
                 )}
               </li>
             ))}
@@ -95,18 +95,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="hvad" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
+      <section id="hvad" className="section-border">
         <div style={{ maxWidth: 1080, margin: '0 auto' }} className="grid md:grid-cols-2">
 
           {/* Venstre: Hvad er YAY! */}
           <div style={{ background: 'var(--papir)', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12 order-last md:order-first">
-            <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
-            <h2 style={{ fontSize: 'var(--font-h2-sm)', fontWeight: 800, color: 'var(--gron)', marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
+            <span className="section-label">Hvad er YAY!</span>
+            <h2 className="section-heading" style={{ fontSize: 'var(--font-h2-sm)', marginBottom: '1.2rem' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
             <div style={{ fontSize: 'var(--font-sm)', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
               <p>YAY! startede med et spørgsmål. Albert, 9 år, spurgte næsten hver dag om han måtte se YouTube. Og tit var svaret nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er uoverskueligt. For meget møj. For lidt kontrol.</p>
               <p style={{ marginTop: 'var(--font-sm)' }}>YAY! blev svaret på det spørgsmål. En webapp der lægger et kuratorlag oven på YouTube, så Junior kun ser det du allerede har godkendt. Ikke en ny streamingtjeneste. Ikke en børne-app. Men et forældreværktøj der giver dig hånden på styret - uden at tage cyklen fra barnet.</p>
             </div>
-            <blockquote style={{ borderLeft: '3px solid #E6C65C', paddingLeft: '1.2rem', fontStyle: 'italic', color: 'rgba(43,43,43,0.45)', fontSize: 'var(--font-sm)', lineHeight: 1.65, marginTop: '1.5rem' }}>
+            <blockquote className="blockquote">
               "Albert finder ikke noget i YAY! - som jeg ikke allerede har godkendt."
             </blockquote>
           </div>
@@ -130,10 +130,10 @@ export default function Home() {
       {/* HVORFOR YAY! */}
       <section style={{ background: TEKST }} id="hvorfor">
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
-          <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', display: 'block', marginBottom: '1rem' }}>Hvorfor YAY!</span>
+          <span className="section-label-dark">Hvorfor YAY!</span>
           <div className="md:grid md:grid-cols-2 md:gap-20 md:items-start">
             <div>
-              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Du behøver ikke begrænse - du kan vise vejen.</h2>
+              <h2 className="section-heading" style={{ marginBottom: '1.2rem' }}>Du behøver ikke begrænse - du kan vise vejen.</h2>
               <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(255,255,255,0.55)', marginBottom: '2rem' }}>Da jeg var lille, sled jeg ryggen i stykker på familiens Lademanns Leksikon. For Albert er YouTube det samme - et levende, søgbart, uendeligt opslagsværk på video. YouTube er ikke fjenden. Men det er algoritmerne og det evindelige scroll.</p>
             </div>
             <div>
@@ -156,10 +156,10 @@ export default function Home() {
       </section>
 
       {/* SÅDAN VIRKER DET */}
-      <section id="saadan" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
+      <section id="saadan" className="section-border">
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
-          <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Sådan virker YAY!</span>
-          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '1rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>To tilstande. Én ro.</h2>
+          <span className="section-label">Sådan virker YAY!</span>
+          <h2 className="section-heading" style={{ marginBottom: '1rem' }}>To tilstande. Én ro.</h2>
           <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(43,43,43,0.68)', marginBottom: '2rem', maxWidth: '52ch' }}>YAY! har to tilstande - Kuratormode og Juniormode. I Kuratormode godkender du kanaler og videoer. I Juniormode ser Junior kun det, du har valgt. Ikke mere. Ikke andet.</p>
           <div>
             {[
@@ -181,16 +181,16 @@ export default function Home() {
                 </div>
               </div>
             ))}
-            <div style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }} />
+            <div className="section-border" />
           </div>
         </div>
       </section>
 
       {/* BLOG */}
-      <section id="blog" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
+      <section id="blog" className="section-border">
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
-          <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Blog</span>
-          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Læs mere om børn og skærm</h2>
+          <span className="section-label">Blog</span>
+          <h2 className="section-heading" style={{ marginBottom: '2rem' }}>Læs mere om børn og skærm</h2>
           <div className="md:grid md:grid-cols-3 md:gap-8">
             {[
               ['historien-bag-yay', 'Om YAY!', 'Far, må jeg se YouTube? - Historien bag YAY!', 'Hvordan et dagligt spørgsmål fra en ni-årig blev til et forældreværktøj.'],
@@ -209,10 +209,10 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
+      <section id="faq" className="section-border">
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
-          <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Ofte stillede spørgsmål</span>
-          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Alt hvad du vil vide om YAY!</h2>
+          <span className="section-label">Ofte stillede spørgsmål</span>
+          <h2 className="section-heading" style={{ marginBottom: '2rem' }}>Alt hvad du vil vide om YAY!</h2>
           <FAQList />
         </div>
       </section>
@@ -233,25 +233,25 @@ export default function Home() {
             <p style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '0.7rem', maxWidth: '26ch' }}>VideoTube til børn - af forældre til forældre.</p>
           </div>
           <div className="mb-6 md:mb-0">
-            <p style={{ fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Navigation</p>
+            <p className="footer-section-heading">Navigation</p>
             <ul style={{ listStyle: 'none' }}>
               {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
                   {href.startsWith('/') ? (
-                    <Link href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
+                    <Link href={href} className="footer-link">{label}</Link>
                   ) : (
-                    <a href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</a>
+                    <a href={href} className="footer-link">{label}</a>
                   )}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p style={{ fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Juridisk</p>
+            <p className="footer-section-heading">Juridisk</p>
             <ul style={{ listStyle: 'none' }}>
               {[['/om', 'Om YAY!'], ['/kontakt', 'Kontakt'], ['/vilkaar', 'Vilkår for brug'], ['/privatlivspolitik', 'Privatlivspolitik'], ['/cookies', 'Cookies']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
-                  <Link href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
+                  <Link href={href} className="footer-link">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -259,8 +259,8 @@ export default function Home() {
         </div>
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '1.2rem 1.25rem' }} className="md:px-8">
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.3rem' }}>
-            <p style={{ fontSize: 'var(--font-micro)', color: 'rgba(255,255,255,0.18)' }}>2026 · yayyoumay.dk</p>
-            <p style={{ fontSize: 'var(--font-micro)', color: 'rgba(255,255,255,0.18)' }}>YAY! er ikke tilknyttet YouTube eller Google.</p>
+            <p className="footer-micro">2026 · yayyoumay.dk</p>
+            <p className="footer-micro">YAY! er ikke tilknyttet YouTube eller Google.</p>
           </div>
         </div>
       </footer>
@@ -306,7 +306,7 @@ function FAQList() {
               </div>
             )
           })}
-          <div style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }} />
+          <div className="section-border" />
         </div>
       ))}
     </div>

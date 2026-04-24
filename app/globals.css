@@ -38,6 +38,85 @@
   --font-close: 2rem;
 }
 
+/* ── Repeating layout patterns ── */
+.section-border { border-bottom: 1px solid rgba(43,43,43,0.12); }
+
+/* ── Section typography ── */
+.section-label {
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(43,43,43,0.35);
+  display: block;
+  margin-bottom: 1rem;
+}
+.section-label-dark {
+  font-size: var(--font-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  display: block;
+  margin-bottom: 1rem;
+}
+.section-heading {
+  font-size: var(--font-h2);
+  font-weight: 800;
+  color: var(--gron);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.blockquote {
+  border-left: 3px solid var(--gul);
+  padding-left: 1.2rem;
+  font-style: italic;
+  color: rgba(43,43,43,0.45);
+  font-size: var(--font-sm);
+  line-height: 1.65;
+  margin-top: 1.5rem;
+}
+
+/* ── Navigation ── */
+.nav-link {
+  font-size: var(--font-nav);
+  font-weight: 500;
+  color: rgba(0,0,0,0.6);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.menu-link {
+  display: block;
+  font-size: var(--font-nav);
+  font-weight: 500;
+  color: var(--tekst);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(43,43,43,0.08);
+}
+
+/* ── Footer ── */
+.footer-link {
+  font-size: var(--font-footer);
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+}
+.footer-section-heading {
+  font-size: var(--font-badge);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  margin-bottom: var(--font-sm);
+}
+.footer-micro {
+  font-size: var(--font-micro);
+  color: rgba(255,255,255,0.18);
+}
+
 html, body {
   background: var(--papir);
   color: var(--tekst);
