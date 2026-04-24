@@ -26,7 +26,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif', fontSize: '1rem' }}>
+    <div style={{ background: PAPIR, color: TEKST, fontFamily: 'system-ui, sans-serif', fontSize: 'var(--font-base)' }}>
 
       {/* NAV */}
       <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: 'var(--papir)', borderBottom: '1px solid rgba(0,0,0,0.08)', height: 56, display: 'flex', alignItems: 'center', padding: '0 1.25rem' }}>
@@ -54,7 +54,7 @@ export default function Home() {
       {/* MENU OVERLAY */}
       {menuOpen && (
         <div style={{ position: 'fixed', inset: 0, background: PAPIR, zIndex: 200, display: 'flex', flexDirection: 'column', padding: '5rem 1.25rem 3rem' }}>
-          <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(43,43,43,0.35)', fontSize: '2rem', cursor: 'pointer', lineHeight: 1 }}>×</button>
+          <button onClick={() => setMenuOpen(false)} style={{ position: 'absolute', top: '1.4rem', right: '1.25rem', background: 'none', border: 'none', color: 'rgba(43,43,43,0.35)', fontSize: 'var(--font-close)', cursor: 'pointer', lineHeight: 1 }}>×</button>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
             <li><a href="https://play.yayyoumay.dk" onClick={() => setMenuOpen(false)} style={{ display: 'block', fontSize: 'var(--font-nav)', fontWeight: 500, color: 'var(--tekst)', textDecoration: 'none', letterSpacing: '0.08em', textTransform: 'uppercase', padding: '1.1rem 0', borderBottom: '1px solid rgba(43,43,43,0.08)' }}>Play</a></li>
             {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
@@ -84,7 +84,7 @@ export default function Home() {
           <h1 style={{ fontSize: 'var(--font-h1)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
             VideoTube til børn<br />- af forældre til forældre.
           </h1>
-          <p style={{ fontSize: '1.425rem', lineHeight: 1, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
+          <p style={{ fontSize: 'var(--font-hero-p)', lineHeight: 1, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
             Vi viser rigtige YouTube-videoer og kanaler - men kun dem du har sagt ja til. Ingen overraskelser, ingen evige scroll, ingen algoritme.
           </p>
           <div style={{ display: 'flex', gap: 8, marginBottom: '1.4rem' }}>
@@ -198,10 +198,10 @@ export default function Home() {
               ['algoritmen', 'Om algoritmen', 'Algoritmen er ikke på vores hold', 'Det starter altid roligt. En katte-video. Og så sker der noget.'],
             ].map(([slug, kat, titel, uddrag]) => (
               <Link key={slug} href={`/blog/${slug}`} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '1.5rem 0', borderTop: '2px solid rgba(43,43,43,0.1)' }} className="md:border-t-2 md:pt-5 block">
-                <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '0.45rem' }}>{kat}</span>
-                <p style={{ fontSize: '0.97rem', fontWeight: 700, lineHeight: 1.35, color: TEKST, marginBottom: '0.5rem' }}>{titel}</p>
-                <p style={{ fontSize: '0.83rem', lineHeight: 1.6, color: 'rgba(43,43,43,0.52)', marginBottom: '0.7rem' }}>{uddrag}</p>
-                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: RØD }}>Læs mere →</span>
+                <span style={{ fontSize: 'var(--font-blog-cat)', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '0.45rem' }}>{kat}</span>
+                <p style={{ fontSize: 'var(--font-blog-title)', fontWeight: 700, lineHeight: 1.35, color: TEKST, marginBottom: '0.5rem' }}>{titel}</p>
+                <p style={{ fontSize: 'var(--font-blog-excerpt)', lineHeight: 1.6, color: 'rgba(43,43,43,0.52)', marginBottom: '0.7rem' }}>{uddrag}</p>
+                <span style={{ fontSize: 'var(--font-read-more)', fontWeight: 600, color: RØD }}>Læs mere →</span>
               </Link>
             ))}
           </div>
@@ -219,9 +219,9 @@ export default function Home() {
 
       {/* CTA */}
       <section style={{ background: GUL, padding: '3.5rem 1.25rem', textAlign: 'center' }} className="md:py-24">
-        <h2 style={{ fontSize: 'clamp(1.9rem, 4vw, 3rem)', fontWeight: 800, color: TEKST, marginBottom: 'var(--font-nav)' }}>Sig YAY!</h2>
+        <h2 style={{ fontSize: 'var(--font-h2-cta)', fontWeight: 800, color: TEKST, marginBottom: 'var(--font-nav)' }}>Sig YAY!</h2>
         <p style={{ fontSize: 'var(--font-sm)', color: 'rgba(43,43,43,0.65)', maxWidth: '36ch', margin: '0 auto 1.6rem', lineHeight: 1.7 }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
-        <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', background: TEKST, color: 'white', padding: '1rem 2.4rem', borderRadius: 6, fontFamily: 'inherit', fontSize: '0.88rem', fontWeight: 700, textDecoration: 'none' }}>Opret gratis konto</a>
+        <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', background: TEKST, color: 'white', padding: '1rem 2.4rem', borderRadius: 6, fontFamily: 'inherit', fontSize: 'var(--font-btn)', fontWeight: 700, textDecoration: 'none' }}>Opret gratis konto</a>
         <p style={{ marginTop: '1rem', fontSize: 'var(--font-xs)', color: 'rgba(43,43,43,0.4)' }}>Ingen kreditkort · Ingen persondata</p>
       </section>
 
@@ -230,7 +230,7 @@ export default function Home() {
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '2.5rem 1.25rem' }} className="md:px-8 md:grid md:grid-cols-3 md:gap-12 md:py-12">
           <div className="mb-8 md:mb-0">
             <SVGLogo height={26} color="white" />
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '0.7rem', maxWidth: '26ch' }}>VideoTube til børn - af forældre til forældre.</p>
+            <p style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '0.7rem', maxWidth: '26ch' }}>VideoTube til børn - af forældre til forældre.</p>
           </div>
           <div className="mb-6 md:mb-0">
             <p style={{ fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Navigation</p>
@@ -238,9 +238,9 @@ export default function Home() {
               {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
                   {href.startsWith('/') ? (
-                    <Link href={href} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
+                    <Link href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
                   ) : (
-                    <a href={href} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</a>
+                    <a href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</a>
                   )}
                 </li>
               ))}
@@ -251,7 +251,7 @@ export default function Home() {
             <ul style={{ listStyle: 'none' }}>
               {[['/om', 'Om YAY!'], ['/kontakt', 'Kontakt'], ['/vilkaar', 'Vilkår for brug'], ['/privatlivspolitik', 'Privatlivspolitik'], ['/cookies', 'Cookies']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
-                  <Link href={href} style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
+                  <Link href={href} style={{ fontSize: 'var(--font-footer)', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>{label}</Link>
                 </li>
               ))}
             </ul>
@@ -259,8 +259,8 @@ export default function Home() {
         </div>
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '1.2rem 1.25rem' }} className="md:px-8">
           <div style={{ maxWidth: 1080, margin: '0 auto', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.3rem' }}>
-            <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.18)' }}>2026 · yayyoumay.dk</p>
-            <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.18)' }}>YAY! er ikke tilknyttet YouTube eller Google.</p>
+            <p style={{ fontSize: 'var(--font-micro)', color: 'rgba(255,255,255,0.18)' }}>2026 · yayyoumay.dk</p>
+            <p style={{ fontSize: 'var(--font-micro)', color: 'rgba(255,255,255,0.18)' }}>YAY! er ikke tilknyttet YouTube eller Google.</p>
           </div>
         </div>
       </footer>
@@ -295,12 +295,12 @@ function FAQList() {
                   onClick={() => setOpen(open === idx ? null : idx)}
                   style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', padding: '1.1rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
                 >
-                  <span style={{ fontSize: '0.88rem', fontWeight: 600, color: TEKST, lineHeight: 1.4 }}>{q}</span>
+                  <span style={{ fontSize: 'var(--font-btn)', fontWeight: 600, color: TEKST, lineHeight: 1.4 }}>{q}</span>
                   <svg style={{ width: 17, height: 17, color: 'rgba(43,43,43,0.28)', flexShrink: 0, transition: 'transform 0.2s', transform: open === idx ? 'rotate(180deg)' : 'none' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><polyline points="6 9 12 15 18 9" /></svg>
                 </button>
                 {open === idx && (
                   <div style={{ paddingBottom: '1.1rem' }}>
-                    <p style={{ fontSize: '0.87rem', lineHeight: 1.75, color: 'rgba(43,43,43,0.62)' }}>{a}</p>
+                    <p style={{ fontSize: 'var(--font-faq-answer)', lineHeight: 1.75, color: 'rgba(43,43,43,0.62)' }}>{a}</p>
                   </div>
                 )}
               </div>

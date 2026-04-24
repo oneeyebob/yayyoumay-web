@@ -25,6 +25,17 @@
   --font-h1: clamp(2.2rem, 5vw, 3.4rem);
   --font-h2: clamp(1.7rem, 3.5vw, 2.4rem);
   --font-h2-sm: clamp(1.5rem, 3vw, 2.2rem);
+  --font-h2-cta: clamp(1.9rem, 4vw, 3rem);
+  --font-hero-p: 1.425rem;
+  --font-footer: 0.82rem;
+  --font-btn: 0.88rem;
+  --font-micro: 0.7rem;
+  --font-blog-cat: 0.62rem;
+  --font-blog-title: 0.97rem;
+  --font-blog-excerpt: 0.83rem;
+  --font-read-more: 0.75rem;
+  --font-faq-answer: 0.87rem;
+  --font-close: 2rem;
 }
 
 html, body {
