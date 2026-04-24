@@ -81,7 +81,7 @@ export default function Home() {
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(43,43,43,0.75) 0%, rgba(43,43,43,0.15) 60%, rgba(43,43,43,0.05) 100%)' }} />
         <div style={{ position: 'absolute', bottom: '2.5rem', zIndex: 1, width: '100%', maxWidth: 1080, left: '50%', transform: 'translateX(-50%)', padding: '0 1.25rem', textAlign: 'left' }}>
           <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: 'var(--font-sm)' }}>af forældre til forældre</span>
-          <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
+          <h1 style={{ fontSize: 'var(--font-h1)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.025em', color: 'white', marginBottom: '1rem', textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
             VideoTube til børn<br />- af forældre til forældre.
           </h1>
           <p style={{ fontSize: '1.425rem', lineHeight: 1, color: 'rgba(255,255,255,0.9)', marginBottom: '1.8rem', maxWidth: '38ch', fontWeight: 600, textShadow: '0 2px 16px rgba(0,0,0,0.6)' }}>
@@ -101,7 +101,7 @@ export default function Home() {
           {/* Venstre: Hvad er YAY! */}
           <div style={{ background: 'var(--papir)', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12 order-last md:order-first">
             <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Hvad er YAY!</span>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800, color: 'var(--gron)', marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
+            <h2 style={{ fontSize: 'var(--font-h2-sm)', fontWeight: 800, color: 'var(--gron)', marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
             <div style={{ fontSize: 'var(--font-sm)', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
               <p>YAY! startede med et spørgsmål. Albert, 9 år, spurgte næsten hver dag om han måtte se YouTube. Og tit var svaret nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er uoverskueligt. For meget møj. For lidt kontrol.</p>
               <p style={{ marginTop: 'var(--font-sm)' }}>YAY! blev svaret på det spørgsmål. En webapp der lægger et kuratorlag oven på YouTube, så Junior kun ser det du allerede har godkendt. Ikke en ny streamingtjeneste. Ikke en børne-app. Men et forældreværktøj der giver dig hånden på styret - uden at tage cyklen fra barnet.</p>
@@ -133,7 +133,7 @@ export default function Home() {
           <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', display: 'block', marginBottom: '1rem' }}>Hvorfor YAY!</span>
           <div className="md:grid md:grid-cols-2 md:gap-20 md:items-start">
             <div>
-              <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Du behøver ikke begrænse - du kan vise vejen.</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '1.2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Du behøver ikke begrænse - du kan vise vejen.</h2>
               <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(255,255,255,0.55)', marginBottom: '2rem' }}>Da jeg var lille, sled jeg ryggen i stykker på familiens Lademanns Leksikon. For Albert er YouTube det samme - et levende, søgbart, uendeligt opslagsværk på video. YouTube er ikke fjenden. Men det er algoritmerne og det evindelige scroll.</p>
             </div>
             <div>
@@ -159,7 +159,7 @@ export default function Home() {
       <section id="saadan" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
           <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Sådan virker YAY!</span>
-          <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '1rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>To tilstande. Én ro.</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '1rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>To tilstande. Én ro.</h2>
           <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(43,43,43,0.68)', marginBottom: '2rem', maxWidth: '52ch' }}>YAY! har to tilstande - Kuratormode og Juniormode. I Kuratormode godkender du kanaler og videoer. I Juniormode ser Junior kun det, du har valgt. Ikke mere. Ikke andet.</p>
           <div>
             {[
@@ -170,7 +170,7 @@ export default function Home() {
             ].map(([num, mode, titel, tekst]) => (
               <div key={num} style={{ display: 'grid', gridTemplateColumns: '5.5rem 1fr', gap: '1rem 1.5rem', padding: '1.3rem 0', borderTop: '1px solid rgba(43,43,43,0.12)', alignItems: 'start' }}>
                 <span style={{
-                  fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                  fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
                   padding: '0.22rem 0.5rem', borderRadius: 3, display: 'inline-block', marginTop: '0.2rem',
                   background: mode === 'kur' ? FERSKEN : mode === 'jun' ? GRØN : 'rgba(43,43,43,0.07)',
                   color: mode === 'jun' ? 'white' : mode === 'løb' ? 'rgba(43,43,43,0.45)' : TEKST,
@@ -190,7 +190,7 @@ export default function Home() {
       <section id="blog" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
           <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Blog</span>
-          <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Læs mere om børn og skærm</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Læs mere om børn og skærm</h2>
           <div className="md:grid md:grid-cols-3 md:gap-8">
             {[
               ['historien-bag-yay', 'Om YAY!', 'Far, må jeg se YouTube? - Historien bag YAY!', 'Hvordan et dagligt spørgsmål fra en ni-årig blev til et forældreværktøj.'],
@@ -212,7 +212,7 @@ export default function Home() {
       <section id="faq" style={{ borderBottom: '1px solid rgba(43,43,43,0.12)' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '3rem 1.25rem' }} className="md:px-8 md:py-20">
           <span style={{ fontSize: 'var(--font-label)', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(43,43,43,0.35)', display: 'block', marginBottom: '1rem' }}>Ofte stillede spørgsmål</span>
-          <h2 style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Alt hvad du vil vide om YAY!</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: GRØN, marginBottom: '2rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Alt hvad du vil vide om YAY!</h2>
           <FAQList />
         </div>
       </section>
@@ -233,7 +233,7 @@ export default function Home() {
             <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.6, marginTop: '0.7rem', maxWidth: '26ch' }}>VideoTube til børn - af forældre til forældre.</p>
           </div>
           <div className="mb-6 md:mb-0">
-            <p style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Navigation</p>
+            <p style={{ fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Navigation</p>
             <ul style={{ listStyle: 'none' }}>
               {[['#hvad', 'Hvad er YAY!'], ['#saadan', 'Sådan virker det'], ['/blog', 'Blog'], ['#faq', 'FAQ']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
@@ -247,7 +247,7 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <p style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Juridisk</p>
+            <p style={{ fontSize: 'var(--font-badge)', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.22)', marginBottom: 'var(--font-sm)' }}>Juridisk</p>
             <ul style={{ listStyle: 'none' }}>
               {[['/om', 'Om YAY!'], ['/kontakt', 'Kontakt'], ['/vilkaar', 'Vilkår for brug'], ['/privatlivspolitik', 'Privatlivspolitik'], ['/cookies', 'Cookies']].map(([href, label]) => (
                 <li key={href} style={{ marginTop: '0.5rem' }}>
