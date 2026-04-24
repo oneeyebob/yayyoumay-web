@@ -102,7 +102,7 @@ export default function Home() {
           <div style={{ background: 'var(--papir)', padding: '3rem 1.25rem', borderRight: '1px solid rgba(43,43,43,0.12)' }} className="md:p-12 order-last md:order-first">
             <span className="section-label">Hvad er YAY!</span>
             <h2 className="section-heading" style={{ fontSize: 'var(--font-h2-sm)', marginBottom: '1.2rem' }}>Far, må jeg se YouTube?<br />Ja, du må så.</h2>
-            <div style={{ fontSize: 'var(--font-sm)', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
+            <div style={{ fontSize: 'var(--font-base)', lineHeight: 1.8, color: 'rgba(43,43,43,0.72)' }}>
               <p>YAY! startede med et spørgsmål. Albert, 9 år, spurgte næsten hver dag om han måtte se YouTube. Og tit var svaret nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er uoverskueligt. For meget møj. For lidt kontrol.</p>
               <p style={{ marginTop: 'var(--font-sm)' }}>YAY! blev svaret på det spørgsmål. En webapp der lægger et kuratorlag oven på YouTube, så Junior kun ser det du allerede har godkendt. Ikke en ny streamingtjeneste. Ikke en børne-app. Men et forældreværktøj der giver dig hånden på styret - uden at tage cyklen fra barnet.</p>
             </div>
@@ -119,7 +119,7 @@ export default function Home() {
               alt="YAY! på tablet og telefon"
               style={{ width: '50%', height: 'auto', display: 'block', margin: '0 auto' }}
             />
-            <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
+            <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.75, color: 'rgba(43,43,43,0.6)' }}>YAY! er gratis. Opret en konto, sæt Junior op. Du kan også bare vælge gæsteadgang og se hvad der sker.</p>
             <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', background: 'var(--gul)', color: 'var(--tekst)', fontFamily: 'inherit', fontSize: 'var(--font-nav)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '1rem', textDecoration: 'none', textAlign: 'center' }}>Gå til play.yayyoumay.dk</a>
             <p style={{ fontSize: 'var(--font-xs)', color: 'rgba(43,43,43,0.3)' }}>Ingen kreditkort · Ingen persondata · Ingen binding</p>
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
           <div className="md:grid md:grid-cols-2 md:gap-20 md:items-start">
             <div>
               <h2 className="section-heading" style={{ marginBottom: '1.2rem' }}>Du behøver ikke begrænse - du kan vise vejen.</h2>
-              <p style={{ fontSize: 'var(--font-sm)', lineHeight: 1.75, color: 'rgba(255,255,255,0.55)', marginBottom: '2rem' }}>Da jeg var lille, sled jeg ryggen i stykker på familiens Lademanns Leksikon. For Albert er YouTube det samme - et levende, søgbart, uendeligt opslagsværk på video. YouTube er ikke fjenden. Men det er algoritmerne og det evindelige scroll.</p>
+              <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.75, color: 'rgba(255,255,255,0.55)', marginBottom: '2rem' }}>Da jeg var lille, sled jeg ryggen i stykker på familiens Lademanns Leksikon. For Albert er YouTube det samme - et levende, søgbart, uendeligt opslagsværk på video. YouTube er ikke fjenden. Men det er algoritmerne og det evindelige scroll.</p>
             </div>
             <div>
               {[
@@ -220,7 +220,7 @@ export default function Home() {
       {/* CTA */}
       <section style={{ background: GUL, padding: '3.5rem 1.25rem', textAlign: 'center' }} className="md:py-24">
         <h2 style={{ fontSize: 'var(--font-h2-cta)', fontWeight: 800, color: TEKST, marginBottom: 'var(--font-nav)' }}>Sig YAY!</h2>
-        <p style={{ fontSize: 'var(--font-sm)', color: 'rgba(43,43,43,0.65)', maxWidth: '36ch', margin: '0 auto 1.6rem', lineHeight: 1.7 }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
+        <p style={{ fontSize: 'var(--font-base)', color: 'rgba(43,43,43,0.65)', maxWidth: '36ch', margin: '0 auto 1.6rem', lineHeight: 1.7 }}>YAY! er gratis at starte. Opret en konto, sæt Junior op og se hvad der sker næste gang han spørger om han må se YouTube.</p>
         <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', background: TEKST, color: 'white', padding: '1rem 2.4rem', borderRadius: 6, fontFamily: 'inherit', fontSize: 'var(--font-btn)', fontWeight: 700, textDecoration: 'none' }}>Opret gratis konto</a>
         <p style={{ marginTop: '1rem', fontSize: 'var(--font-xs)', color: 'rgba(43,43,43,0.4)' }}>Ingen kreditkort · Ingen persondata</p>
       </section>
@@ -300,7 +300,7 @@ function FAQList() {
                 </button>
                 {open === idx && (
                   <div style={{ paddingBottom: '1.1rem' }}>
-                    <p style={{ fontSize: 'var(--font-faq-answer)', lineHeight: 1.75, color: 'rgba(43,43,43,0.62)' }}>{a}</p>
+                    <p style={{ fontSize: 'var(--font-base)', lineHeight: 1.75, color: 'rgba(43,43,43,0.62)' }}>{a}</p>
                   </div>
                 )}
               </div>
