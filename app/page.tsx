@@ -406,7 +406,7 @@ export default function Home() {
 
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingTop: 32, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, fontSize: 13 }}>
           <span>© {c.footer.copyright}</span>
-          <span style={{ color: 'rgba(255,255,255,0.25)' }}>Bygget med kærlighed af en far der ville have et bedre alternativ til nej.</span>
+          <span style={{ color: 'rgba(255,255,255,0.25)' }}>Vibe coded efter sengetid - ræk ud hvis du vil høre nærmere</span>
         </div>
       </footer>
     </>
