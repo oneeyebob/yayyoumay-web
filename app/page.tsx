@@ -36,11 +36,27 @@ const navLinks = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const closeMenu = () => setMenuOpen(false)
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faq.items.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* ── NAV ────────────────────────────────────────── */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
@@ -344,6 +360,52 @@ export default function Home() {
                 </Link>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ────────────────────────────────────────── */}
+      <section id="faq" style={{ background: CREAM, padding: '120px 40px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: NAVY, opacity: 0.5, marginBottom: 20 }}>
+            {c.faq.tag}
+          </div>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', lineHeight: 1.05, color: NAVY, letterSpacing: -1.5, maxWidth: 640, marginBottom: 56 }}>
+            {c.faq.h2}
+          </h2>
+
+          <div style={{ maxWidth: 760 }}>
+            {c.faq.items.map((item, i) => {
+              const isOpen = openFaq === i
+              return (
+                <div key={i} style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }}>
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 24 }}
+                    aria-expanded={isOpen}
+                  >
+                    <span style={{ fontSize: 17, fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
+                    <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: '50%', background: isOpen ? NAVY : 'rgba(27,42,74,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}>
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+                        <path d="M1 3L5 7L9 3" stroke={isOpen ? YELLOW : NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p style={{ fontSize: 16, lineHeight: 1.7, color: 'rgba(27,42,74,0.65)', paddingBottom: 24, paddingRight: 48 }}>
+                      {item.a}
+                    </p>
+                  )}
+                </div>
+              )
+            })}
+            <div style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }} />
+          </div>
+
+          <div style={{ marginTop: 40 }}>
+            <Link href={c.faq.moreLink} style={{ fontSize: 15, fontWeight: 700, color: NAVY, textDecoration: 'none' }}>
+              {c.faq.moreLinkLabel} →
+            </Link>
           </div>
         </div>
       </section>

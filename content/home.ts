@@ -107,6 +107,38 @@ export const homeContent = {
       }
     ]
   },
+  faq: {
+    tag: "Ofte stillede spørgsmål",
+    h2: "Alt hvad du vil vide om YAY!",
+    items: [
+      {
+        q: "Hvad er YAY!?",
+        a: "YAY! er et filter du lægger oven på YouTube. Du bestemmer hvilke kanaler og videoer dit barn må se - og dit barn ser kun det du har godkendt. Ingen algoritme, ingen shorts, ingen endeløst scroll."
+      },
+      {
+        q: "Er YAY! gratis?",
+        a: "Ja. YAY! er gratis. Ingen kreditkort, ingen abonnement, ingen skjulte omkostninger."
+      },
+      {
+        q: "Hvad er forskellen på YAY! og YouTube Kids?",
+        a: "YouTube Kids er lavet til de allermindste og føles barnligt for børn over 6-7 år. YAY! giver adgang til hele YouTubes univers - men kun det du som forælder har godkendt. Du bestemmer niveauet. YAY! er til børn fra 3 til 11 år."
+      },
+      {
+        q: "Skal man downloade en app?",
+        a: "Nej. YAY! er en webapp du åbner i browseren. På iPhone og iPad kan du tilføje den til hjemskærmen så den opfører sig som en app."
+      },
+      {
+        q: "Kan mit barn finde vej til det åbne YouTube?",
+        a: "YAY! er ikke et teknisk fængsel - det er en aftale. Dit barn åbner YAY! og finder det indhold du har valgt. De er underholdt inden for rammen og har ikke grund til at skifte app. Vi anbefaler at du en gang imellem sætter dig ned med dit barn og finder nyt indhold på YouTube sammen."
+      },
+      {
+        q: "Hvad er forskellen på YAY! og bare at sige nej til YouTube?",
+        a: "Nej er en midlertidig løsning. YAY! er et ja med retning. Dit barn får adgang til det gode YouTube - og algoritmen får ikke adgang til dit barn."
+      }
+    ],
+    moreLink: "/faq",
+    moreLinkLabel: "Se alle spørgsmål og svar"
+  },
   cta: {
     h2: "Næste gang dit barn spørger om YouTube - hvad svarer du?",
     body: "Opret en konto. Gå til Biblioteket og abonner på en liste. Det tager to minutter - og så er du klar.",
