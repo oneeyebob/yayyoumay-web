@@ -44,4 +44,28 @@ body {
 .prose h3 {
   font-family: var(--font-fraunces), Georgia, serif;
   font-weight: 400;
+  color: #1B2A4A;
+  letter-spacing: -0.03em;
+}
+
+.prose p,
+.prose li {
+  color: rgba(27, 42, 74, 0.72);
+  line-height: 1.8;
+}
+
+.prose strong {
+  color: #1B2A4A;
+  font-weight: 600;
+}
+
+.prose a {
+  color: #1B2A4A;
+  text-decoration-color: rgba(27, 42, 74, 0.3);
+}
+
+.prose blockquote {
+  border-left-color: rgba(27, 42, 74, 0.2);
+  color: rgba(27, 42, 74, 0.6);
+  font-style: italic;
 }
