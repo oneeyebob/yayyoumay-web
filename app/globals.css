@@ -2,48 +2,41 @@
 @plugin "@tailwindcss/typography";
 
 :root {
+  --navy: #1B2A4A;
+  --gul: #F5C842;
+  --rod: #E84C3D;
+  --cream: #F7F3EB;
+  --gray-light: #F0EDE8;
+
+  /* Legacy variables kept for blog pages */
   --papir: #F5F1E8;
   --tekst: #2B2B2B;
-  --gul: #E6C65C;
   --grøn: #808f2d;
-  --rød: #B5523A;
-  --blå: #6C7C8C;
-  --fersken: #F2D6C2;
-
   --gron: #808f2d;
-  --rod: #B5523A;
+  --rød: #B5523A;
+  --rod-legacy: #B5523A;
+  --blå: #6C7C8C;
   --bla: #6C7C8C;
-
-  --font-xs: 0.72rem;
-  --font-sm: 0.85rem;
-  --font-base: 1rem;
-  --font-md: 1.05rem;
-  --font-lg: 1.2rem;
-  --font-badge: 0.6rem;
-  --font-label: 0.65rem;
-  --font-nav: 0.78rem;
-  --font-h1: clamp(2.2rem, 5vw, 3.4rem);
-  --font-h2: clamp(1.7rem, 3.5vw, 2.4rem);
-  --font-h2-sm: clamp(1.5rem, 3vw, 2.2rem);
-  --font-h2-cta: clamp(1.9rem, 4vw, 3rem);
-  --font-hero-p: 1.425rem;
-  --font-footer: 0.82rem;
-  --font-btn: 0.88rem;
-  --font-micro: 0.7rem;
-  --font-blog-cat: 0.62rem;
-  --font-blog-title: 0.97rem;
-  --font-blog-excerpt: 0.83rem;
-  --font-read-more: 0.75rem;
-  --font-faq-answer: 0.87rem;
-  --font-close: 2rem;
+  --fersken: #F2D6C2;
 }
 
-/* ── Repeating layout patterns ── */
+html, body {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-heading {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+}
+
+/* Legacy classes kept for blog pages */
 .section-border { border-bottom: 1px solid rgba(43,43,43,0.12); }
 
-/* ── Section typography ── */
 .section-label {
-  font-size: var(--font-label);
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -51,8 +44,9 @@
   display: block;
   margin-bottom: 1rem;
 }
+
 .section-label-dark {
-  font-size: var(--font-label);
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -60,37 +54,39 @@
   display: block;
   margin-bottom: 1rem;
 }
+
 .section-heading {
-  font-size: var(--font-h2);
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
   font-weight: 800;
   color: var(--gron);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
+
 .blockquote {
-  border-left: 3px solid var(--gul);
+  border-left: 3px solid #E6C65C;
   padding-left: 1.2rem;
   font-style: italic;
   color: rgba(43,43,43,0.45);
-  font-size: var(--font-sm);
+  font-size: 0.85rem;
   line-height: 1.65;
   margin-top: 1.5rem;
 }
 
-/* ── Navigation ── */
 .nav-link {
-  font-size: var(--font-nav);
+  font-size: 0.78rem;
   font-weight: 500;
   color: rgba(0,0,0,0.6);
   text-decoration: none;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
 .menu-link {
   display: block;
-  font-size: var(--font-nav);
+  font-size: 0.78rem;
   font-weight: 500;
-  color: var(--tekst);
+  color: #2B2B2B;
   text-decoration: none;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -98,28 +94,22 @@
   border-bottom: 1px solid rgba(43,43,43,0.08);
 }
 
-/* ── Footer ── */
 .footer-link {
-  font-size: var(--font-footer);
+  font-size: 0.82rem;
   color: rgba(255,255,255,0.4);
   text-decoration: none;
 }
+
 .footer-section-heading {
-  font-size: var(--font-badge);
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.22);
-  margin-bottom: var(--font-sm);
-}
-.footer-micro {
-  font-size: var(--font-micro);
-  color: rgba(255,255,255,0.18);
+  margin-bottom: 0.85rem;
 }
 
-html, body {
-  background: var(--papir);
-  color: var(--tekst);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
+.footer-micro {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.18);
 }
