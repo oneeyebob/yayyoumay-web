@@ -30,7 +30,6 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
 const navLinks = [
   { label: 'Hvad er YAY!', href: '#hvad' },
   { label: 'Kom i gang',   href: '#saadan' },
-  { label: 'Biblioteket',  href: '#biblioteket' },
   { label: 'Blog',         href: '/blog' },
 ]
 
