@@ -101,20 +101,29 @@ export default function Home() {
 
       {/* HERO - navy */}
       <section style={{ background: NAVY, color: 'white', padding: '5rem 1.25rem' }} className="md:py-32">
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '1.5rem' }}>{c.hero.tag}</span>
-          <h1 className="font-heading" style={{ fontSize: 'clamp(2.8rem, 7vw, 5rem)', lineHeight: 1.06, marginBottom: '1.5rem', color: 'white' }}>
-            {c.hero.h1}<br />
-            <span style={{ color: GUL }}>{c.hero.h1em}</span>
-          </h1>
-          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', maxWidth: '44ch', marginBottom: '2.5rem' }}>{c.hero.body}</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-            <a href="https://play.yayyoumay.dk/register" style={{ background: GUL, color: NAVY, fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.9rem 1.8rem', textDecoration: 'none', display: 'inline-block' }}>
-              {c.hero.ctaPrimary}
-            </a>
-            <a href="#saadan" style={{ border: `1px solid rgba(255,255,255,0.25)`, color: 'rgba(255,255,255,0.8)', fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.9rem 1.8rem', textDecoration: 'none', display: 'inline-block' }}>
-              {c.hero.ctaSecondary}
-            </a>
+        <div style={{ maxWidth: 960, margin: '0 auto', display: 'grid', gap: '3rem', alignItems: 'center' }} className="md:grid-cols-2">
+          <div>
+            <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: GUL, display: 'block', marginBottom: '1.5rem' }}>{c.hero.tag}</span>
+            <h1 className="font-heading" style={{ fontSize: 'clamp(2.8rem, 7vw, 5rem)', lineHeight: 1.06, marginBottom: '1.5rem', color: 'white' }}>
+              {c.hero.h1}<br />
+              <span style={{ color: GUL }}>{c.hero.h1em}</span>
+            </h1>
+            <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', maxWidth: '44ch', marginBottom: '2.5rem' }}>{c.hero.body}</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+              <a href="https://play.yayyoumay.dk/register" style={{ background: GUL, color: NAVY, fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.9rem 1.8rem', textDecoration: 'none', display: 'inline-block' }}>
+                {c.hero.ctaPrimary}
+              </a>
+              <a href="#saadan" style={{ border: `1px solid rgba(255,255,255,0.25)`, color: 'rgba(255,255,255,0.8)', fontWeight: 600, fontSize: '0.78rem', letterSpacing: '0.12em', textTransform: 'uppercase', padding: '0.9rem 1.8rem', textDecoration: 'none', display: 'inline-block' }}>
+                {c.hero.ctaSecondary}
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:flex" style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <img
+              src="/devices.png"
+              alt="YAY! pa tablet og telefon"
+              style={{ width: '100%', maxWidth: 420, height: 'auto', display: 'block' }}
+            />
           </div>
         </div>
       </section>
