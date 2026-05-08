@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { homeContent } from '../../content/home'
+import { faqContent } from '../../content/faq'
 
 const c = homeContent
+const faq = faqContent
 
 const NAVY      = '#1B2A4A'
 const YELLOW    = '#F5C842'
@@ -22,13 +24,35 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
   </svg>
 )
 
-export default function FaqPage() {
-  const [openItem, setOpenItem] = useState<number | null>(null)
+function ChevronIcon({ open }: { open: boolean }) {
+  return (
+    <span style={{
+      flexShrink: 0, width: 28, height: 28, borderRadius: '50%',
+      background: open ? NAVY : 'rgba(27,42,74,0.08)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      transition: 'background 0.2s',
+    }}>
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+        style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+        <path d="M1 3.5L5.5 8L10 3.5" stroke={open ? YELLOW : NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  )
+}
 
-  const faqJsonLd = {
+export default function FaqPage() {
+  // key: "sectionIndex-itemIndex"
+  const [openKey, setOpenKey] = useState<string | null>(null)
+
+  const toggle = (key: string) => setOpenKey(prev => prev === key ? null : key)
+
+  // Flat list of all Q&A for JSON-LD
+  const allItems = faq.sections.flatMap(s => s.items)
+
+  const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: c.faq.items.map(item => ({
+    mainEntity: allItems.map(item => ({
       '@type': 'Question',
       name: item.q,
       acceptedAnswer: { '@type': 'Answer', text: item.a },
@@ -37,10 +61,7 @@ export default function FaqPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── NAV ── */}
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: NAVY, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
@@ -48,12 +69,8 @@ export default function FaqPage() {
           <Logo height={32} color="#FFFFFF" />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
-            Forsiden
-          </Link>
-          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
-            Blog
-          </Link>
+          <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>Forsiden</Link>
+          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>Blog</Link>
           <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, padding: '8px 20px', borderRadius: 100, fontWeight: 700, textDecoration: 'none', fontSize: 14 }}>
             {c.nav.cta}
           </a>
@@ -64,52 +81,60 @@ export default function FaqPage() {
       <section style={{ background: NAVY, padding: '80px 40px 96px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
-            {c.faq.tag}
+            Ofte stillede spørgsmål
           </div>
           <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.05, color: 'white', letterSpacing: -2, marginBottom: 24 }}>
-            {c.faq.h2}
+            {faq.meta.title}
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', maxWidth: 560 }}>
-            {c.faq.pageDescription}
+            {faq.meta.description}
           </p>
         </div>
       </section>
 
-      {/* ── FAQ ITEMS ── */}
+      {/* ── FAQ SECTIONS ── */}
       <section style={{ background: CREAM, padding: '80px 40px 120px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          {c.faq.items.map((item, i) => {
-            const isOpen = openItem === i
-            return (
-              <div key={i} style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }}>
-                <button
-                  onClick={() => setOpenItem(isOpen ? null : i)}
-                  style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 24 }}
-                  aria-expanded={isOpen}
-                >
-                  <span style={{ fontSize: 18, fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
-                  <span style={{ flexShrink: 0, width: 28, height: 28, borderRadius: '50%', background: isOpen ? NAVY : 'rgba(27,42,74,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}>
-                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
-                      <path d="M1 3.5L5.5 8L10 3.5" stroke={isOpen ? YELLOW : NAVY} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                </button>
-                {isOpen && (
-                  <p style={{ fontSize: 16, lineHeight: 1.75, color: 'rgba(27,42,74,0.65)', paddingBottom: 28, paddingRight: 52 }}>
-                    {item.a}
-                  </p>
-                )}
-              </div>
-            )
-          })}
-          <div style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }} />
 
-          <div style={{ marginTop: 56, paddingTop: 40, borderTop: '1px solid rgba(27,42,74,0.08)' }}>
+          {faq.sections.map((section, si) => (
+            <div key={si} style={{ marginBottom: 64 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: NAVY, opacity: 0.45, marginBottom: 8 }}>
+                {section.heading}
+              </p>
+
+              <div style={{ marginTop: 16 }}>
+                {section.items.map((item, ii) => {
+                  const key = `${si}-${ii}`
+                  const isOpen = openKey === key
+                  return (
+                    <div key={ii} style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }}>
+                      <button
+                        onClick={() => toggle(key)}
+                        style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 24 }}
+                        aria-expanded={isOpen}
+                      >
+                        <span style={{ fontSize: 16, fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{item.q}</span>
+                        <ChevronIcon open={isOpen} />
+                      </button>
+                      {isOpen && (
+                        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'rgba(27,42,74,0.65)', paddingBottom: 24, paddingRight: 52 }}>
+                          {item.a}
+                        </p>
+                      )}
+                    </div>
+                  )
+                })}
+                <div style={{ borderTop: '1px solid rgba(27,42,74,0.12)' }} />
+              </div>
+            </div>
+          ))}
+
+          <div style={{ marginTop: 24, paddingTop: 40, borderTop: '1px solid rgba(27,42,74,0.08)' }}>
             <p style={{ fontSize: 15, color: 'rgba(27,42,74,0.5)', marginBottom: 8 }}>
               Fandt du ikke svar på dit spørgsmål?
             </p>
-            <a href="mailto:hej@yayyoumay.dk" style={{ fontSize: 15, fontWeight: 700, color: NAVY, textDecoration: 'none' }}>
-              Skriv til os på hej@yayyoumay.dk →
+            <a href="mailto:kontakt@yayyoumay.dk" style={{ fontSize: 15, fontWeight: 700, color: NAVY, textDecoration: 'none' }}>
+              Skriv til os på kontakt@yayyoumay.dk →
             </a>
           </div>
         </div>
