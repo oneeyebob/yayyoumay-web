@@ -11,13 +11,14 @@ const fraunces = Fraunces({
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
   variable: '--font-dm-sans',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'YAY! - VideoTube til børn, af forældre til forældre',
-  description: 'YAY! er et filterlag oven på YouTube. Du godkender kanaler og videoer - Junior ser kun det, du har valgt. Ingen algoritme, ingen overraskelser.',
+  title: 'YAY! - YouTube-filter til børn',
+  description: 'YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
