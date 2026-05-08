@@ -376,11 +376,11 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingBottom: 48, borderBottom: '1px solid rgba(255,255,255,0.06)' }}
              className="grid md:grid-cols-[2fr_1fr_1fr_1fr]" >
           <div>
-            <span className="font-heading" style={{ fontWeight: 400, fontSize: 32, color: YELLOW, letterSpacing: -1, display: 'block', marginBottom: 16 }}>
-              YAY!
-            </span>
+            <a href="/" style={{ display: 'inline-flex', marginBottom: 16 }}>
+              <Logo height={32} color="#FFFFFF" />
+            </a>
             <p style={{ fontSize: 14, lineHeight: 1.6, maxWidth: 240 }}>
-              {c.footer.tagline}
+              YouTube-filter til de små
             </p>
           </div>
 
