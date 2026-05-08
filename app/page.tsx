@@ -15,7 +15,7 @@ const LIGHT_GRAY = '#F0EDE6'
 const FOOTER_BG  = '#0F1A30'
 
 /* ── shared style helpers ──────────────────────── */
-const tag = (light: boolean): React.CSSProperties => ({
+const tagStyle = (light: boolean): React.CSSProperties => ({
   display: 'block',
   fontSize: '0.65rem',
   fontWeight: 700,
@@ -79,8 +79,7 @@ export default function Home() {
             <Logo height={26} color="white" />
           </a>
 
-          {/* desktop links */}
-          <nav className="hidden md:flex" style={{ gap: '2.5rem', alignItems: 'center', listStyle: 'none' }}>
+          <nav className="hidden md:flex" style={{ gap: '2.5rem', alignItems: 'center' }}>
             {navLinks.map(l => <NavLink key={l.href} href={l.href} label={l.label} />)}
           </nav>
 
@@ -88,7 +87,6 @@ export default function Home() {
             {c.nav.cta}
           </a>
 
-          {/* hamburger */}
           <button className="md:hidden" onClick={() => setMenuOpen(true)} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 5, padding: 4 }} aria-label="Menu">
             <span style={{ display: 'block', width: 22, height: 2, background: 'white' }} />
             <span style={{ display: 'block', width: 22, height: 2, background: 'white' }} />
@@ -101,11 +99,9 @@ export default function Home() {
       {menuOpen && (
         <div style={{ position: 'fixed', inset: 0, background: NAVY, zIndex: 100, display: 'flex', flexDirection: 'column', padding: '5rem 1.5rem 2rem' }}>
           <button onClick={close} style={{ position: 'absolute', top: '1rem', right: '1.5rem', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', fontSize: '2rem', lineHeight: 1, cursor: 'pointer' }}>&#215;</button>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {navLinks.map(l => (
-              <NavLink key={l.href} href={l.href} label={l.label} onClick={close} />
-            ))}
-            <a href="https://play.yayyoumay.dk" onClick={close} style={{ marginTop: '2rem', display: 'inline-block', background: YELLOW, color: NAVY, fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', padding: '0.8rem 1.5rem', textDecoration: 'none', alignSelf: 'flex-start' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {navLinks.map(l => <NavLink key={l.href} href={l.href} label={l.label} onClick={close} />)}
+            <a href="https://play.yayyoumay.dk" onClick={close} style={{ marginTop: '1rem', display: 'inline-block', background: YELLOW, color: NAVY, fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', padding: '0.8rem 1.5rem', textDecoration: 'none', alignSelf: 'flex-start' }}>
               {c.nav.cta}
             </a>
           </div>
@@ -114,13 +110,18 @@ export default function Home() {
 
       {/* ── HERO ───────────────────────────────────────── */}
       <section style={{ background: NAVY }}>
-        <div style={{ ...sectionWrap, paddingTop: '5rem', paddingBottom: '5rem', display: 'grid', gap: '3rem', alignItems: 'center' }} className="md:grid-cols-2 md:py-28">
-
+        <div
+          className="grid md:grid-cols-2 py-[4.5rem] md:py-[7.5rem]"
+          style={{ ...sectionWrap, gap: '3rem', alignItems: 'center' }}
+        >
           <div>
-            <span style={tag(false)}>{c.hero.tag}</span>
-            <h1 className="font-heading" style={{ fontSize: 'clamp(2.6rem, 6vw, 4.5rem)', lineHeight: 1.08, color: 'white', marginBottom: '1.5rem' }}>
+            <span style={tagStyle(false)}>{c.hero.tag}</span>
+            <h1
+              className="font-heading"
+              style={{ fontSize: 'clamp(3.5rem, 6vw, 5rem)', lineHeight: 1.08, color: 'white', marginBottom: '1.5rem', fontWeight: 400 }}
+            >
               {c.hero.h1}<br />
-              <span style={{ color: YELLOW }}>{c.hero.h1em}</span>
+              <em style={{ color: YELLOW, fontStyle: 'italic' }}>{c.hero.h1em}</em>
             </h1>
             <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)', maxWidth: '42ch', marginBottom: '2.5rem' }}>
               {c.hero.body}
@@ -139,7 +140,7 @@ export default function Home() {
             <img
               src="/devices.png"
               alt="YAY! pa tablet og telefon"
-              style={{ width: '100%', maxWidth: 400, height: 'auto', display: 'block' }}
+              style={{ width: '100%', maxWidth: 420, height: 'auto', display: 'block' }}
             />
           </div>
         </div>
@@ -147,16 +148,17 @@ export default function Home() {
 
       {/* ── HVAD ER YAY ────────────────────────────────── */}
       <section id="hvad" style={{ background: YELLOW }}>
-        <div style={{ ...sectionWrap, paddingTop: '4.5rem', paddingBottom: '4.5rem' }} className="md:py-24">
-          <span style={tag(true)}>{c.why.tag}</span>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '2.5rem', maxWidth: '20ch' }}>
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={sectionWrap}>
+          <span style={tagStyle(true)}>{c.why.tag}</span>
+          <h2
+            className="font-heading"
+            style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '2.5rem', maxWidth: '20ch', fontWeight: 400 }}
+          >
             {c.why.h2}
           </h2>
-          <div style={{ display: 'grid', gap: '1.75rem' }} className="md:grid-cols-3">
+          <div className="grid md:grid-cols-3" style={{ gap: '1.75rem' }}>
             {c.why.paragraphs.map((p, i) => (
-              <p key={i} style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(27,42,74,0.72)' }}>
-                {p}
-              </p>
+              <p key={i} style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(27,42,74,0.72)' }}>{p}</p>
             ))}
           </div>
         </div>
@@ -164,84 +166,96 @@ export default function Home() {
 
       {/* ── SAADAN VIRKER DET ──────────────────────────── */}
       <section id="saadan" style={{ background: NAVY }}>
-        <div style={{ ...sectionWrap, paddingTop: '4.5rem', paddingBottom: '4.5rem' }} className="md:py-24">
-          <span style={tag(false)}>{c.how.tag}</span>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: 'white', marginBottom: '1.25rem' }}>
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={sectionWrap}>
+          <span style={tagStyle(false)}>{c.how.tag}</span>
+          <h2
+            className="font-heading"
+            style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: 'white', marginBottom: '1.25rem', fontWeight: 400 }}
+          >
             {c.how.h2line1}<br />{c.how.h2line2}
           </h2>
           <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', maxWidth: '52ch', marginBottom: '3.5rem' }}>
             {c.how.intro}
           </p>
 
-          <div>
+          <div className="grid md:grid-cols-4" style={{ gap: '2rem' }}>
             {c.how.steps.map((step, i) => {
-              const isParent  = step.badge === 'Forældre'
-              const isChild   = step.badge === 'Barnet'
-              const badgeBg   = isParent ? YELLOW  : isChild ? CREAM : 'rgba(255,255,255,0.1)'
-              const badgeFg   = isParent ? NAVY    : isChild ? NAVY  : 'rgba(255,255,255,0.45)'
+              const isParent = step.badge === 'Forældre'
+              const isChild  = step.badge === 'Barnet'
+              const badgeBg  = isParent ? YELLOW : isChild ? CREAM : 'rgba(255,255,255,0.1)'
+              const badgeFg  = isParent ? NAVY   : isChild ? NAVY  : 'rgba(255,255,255,0.45)'
               return (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '2.5rem 1fr', gap: '1.25rem', padding: '1.5rem 0', borderTop: '1px solid rgba(255,255,255,0.08)', alignItems: 'start' }}>
-                  <span style={{ fontSize: '1.1rem', fontWeight: 300, color: 'rgba(255,255,255,0.2)', lineHeight: 1, paddingTop: '0.15rem' }}>
-                    {step.number}
-                  </span>
-                  <div>
-                    <span style={{ display: 'inline-block', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', padding: '0.2rem 0.5rem', marginBottom: '0.6rem', background: badgeBg, color: badgeFg }}>
-                      {step.badge}
-                    </span>
-                    <p style={{ fontSize: '0.97rem', fontWeight: 500, color: 'white', marginBottom: '0.3rem' }}>{step.title}</p>
-                    <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.48)' }}>{step.body}</p>
+                <div key={i}>
+                  <div style={{ width: '2.5rem', height: '2.5rem', borderRadius: '50%', background: YELLOW, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem', flexShrink: 0 }}>
+                    <span style={{ fontSize: '0.9rem', fontWeight: 700, color: NAVY, lineHeight: 1 }}>{step.number}</span>
                   </div>
+                  <span style={{ display: 'inline-block', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', padding: '0.2rem 0.5rem', marginBottom: '0.75rem', background: badgeBg, color: badgeFg }}>
+                    {step.badge}
+                  </span>
+                  <p style={{ fontSize: '0.97rem', fontWeight: 500, color: 'white', marginBottom: '0.4rem' }}>{step.title}</p>
+                  <p style={{ fontSize: '0.87rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.48)' }}>{step.body}</p>
                 </div>
               )
             })}
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }} />
           </div>
         </div>
       </section>
 
       {/* ── TO SIDER ───────────────────────────────────── */}
       <section id="biblioteket" style={{ background: CREAM }}>
-        <div style={{ ...sectionWrap, paddingTop: '4.5rem', paddingBottom: '4.5rem' }} className="md:py-24">
-          <span style={tag(true)}>{c.modes.tag}</span>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '3rem', maxWidth: '22ch' }}>
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={sectionWrap}>
+          <span style={tagStyle(true)}>{c.modes.tag}</span>
+          <h2
+            className="font-heading"
+            style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '3rem', maxWidth: '22ch', fontWeight: 400 }}
+          >
             {c.modes.h2}
           </h2>
-          <div style={{ display: 'grid', gap: '1.25rem' }} className="md:grid-cols-2">
-            {c.modes.cards.map((card, i) => (
-              <div key={i} style={{ background: 'white', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
-                <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(27,42,74,0.35)', marginBottom: '1.25rem' }}>
-                  {card.label}
-                </span>
-                <h3 className="font-heading" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.65rem)', lineHeight: 1.2, color: NAVY, marginBottom: '1rem' }}>
-                  {card.h3}
-                </h3>
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(27,42,74,0.58)' }}>
-                  {card.body}
-                </p>
-                <span style={{ position: 'absolute', bottom: '-0.5rem', right: '1.25rem', fontSize: '5.5rem', fontWeight: 900, color: 'rgba(27,42,74,0.05)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>
-                  {card.bgText}
-                </span>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2" style={{ gap: '1.25rem' }}>
+            {c.modes.cards.map((card, i) => {
+              const isNavyCard  = i === 0
+              const cardBg      = isNavyCard ? NAVY   : YELLOW
+              const cardFg      = isNavyCard ? 'white'  : NAVY
+              const labelColor  = isNavyCard ? 'rgba(255,255,255,0.35)'  : 'rgba(27,42,74,0.45)'
+              const bodyColor   = isNavyCard ? 'rgba(255,255,255,0.58)'  : 'rgba(27,42,74,0.58)'
+              const bgTextColor = isNavyCard ? 'rgba(255,255,255,0.05)'  : 'rgba(27,42,74,0.07)'
+              return (
+                <div key={i} style={{ background: cardBg, padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
+                  <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: labelColor, marginBottom: '1.25rem' }}>
+                    {card.label}
+                  </span>
+                  <h3
+                    className="font-heading"
+                    style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.65rem)', lineHeight: 1.2, color: cardFg, marginBottom: '1rem', fontWeight: 400 }}
+                  >
+                    {card.h3}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: bodyColor }}>
+                    {card.body}
+                  </p>
+                  <span style={{ position: 'absolute', bottom: '-0.5rem', right: '1.25rem', fontSize: '5.5rem', fontWeight: 900, color: bgTextColor, lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>
+                    {card.bgText}
+                  </span>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* ── HISTORIEN ──────────────────────────────────── */}
       <section style={{ background: RED }}>
-        <div style={{ ...sectionWrap, paddingTop: '4.5rem', paddingBottom: '4.5rem' }} className="md:py-24">
-          <span style={tag(false)}>{c.story.tag}</span>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.7rem, 4vw, 2.8rem)', lineHeight: 1.15, color: 'white', marginBottom: '2.5rem', maxWidth: '28ch' }}>
-            {c.story.h2}
-          </h2>
-          <div style={{ display: 'grid', gap: '1.5rem' }} className="md:grid-cols-2 md:gap-16">
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={sectionWrap}>
+          <span style={tagStyle(false)}>{c.story.tag}</span>
+          <div className="grid md:grid-cols-2 md:gap-16" style={{ gap: '2rem', alignItems: 'start' }}>
+            <h2
+              className="font-heading"
+              style={{ fontSize: 'clamp(1.7rem, 4vw, 2.8rem)', lineHeight: 1.15, color: 'white', fontWeight: 400 }}
+            >
+              {c.story.h2}
+            </h2>
             <div>
-              {c.story.paragraphs.slice(0, 2).map((p, i) => (
-                <p key={i} style={{ fontSize: '1rem', lineHeight: 1.85, color: 'rgba(255,255,255,0.72)', marginBottom: '1.1rem' }}>{p}</p>
-              ))}
-            </div>
-            <div>
-              {c.story.paragraphs.slice(2).map((p, i) => (
+              {c.story.paragraphs.map((p, i) => (
                 <p key={i} style={{ fontSize: '1rem', lineHeight: 1.85, color: 'rgba(255,255,255,0.72)', marginBottom: '1.1rem' }}>{p}</p>
               ))}
             </div>
@@ -251,14 +265,17 @@ export default function Home() {
 
       {/* ── BLOG ───────────────────────────────────────── */}
       <section id="blog" style={{ background: LIGHT_GRAY }}>
-        <div style={{ ...sectionWrap, paddingTop: '4.5rem', paddingBottom: '4.5rem' }} className="md:py-24">
-          <span style={tag(true)}>{c.blog.tag}</span>
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '3rem' }}>
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={sectionWrap}>
+          <span style={tagStyle(true)}>{c.blog.tag}</span>
+          <h2
+            className="font-heading"
+            style={{ fontSize: 'clamp(1.9rem, 4.5vw, 3rem)', lineHeight: 1.1, color: NAVY, marginBottom: '3rem', fontWeight: 400 }}
+          >
             {c.blog.h2}
           </h2>
-          <div style={{ display: 'grid', gap: '0' }} className="md:grid-cols-3">
+          <div className="grid md:grid-cols-3" style={{ gap: 0 }}>
             {c.blog.posts.map((post, i) => (
-              <Link key={i} href={post.href} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '1.75rem 0', borderTop: '1px solid rgba(27,42,74,0.14)' }} className="md:border-t md:border-r-0 md:pr-8 last:pr-0">
+              <Link key={i} href={post.href} style={{ display: 'block', textDecoration: 'none', color: 'inherit', padding: '1.75rem 0', borderTop: '1px solid rgba(27,42,74,0.14)' }}>
                 <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(27,42,74,0.38)', marginBottom: '0.75rem' }}>
                   {post.tag}
                 </span>
@@ -274,14 +291,17 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div style={{ borderTop: '1px solid rgba(27,42,74,0.14)' }} className="hidden md:block" />
+          <div style={{ borderTop: '1px solid rgba(27,42,74,0.14)' }} />
         </div>
       </section>
 
       {/* ── CTA ────────────────────────────────────────── */}
       <section id="faq" style={{ background: NAVY }}>
-        <div style={{ ...sectionWrap, paddingTop: '5rem', paddingBottom: '5rem', textAlign: 'center', maxWidth: 640 }} className="md:py-32">
-          <h2 className="font-heading" style={{ fontSize: 'clamp(1.7rem, 4vw, 2.8rem)', lineHeight: 1.15, color: 'white', marginBottom: '1.25rem' }}>
+        <div className="py-[4.5rem] md:py-[7.5rem]" style={{ ...sectionWrap, textAlign: 'center', maxWidth: 640 }}>
+          <h2
+            className="font-heading"
+            style={{ fontSize: 'clamp(1.7rem, 4vw, 2.8rem)', lineHeight: 1.15, color: 'white', marginBottom: '1.25rem', fontWeight: 400 }}
+          >
             {c.cta.h2}
           </h2>
           <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.52)', marginBottom: '2.5rem' }}>
@@ -298,7 +318,7 @@ export default function Home() {
 
       {/* ── FOOTER ─────────────────────────────────────── */}
       <footer style={{ background: FOOTER_BG, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ ...sectionWrap, paddingTop: '3.5rem', paddingBottom: '3.5rem', display: 'grid', gap: '2.5rem' }} className="md:grid-cols-4 md:py-16">
+        <div className="grid md:grid-cols-4 py-[3.5rem] md:py-16" style={{ ...sectionWrap, gap: '2.5rem' }}>
 
           <div>
             <Logo height={22} color="white" />
