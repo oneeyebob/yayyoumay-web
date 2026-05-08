@@ -31,7 +31,7 @@ const navLinks = [
   { label: 'Hvad er YAY!', href: '#hvad' },
   { label: 'Kom i gang',   href: '#saadan' },
   { label: 'Biblioteket',  href: '#biblioteket' },
-  { label: 'Blog',         href: '#blog' },
+  { label: 'Blog',         href: '/blog' },
 ]
 
 export default function Home() {
