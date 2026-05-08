@@ -158,7 +158,7 @@ export default function Home() {
                   Juniormode
                 </div>
                 <div className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(22px, 3vw, 36px)', color: NAVY, letterSpacing: -1, lineHeight: 1.1, marginBottom: 12 }}>
-                  Ingen algoritme,<br /><em style={{ fontStyle: 'italic', color: RED }}>ingen shorts.</em>
+                  Ingen algoritme, ingen shorts, ingen endeløst scroll.
                 </div>
                 <img src="/devices.png" alt="YAY! app" style={{ width: '100%', display: 'block', marginTop: 24 }} />
               </div>
