@@ -137,7 +137,8 @@ export const homeContent = {
       }
     ],
     moreLink: "/faq",
-    moreLinkLabel: "Se alle spørgsmål og svar"
+    moreLinkLabel: "Se alle spørgsmål og svar",
+    pageDescription: "Vi har samlet svarene på de spørgsmål vi oftest får. Mangler du et svar? Skriv til os."
   },
   cta: {
     h2: "Næste gang dit barn spørger om YouTube - hvad svarer du?",
