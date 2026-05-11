@@ -171,7 +171,7 @@ export default function Home() {
           </div>
 
           {/* right: tablet mockup */}
-          <div className="hidden md:flex" style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <div className="flex md:flex" style={{ justifyContent: 'center', alignItems: 'center' }}>
             <div style={{
               position: 'relative', maxWidth: 560, width: '100%',
               background: '#1a1f2e', borderRadius: 36, padding: '44px 22px 66px',
