@@ -39,6 +39,15 @@ body {
 }
 
 /* Step link hover effect */
+@keyframes step-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0px rgba(245, 200, 66, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 200, 66, 0);
+  }
+}
+
 .step-link {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -46,6 +55,12 @@ body {
 .step-link:hover {
   transform: scale(1.12);
   box-shadow: 0 0 0 6px rgba(245, 200, 66, 0.25), 0 0 24px rgba(245, 200, 66, 0.4);
+}
+
+@media (max-width: 767px) {
+  .step-link {
+    animation: step-pulse 2s ease-in-out infinite;
+  }
 }
 
 /* Prose overrides for blog */
