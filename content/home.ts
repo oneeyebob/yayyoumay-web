@@ -71,7 +71,7 @@ export const homeContent = {
   },
   story: {
     tag: "Historien bag YAY!",
-    h2: "YAY! er svaret på et spørgsmål en 8-årig stillede flere gange dagligt.",
+    h2: "YAY! er svaret på et spørgsmål Albert stillede flere gange dagligt.",
     paragraphs: [
       "\"Må jeg se YouTube?\"",
       "YAY! startede som et weekendprojekt. En webapp vi lavede til os selv fordi svaret på \"må jeg se YouTube?\" ofte var nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er svært at overskue.",
