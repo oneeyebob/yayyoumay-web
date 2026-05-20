@@ -314,7 +314,9 @@ export default function Home() {
               </h2>
               {c.story.paragraphs.map((p, i) => (
                 <p key={i} style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
-                  {p}
+                  {i === c.story.paragraphs.length - 1 ? (
+                    <a href="/blog/historien-bag-yay" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>{p}</a>
+                  ) : p}
                 </p>
               ))}
             </div>

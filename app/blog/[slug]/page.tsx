@@ -87,7 +87,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               ← Alle indlæg
             </Link>
             <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, fontSize: 14, fontWeight: 700, padding: '12px 24px', borderRadius: 100, textDecoration: 'none' }}>
-              Prøv YAY! gratis
+              Opret dig på YAY! - det er helt gratis
             </a>
           </div>
         </div>
