@@ -204,7 +204,9 @@ export default function Home() {
           <div style={{ maxWidth: 760 }}>
             {c.why.paragraphs.map((p, i) => (
               <p key={i} style={{ fontSize: 18, lineHeight: 1.7, color: 'rgba(27,42,74,0.75)', marginBottom: i < c.why.paragraphs.length - 1 ? 20 : 0 }}>
-                {p}
+                {i === 0 ? (
+                  <a href="/blog/lademanns-leksikon" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>{p}</a>
+                ) : p}
               </p>
             ))}
           </div>
