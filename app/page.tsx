@@ -160,6 +160,7 @@ export default function Home() {
 
           {/* right: tablet mockup */}
           <div className="flex md:flex" style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <a href="https://play.yayyoumay.dk" style={{ display: 'block', width: '100%', textDecoration: 'none' }}>
             <div style={{
               position: 'relative', maxWidth: 560, width: '100%',
               background: '#1a1f2e', borderRadius: 36, padding: '44px 22px 66px',
@@ -180,6 +181,7 @@ export default function Home() {
                 <img src="/devices.png" alt="YAY! app" style={{ width: '100%', display: 'block', marginTop: 24 }} />
               </div>
             </div>
+            </a>
           </div>
 
         </div>
