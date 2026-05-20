@@ -15,9 +15,8 @@ export const homeContent = {
     tag: "Hvad er YAY!",
     h2: "Et tilvalg af YouTube. Ikke et fravalg.",
     paragraphs: [
-      "YouTube er ikke problemet. YouTube er fantastisk - det er der børn slår op, lærer, nørder og finder svar på ting de ikke vidste de var nysgerrige på. Det er der de finder viden og bliver underholdt.",
-      "Problemet er algoritmer, shorts og det endeløse scroll. De er designet til at holde dit barn på platformen - så længe som muligt.",
-      "YAY! fjerner disse elementer - og giver dit barn det bedste fra YouTube."
+      "YouTube er en guldgrube af viden, kreativitet og underholdning. Børn lærer, fordyber sig og finder svar på spørgsmål, de ikke vidste, de havde.",
+      "Men YouTube er også uendelige scroll, Shorts og anbefalinger, der er designet til at fastholde dit barn så længe som muligt. Med YAY! vælger du selv indholdet - og fjerner alt det overflødige."
     ]
   },
   how: {
