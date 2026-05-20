@@ -72,12 +72,11 @@ export const homeContent = {
   },
   story: {
     tag: "Historien bag YAY!",
-    h2: "Albert sagde ikke \"må jeg se YouTube?\" én eneste gang den uge.",
+    h2: "YAY! er svaret på et spørgsmål en 8-årig stillede flere gange dagligt.",
     paragraphs: [
-      "Han spurgte om han måtte se YAY!",
-      "YAY! startede som et weekendprojekt. En webapp Jakob lavede til sig selv og Albert fordi svaret på \"må jeg se YouTube?\" næsten altid var nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er svært at overskue.",
-      "Da han fortalte andre forældre om det, genkendte de alle historien.",
-      "YAY! er ikke et tech-produkt. Det er et svar på et spørgsmål en 8-årig stiller hver dag."
+      "\"Må jeg se YouTube?\"",
+      "YAY! startede som et weekendprojekt. En webapp vi lavede til os selv fordi svaret på \"må jeg se YouTube?\" ofte var nej - ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er svært at overskue.",
+      "YAY YOU MAY! blev svaret."
     ]
   },
   blog: {
