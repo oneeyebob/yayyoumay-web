@@ -144,7 +144,7 @@ export const homeContent = {
   },
   cta: {
     h2: "Næste gang dit barn spørger om YouTube - hvad svarer du?",
-    body: "Opret en konto. Gå til Biblioteket og abonner på en liste. Det tager to minutter - og så er du klar.",
+    body: "Opret en gratis YAY!-konto, vælg en liste i biblioteket og kom i gang på to minutter. Det kræver ingen email eller betalingskort - kun et brugernavn og et trygt rum til dit barn.",
     btn: "Opret en konto",
     note: "Ingen email. Ingen kreditkort. Gratis."
   },
