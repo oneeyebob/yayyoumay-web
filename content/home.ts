@@ -5,9 +5,9 @@ export const homeContent = {
   },
   hero: {
     tag: "Et YouTube-filter til de små",
-    h1: "Må jeg se YAY?",
-    h1em: "Ja du må!",
-    body: "YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll. Kun det du har valgt til.",
+    h1: "Giv dit barn",
+    h1em: "et trygt rum på YouTube",
+    body: "Med YAY! vælger du, hvad dit barn ser. Ingen algoritmer, ingen Shorts, ingen endeløst scroll - kun det indhold du godkender.",
     ctaPrimary: "Opret en konto - det er gratis",
     ctaSecondary: "Sådan virker det"
   },
