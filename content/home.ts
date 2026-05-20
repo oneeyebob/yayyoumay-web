@@ -64,7 +64,7 @@ export const homeContent = {
       {
         label: "Dit barns oplevelse",
         h3: "De finder. De udforsker. De spørger om mere.",
-        body: "Ingen algoritme der serverer næste video. Ingen reels. Ingen kommentarfelt. Bare det indhold du har valgt - og plads til at gå på opdagelse i det.",
+        body: "Dine børn udforsker og ser videoer uden pop-ups, kommentarer eller uendeligt scroll. De kan bede om nyt indhold, og du kan tilføje det med det samme.",
         bgText: "JA!"
       }
     ]
