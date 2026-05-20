@@ -23,7 +23,7 @@ export const homeContent = {
     tag: "Sådan virker det",
     h2line1: "Du er redaktøren.",
     h2line2: "Dit barn er læseren.",
-    intro: "YAY! er en simpel udgave af YouTube med et forældremodul. Du styrer indholdet fra din telefon - dit barn ser kun det du har godkendt.",
+    intro: "YAY! bruger YouTube som videokilde - tænk på det som en forenklet udgave af YouTube med et forældremodul. Du styrer indholdet fra din telefon, og dit barn ser kun det du har godkendt.",
     steps: [
       {
         number: "1",
