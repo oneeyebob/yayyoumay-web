@@ -281,9 +281,9 @@ export default function Home() {
                     {card.label}
                   </div>
                   <h3 className="font-heading" style={{ fontWeight: 400, fontSize: 36, letterSpacing: -1, marginBottom: 16, lineHeight: 1.1, color: cardFg }}>
-                    {card.h3}
+                    {i === 1 ? <>De finder.<br />De udforsker.<br />De spørger om mere.</> : card.h3}
                   </h3>
-                  <p style={{ fontSize: 16, lineHeight: 1.65, opacity: bodyOpacity, maxWidth: 380, color: cardFg }}>
+                  <p style={{ fontSize: 16, lineHeight: 1.65, opacity: bodyOpacity, color: cardFg }}>
                     {card.body}
                   </p>
                   <div aria-hidden style={{ position: 'absolute', bottom: -20, right: -10, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 120, letterSpacing: -4, pointerEvents: 'none', userSelect: 'none', lineHeight: 1, color: bgTextColor }}>
