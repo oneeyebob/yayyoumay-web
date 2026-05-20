@@ -231,7 +231,7 @@ export default function Home() {
             {c.how.intro}
           </p>
 
-          <div className="grid md:grid-cols-4 grid-cols-2 gap-7">
+          <div className="grid md:grid-cols-4 grid-cols-1 gap-7">
             {c.how.steps.map((step, i) => {
               const isBarn    = step.badge === 'Barnet'
               const badgeBg   = isBarn ? 'rgba(45,122,95,0.2)' : 'rgba(245,200,66,0.15)'
