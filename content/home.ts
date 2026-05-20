@@ -23,31 +23,31 @@ export const homeContent = {
     tag: "Sådan virker det",
     h2line1: "Du er redaktøren.",
     h2line2: "Dit barn er læseren.",
-    intro: "YAY! fungerer som en simpel udgave af YouTube med et forældremodul. Dit barn ser indholdet - de videoer og kanaler du har godkendt. Du styrer indholdet fra forældremodulet - du tilføjer og fjerner fra din egen telefon, uden at tage iPaden fra dit barn.",
+    intro: "YAY! er en simpel udgave af YouTube med et forældremodul. Du styrer indholdet fra din telefon - dit barn ser kun det du har godkendt.",
     steps: [
       {
         number: "1",
         badge: "Forældre",
         title: "Opret en konto",
-        body: "Vælg et brugernavn og en adgangskode. Ingen email, ingen telefonnummer. Du får en gendannelsesnøgle - gem den et sikkert sted, det er den eneste måde at komme ind igen hvis du glemmer din adgangskode."
+        body: "Vælg et brugernavn og adgangskode. Ingen email, ingen telefonnummer. Du får en gendannelsesnøgle - gem den et sikkert sted."
       },
       {
         number: "2",
         badge: "Forældre",
-        title: "Kom hurtigt i gang",
-        body: "Gå til Biblioteket og abonner på en af vores lister. Du er i gang på to minutter. Vil du bygge din egen liste? Find en kanal på YouTube, kopier linket og indsæt det. Så er den tilføjet."
+        title: "Vælg indhold",
+        body: "Gå til Biblioteket og abonner på en færdig liste. Eller tilføj selv kanaler og videoer fra YouTube ved at indsætte linket. Du er i gang på to minutter."
       },
       {
         number: "3",
         badge: "Barnet",
         title: "Giv dit barn adgang",
-        body: "Åbn YAY! på dit barns enhed. Vælg profilen. Dit barn ser nu kun det du har valgt - ingen anbefalinger, ingen vej ud til det åbne YouTube."
+        body: "Åbn YAY! på barnets enhed og vælg profilen. Dit barn ser nu kun det du har valgt - ingen anbefalinger, ingen vej ud til det åbne YouTube."
       },
       {
         number: "4",
         badge: "Løbende",
-        title: "Følg med og tilføj løbende",
-        body: "Sæt dig ned med dit barn en gang imellem. Find noget nyt på YouTube sammen. Synes du det ser fornuftigt ud - tilføj det. Dit barn får ejerskab. Du beholder kontrollen."
+        title: "Udforsk sammen",
+        body: "Sæt jer ned af og til og find noget nyt på YouTube sammen. Tilføj det der ser fornuftigt ud. Dit barn får ejerskab. Du beholder kontrollen."
       }
     ]
   },
