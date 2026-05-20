@@ -238,9 +238,15 @@ export default function Home() {
               const badgeFg   = isBarn ? '#4CAF85'              : YELLOW
               return (
                 <div key={i} style={{ textAlign: 'center', padding: '0 8px' }}>
-                  <div style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-                    <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
-                  </div>
+                  {i === 0 || i === 2 ? (
+                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : 'https://play.yayyoumay.dk/demo'} style={{ display: 'block', width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
+                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
+                    </a>
+                  ) : (
+                    <div style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
+                    </div>
+                  )}
                   <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', padding: '4px 12px', borderRadius: 100, marginBottom: 12, background: badgeBg, color: badgeFg }}>
                     {step.badge}
                   </div>
