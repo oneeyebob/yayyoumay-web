@@ -281,7 +281,7 @@ export default function Home() {
                     {card.label}
                   </div>
                   <h3 className="font-heading" style={{ fontWeight: 400, fontSize: 36, letterSpacing: -1, marginBottom: 16, lineHeight: 1.1, color: cardFg }}>
-                    {i === 1 ? <>De finder.<br />De udforsker.<br />De spørger om mere.</> : card.h3}
+                    {i === 1 ? <>De finder. De udforsker.<br />De spørger om mere.</> : card.h3}
                   </h3>
                   <p style={{ fontSize: 16, lineHeight: 1.65, opacity: bodyOpacity, color: cardFg }}>
                     {card.body}
