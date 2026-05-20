@@ -111,27 +111,31 @@ export const homeContent = {
     items: [
       {
         q: "Hvad er YAY!?",
-        a: "YAY! er et filter du lægger oven på YouTube. Du bestemmer hvilke kanaler og videoer dit barn må se - og dit barn ser kun det du har godkendt. Ingen algoritme, ingen shorts, ingen endeløst scroll."
+        a: "YAY! er en webapp der ligger oven på YouTube. Du vælger præcis hvilke kanaler og videoer dit barn må se - og alt andet er skjult. Ingen algoritmer, ingen kommentarspor, ingen Shorts."
       },
       {
-        q: "Er YAY! gratis?",
-        a: "Ja. YAY! er gratis. Ingen kreditkort, ingen abonnement, ingen skjulte omkostninger."
+        q: "Koster det noget?",
+        a: "Nej. YAY! er gratis at bruge. Du skal hverken oplyse email eller kreditkort."
       },
       {
         q: "Hvad er forskellen på YAY! og YouTube Kids?",
-        a: "YouTube Kids er lavet til de allermindste og føles barnligt for børn over 6-7 år. YAY! giver adgang til hele YouTubes univers - men kun det du som forælder har godkendt. Du bestemmer niveauet. YAY! er til børn fra 3 til 11 år."
+        a: "YouTube Kids passer primært til de mindste og føles barnligt for børn over 6-7 år. YAY! giver adgang til hele YouTube - men kun til det du godkender. Du bestemmer niveauet. YAY! er til børn fra 3 til 11 år."
       },
       {
         q: "Skal man downloade en app?",
-        a: "Nej. YAY! er en webapp du åbner i browseren. På iPhone og iPad kan du tilføje den til hjemskærmen så den opfører sig som en app."
+        a: "Nej. YAY! fungerer i browseren. På iPhone og iPad kan du gemme den på hjemskærmen, så den opfører sig som en app."
       },
       {
-        q: "Kan mit barn finde vej til det åbne YouTube?",
-        a: "YAY! er ikke et teknisk fængsel - det er en aftale. Dit barn åbner YAY! og finder det indhold du har valgt. De er underholdt inden for rammen og har ikke grund til at skifte app. Vi anbefaler at du en gang imellem sætter dig ned med dit barn og finder nyt indhold på YouTube sammen."
+        q: "Kan mit barn gå ind på det rigtige YouTube?",
+        a: "YAY! er ikke et teknisk fængsel - det er en aftale. Barnet bliver i YAY! fordi det har alt det gode de ønsker. Vi anbefaler at du af og til sætter dig ned med dit barn og finder nyt indhold på YouTube sammen."
       },
       {
-        q: "Hvad er forskellen på YAY! og bare at sige nej til YouTube?",
+        q: "Hvorfor ikke bare sige nej?",
         a: "Nej er en midlertidig løsning. YAY! er et ja med retning. Dit barn får adgang til det gode YouTube - og algoritmen får ikke adgang til dit barn."
+      },
+      {
+        q: "Hvad gør I med mine data?",
+        a: "YAY! gemmer ikke email, telefonnummer eller personlige oplysninger. Du opretter dig med et brugernavn og en adgangskode - det er alt hvad vi har."
       }
     ],
     moreLink: "/faq",
