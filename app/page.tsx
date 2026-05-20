@@ -256,6 +256,9 @@ export default function Home() {
                   <p style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(255,255,255,0.45)' }}>
                     {step.body}
                   </p>
+                  {i === 0 && <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Opret konto</a>}
+                  {i === 1 && <a href="https://play.yayyoumay.dk/demo/curator/profiles/albert" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
+                  {i === 2 && <a href="https://play.yayyoumay.dk/demo" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
                 </div>
               )
             })}
