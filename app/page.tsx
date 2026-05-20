@@ -239,7 +239,7 @@ export default function Home() {
               return (
                 <div key={i} style={{ textAlign: 'center', padding: '0 8px' }}>
                   {i === 0 || i === 2 ? (
-                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : 'https://play.yayyoumay.dk/demo'} style={{ display: 'block', width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
+                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : 'https://play.yayyoumay.dk/demo'} style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
                       <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
                     </a>
                   ) : (
