@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { homeContent } from '../content/home'
+import AIPromptBox from './components/AIPromptBox'
 
 const c = homeContent
 
@@ -156,6 +157,7 @@ export default function Home() {
                 {c.hero.ctaSecondary}
               </a>
             </div>
+            <AIPromptBox title="Hvad er YAY!" url="https://www.yayyoumay.dk" compact />
           </div>
 
           {/* right: tablet mockup */}

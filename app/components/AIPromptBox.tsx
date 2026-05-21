@@ -35,9 +35,10 @@ const GeminiIcon = () => (
 type Props = {
   title: string
   url?: string
+  compact?: boolean
 }
 
-export default function AIPromptBox({ title, url }: Props) {
+export default function AIPromptBox({ title, url, compact = false }: Props) {
   const [platform, setPlatform] = useState<'ios' | 'android' | 'desktop'>('desktop')
 
   useEffect(() => {
@@ -71,6 +72,41 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
     : platform === 'android'
     ? allAIs.filter(ai => ai.label !== 'Claude')
     : allAIs.filter(ai => ai.label !== 'Gemini')
+
+  if (compact) return (
+    <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+      <span style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.35)', letterSpacing: 0.5, whiteSpace: 'nowrap' }}>
+        Spørg din AI om YAY!
+      </span>
+      {ais.map(ai => (
+        <a
+          key={ai.label}
+          href={ai.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            background: 'transparent', color: 'rgba(255,255,255,0.5)',
+            border: '1px solid rgba(255,255,255,0.2)',
+            padding: '6px 12px', borderRadius: 100,
+            fontSize: 12, fontWeight: 600, textDecoration: 'none',
+            transition: 'color 0.15s, border-color 0.15s',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.color = 'white'
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+          }}
+        >
+          {ai.icon}
+          {ai.label}
+        </a>
+      ))}
+    </div>
+  )
 
   return (
     <div style={{
