@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   description: 'YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll.',
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
     ],
     apple: '/apple-touch-icon.png',
   },
