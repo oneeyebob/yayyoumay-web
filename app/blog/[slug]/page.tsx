@@ -68,6 +68,12 @@ export function generateStaticParams() {
   return Object.keys(posts).map(slug => ({ slug }))
 }
 
+const postDates: Record<string, string> = {
+  'historien-bag-yay':  '2025-04-01',
+  'lademanns-leksikon': '2025-04-15',
+  'algoritmen':         '2025-05-01',
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = posts[slug]
@@ -104,8 +110,27 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const { Content } = post
 
+  const blogPostingJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    author: { '@type': 'Person', name: 'Jakob Edelfeldt', url: 'https://www.yayyoumay.dk' },
+    publisher: { '@type': 'Organization', name: 'YAY!', url: 'https://www.yayyoumay.dk' },
+    datePublished: postDates[slug],
+    dateModified: postDates[slug],
+    url: `https://www.yayyoumay.dk/blog/${slug}`,
+    image: 'https://www.yayyoumay.dk/og-image.png',
+    inLanguage: 'da',
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+      />
+
       {/* ── NAV ── */}
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: NAVY, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>

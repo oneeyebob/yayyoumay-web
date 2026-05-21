@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { homeContent } from '../content/home'
 import AIPromptBox from './components/AIPromptBox'
@@ -185,7 +186,7 @@ export default function Home() {
                 <div className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(22px, 3vw, 36px)', color: NAVY, letterSpacing: -1, lineHeight: 1.1, marginBottom: 12 }}>
                   Ingen algoritme, ingen shorts, ingen endeløst scroll.
                 </div>
-                <img src="/devices.png" alt="YAY! app" style={{ width: '100%', display: 'block', marginTop: 24 }} />
+                <Image src="/devices.png" alt="YAY! app på tablet og telefon - YouTube-filter til børn" width={800} height={500} style={{ width: '100%', height: 'auto', display: 'block', marginTop: 24 }} priority />
               </div>
             </div>
             </a>
