@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { homeContent } from '../../../content/home'
+import ShareButtons from '../../components/ShareButtons'
 import HistorienBagYay from '../../../content/blog/historien-bag-yay.mdx'
 import LademannsLeksikon from '../../../content/blog/lademanns-leksikon.mdx'
 import Algoritmen from '../../../content/blog/algoritmen.mdx'
@@ -72,6 +73,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(28px, 4vw, 48px)', lineHeight: 1.1, color: 'white', letterSpacing: -1.5 }}>
             {post.title}
           </h1>
+          <ShareButtons title={post.title} />
         </div>
       </section>
 
@@ -99,10 +101,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <Link href="/" style={{ display: 'inline-flex' }}>
             <Logo height={26} color="#FFFFFF" />
           </Link>
-          <div style={{ display: 'flex', gap: 24 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
             <Link href="/blog" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>Blog</Link>
             <Link href="/faq" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>FAQ</Link>
             <Link href="/kontakt" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>Kontakt</Link>
+            <div style={{ display: 'flex', gap: 14, marginLeft: 8 }}>
+              {[
+                { href: '#', label: 'Facebook',  icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> },
+                { href: '#', label: 'Instagram', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> },
+                { href: '#', label: 'Threads',   icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.471 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.839 3.155 3.454 5.537l-2.667.647c-.993-3.96-3.285-5.964-7.613-5.992-2.757.019-4.911.86-6.402 2.497-1.414 1.556-2.145 3.79-2.17 6.64.025 2.851.756 5.082 2.17 6.637 1.49 1.638 3.645 2.479 6.401 2.496 1.302-.01 2.404-.195 3.373-.573a5.678 5.678 0 0 0 2.168-1.64c.617-.78.993-1.76 1.118-2.917.13-1.186-.024-2.14-.467-2.845-.436-.693-1.13-1.17-2.063-1.419a9.048 9.048 0 0 1-.336 1.72c-.317 1.046-.868 1.909-1.638 2.563-.806.683-1.81 1.05-2.985 1.09-1.006.033-1.937-.207-2.618-.676-.747-.514-1.18-1.281-1.218-2.156-.036-.837.296-1.587.934-2.112.612-.503 1.476-.793 2.56-.861a13.72 13.72 0 0 1 2.52.107c-.08-.543-.266-.947-.551-1.198-.32-.28-.802-.423-1.43-.426h-.016c-.493 0-1.12.133-1.566.682l-2.057-1.782c.783-.902 2.008-1.396 3.623-1.396h.024c2.717.018 4.365 1.595 4.468 4.328a14.47 14.47 0 0 1 1.84.572c1.416.568 2.485 1.467 3.088 2.597.624 1.167.778 2.57.455 4.167-.321 1.581-1.031 2.935-2.112 4.023-1.084 1.091-2.47 1.853-4.122 2.266-.99.249-2.078.377-3.236.385zm.554-7.986c.535-.018.976-.173 1.312-.46.381-.326.641-.81.773-1.437a11.56 11.56 0 0 0 .215-1.568 11.47 11.47 0 0 0-2.036-.087c-.658.041-1.168.22-1.476.518-.248.238-.369.541-.355.876.023.527.281.886.787 1.097.28.118.614.17.966.157l.014-.096z"/></svg> },
+                { href: '#', label: 'TikTok',    icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg> },
+              ].map(s => (
+                <a key={s.label} href={s.href} aria-label={s.label} style={{ color: 'rgba(255,255,255,0.35)' }}>
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
         <div style={{ maxWidth: 680, margin: '0 auto', paddingTop: 24, fontSize: 13 }}>
