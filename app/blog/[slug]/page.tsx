@@ -69,9 +69,9 @@ export function generateStaticParams() {
 }
 
 const postDates: Record<string, string> = {
-  'historien-bag-yay':  '2025-04-01',
-  'lademanns-leksikon': '2025-04-15',
-  'algoritmen':         '2025-05-01',
+  'historien-bag-yay':  '2025-04-07',
+  'lademanns-leksikon': '2025-04-23',
+  'algoritmen':         '2025-05-02',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
