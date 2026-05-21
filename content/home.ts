@@ -156,7 +156,7 @@ export const homeContent = {
         links: [
           { label: "Hvad er YAY!", href: "#hvad" },
           { label: "Kom i gang", href: "#saadan" },
-          { label: "Biblioteket", href: "#biblioteket" },
+          { label: "Biblioteket", href: "https://play.yayyoumay.dk/demo/curator/library", external: true },
           { label: "FAQ", href: "#faq" }
         ]
       },

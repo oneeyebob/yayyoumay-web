@@ -246,7 +246,7 @@ export default function Home() {
               return (
                 <div key={i} style={{ textAlign: 'center', padding: '0 8px' }}>
                   {i === 0 || i === 1 || i === 2 ? (
-                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : i === 1 ? 'https://play.yayyoumay.dk/demo/curator/profiles/albert' : 'https://play.yayyoumay.dk/demo'} className="step-link" style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
+                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : i === 1 ? 'https://play.yayyoumay.dk/demo/curator/profiles/albert' : 'https://play.yayyoumay.dk/demo'} target={i > 0 ? '_blank' : undefined} rel={i > 0 ? 'noopener noreferrer' : undefined} className="step-link" style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
                       <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
                     </a>
                   ) : (
@@ -264,8 +264,8 @@ export default function Home() {
                     {step.body}
                   </p>
                   {i === 0 && <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Opret konto</a>}
-                  {i === 1 && <a href="https://play.yayyoumay.dk/demo/curator/profiles/albert" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
-                  {i === 2 && <a href="https://play.yayyoumay.dk/demo" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
+                  {i === 1 && <a href="https://play.yayyoumay.dk/demo/curator/profiles/albert" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
+                  {i === 2 && <a href="https://play.yayyoumay.dk/demo" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
                 </div>
               )
             })}
@@ -493,6 +493,8 @@ export default function Home() {
                   <li key={link.href}>
                     {link.href.startsWith('/') ? (
                       <Link href={link.href} style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>{link.label}</Link>
+                    ) : (link as any).external ? (
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>{link.label}</a>
                     ) : (
                       <a href={link.href} style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontSize: 14 }}>{link.label}</a>
                     )}
