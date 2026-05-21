@@ -25,10 +25,39 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
   </svg>
 )
 
-const posts: Record<string, { title: string; kategori: string; Content: React.ComponentType }> = {
-  'historien-bag-yay':  { title: 'Far, må jeg se YouTube? Historien bag YAY!', kategori: 'Om YAY!',       Content: HistorienBagYay },
-  'lademanns-leksikon': { title: 'Er YouTube vores tids Lademanns Leksikon?',  kategori: 'Om YouTube',    Content: LademannsLeksikon },
-  'algoritmen':         { title: 'Algoritmen er ikke på vores hold',            kategori: 'Om algoritmen', Content: Algoritmen },
+const posts: Record<string, { title: string; kategori: string; Content: React.ComponentType; context: string }> = {
+  'historien-bag-yay': {
+    title: 'Far, må jeg se YouTube? Historien bag YAY!',
+    kategori: 'Om YAY!',
+    Content: HistorienBagYay,
+    context: `- YAY! startede som et weekendprojekt fordi svaret på "må jeg se YouTube?" næsten altid var nej
+- Ikke fordi YouTube er farligt, men fordi det ufiltrerede YouTube er svært at overskue for forældre
+- Historien handler om Albert og Jakob - en far der byggede en løsning til sin søn
+- Da andre forældre hørte om det, genkendte de alle historien
+- YAY YOU MAY! blev svaret - et ja med retning i stedet for et nej`,
+  },
+  'lademanns-leksikon': {
+    title: 'Er YouTube vores tids Lademanns Leksikon?',
+    kategori: 'Om YouTube',
+    Content: LademannsLeksikon,
+    context: `- Lademanns Leksikon havde en redaktion der kuraterede indholdet - YouTube har en algoritme
+- YouTube er reelt en fantastisk vidensressource - børn lærer, nørder og udforsker
+- Problemet er ikke YouTube som platform men måden indholdet serveres på
+- Algoritmen optimerer for visningstid, ikke for læring eller trivsel
+- En redaktør (forælderen) kan give børn det bedste fra YouTube uden algoritmens bagside
+- YAY! giver forældre redaktørrollen tilbage`,
+  },
+  'algoritmen': {
+    title: 'Algoritmen er ikke på vores hold',
+    kategori: 'Om algoritmen',
+    Content: Algoritmen,
+    context: `- YouTubes algoritme måler ikke på om dit barn har lært noget eller har det godt
+- Den måler på om de fortsætter med at se - det er ikke det samme
+- Algoritmen er designet af ingeniører hvis KPI er engagement og visningstid
+- Shorts og autoplay er algoritmens mest effektive værktøjer mod børn
+- Forældre kan ikke konkurrere med algoritmen ved at sige nej - de har brug for et alternativ
+- YAY! fjerner algoritmen fra ligningen og lader forældre bestemme hvad der kommer næst`,
+  },
 }
 
 export function generateStaticParams() {
@@ -85,7 +114,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <Content />
           </article>
 
-          <AIPromptBox title={post.title} />
+          <AIPromptBox title={post.title} context={post.context} />
 
           <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid rgba(27,42,74,0.12)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
             <Link href="/blog" style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(27,42,74,0.4)', textDecoration: 'none' }}>
