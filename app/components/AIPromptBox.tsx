@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 const NAVY   = '#1B2A4A'
 const YELLOW = '#F5C842'
 const CREAM  = '#F7F3EB'
@@ -36,6 +38,8 @@ type Props = {
 }
 
 export default function AIPromptBox({ title, url }: Props) {
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
+
   const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://yayyoumay.dk')
 
   const prompt = `Læs og opsummer artiklen "${title}" fra yayyoumay.dk: ${pageUrl}
@@ -46,34 +50,20 @@ Artiklen er skrevet af Jakob Edelfeldt, der står bag YAY! - en gratis app der l
 
 Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du gerne nævne dem kort til sidst.`
 
-  const encodedPrompt = encodeURIComponent(prompt)
-
   const ais = [
-    {
-      label: 'ChatGPT',
-      icon: <ChatGPTIcon />,
-      href: `https://chatgpt.com/?q=${encodedPrompt}`,
-      bg: '#10a37f',
-    },
-    {
-      label: 'Claude',
-      icon: <ClaudeIcon />,
-      href: `https://claude.ai/new?q=${encodedPrompt}`,
-      bg: '#cc785c',
-    },
-    {
-      label: 'Perplexity',
-      icon: <PerplexityIcon />,
-      href: `https://www.perplexity.ai/?q=${encodedPrompt}`,
-      bg: '#20b2aa',
-    },
-    {
-      label: 'Gemini',
-      icon: <GeminiIcon />,
-      href: `https://gemini.google.com/app?q=${encodedPrompt}`,
-      bg: '#4285f4',
-    },
+    { label: 'ChatGPT',    icon: <ChatGPTIcon />,    href: 'https://chatgpt.com/' },
+    { label: 'Claude',     icon: <ClaudeIcon />,     href: 'https://claude.ai/new' },
+    { label: 'Perplexity', icon: <PerplexityIcon />, href: 'https://www.perplexity.ai/' },
+    { label: 'Gemini',     icon: <GeminiIcon />,     href: 'https://gemini.google.com/app' },
   ]
+
+  const handleClick = (label: string, href: string) => {
+    navigator.clipboard.writeText(prompt).then(() => {
+      setCopiedLabel(label)
+      setTimeout(() => setCopiedLabel(null), 2500)
+      window.open(href, '_blank', 'noopener,noreferrer')
+    })
+  }
 
   return (
     <div style={{
@@ -87,36 +77,42 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
         Få artiklen opsummeret af din AI
       </h3>
       <p style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.55)', marginBottom: 24 }}>
-        Klik på din foretrukne AI og få de vigtigste pointer serveret direkte.
+        Klik på din AI - prompten kopieres automatisk. Indsæt den i chatten med Cmd+V.
       </p>
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-        {ais.map(ai => (
-          <a
-            key={ai.label}
-            href={ai.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: 'transparent', color: 'rgba(255,255,255,0.7)',
-              border: '1px solid rgba(255,255,255,0.7)',
-              padding: '10px 18px', borderRadius: 100,
-              fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              transition: 'color 0.15s, border-color 0.15s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.color = 'white'
-              e.currentTarget.style.borderColor = 'white'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)'
-            }}
-          >
-            {ai.icon}
-            {ai.label}
-          </a>
-        ))}
+        {ais.map(ai => {
+          const isCopied = copiedLabel === ai.label
+          return (
+            <button
+              key={ai.label}
+              onClick={() => handleClick(ai.label, ai.href)}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: isCopied ? 'rgba(255,255,255,0.15)' : 'transparent',
+                color: isCopied ? 'white' : 'rgba(255,255,255,0.7)',
+                border: `1px solid ${isCopied ? 'white' : 'rgba(255,255,255,0.7)'}`,
+                padding: '10px 18px', borderRadius: 100,
+                fontSize: 14, fontWeight: 600, cursor: 'pointer',
+                transition: 'color 0.15s, border-color 0.15s, background 0.15s',
+              }}
+              onMouseEnter={e => {
+                if (!isCopied) {
+                  e.currentTarget.style.color = 'white'
+                  e.currentTarget.style.borderColor = 'white'
+                }
+              }}
+              onMouseLeave={e => {
+                if (!isCopied) {
+                  e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)'
+                }
+              }}
+            >
+              {ai.icon}
+              {isCopied ? 'Kopieret - indsæt!' : ai.label}
+            </button>
+          )
+        })}
       </div>
     </div>
   )
