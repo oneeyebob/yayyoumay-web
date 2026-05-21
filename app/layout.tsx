@@ -19,8 +19,27 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.yayyoumay.dk'),
   title: 'YAY! - YouTube-filter til børn',
   description: 'YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll.',
+  alternates: {
+    canonical: 'https://www.yayyoumay.dk',
+  },
+  openGraph: {
+    title: 'YAY! - YouTube-filter til børn',
+    description: 'YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll.',
+    url: 'https://www.yayyoumay.dk',
+    siteName: 'YAY!',
+    locale: 'da_DK',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'YAY! - YouTube-filter til børn' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'YAY! - YouTube-filter til børn',
+    description: 'YAY! er et filter du lægger oven på YouTube. Du vælger hvad dit barn må se. Ingen algoritme, ingen shorts, ingen endeløst scroll.',
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { homeContent } from '../../../content/home'
 import ShareButtons from '../../components/ShareButtons'
@@ -25,9 +26,10 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
   </svg>
 )
 
-const posts: Record<string, { title: string; kategori: string; Content: React.ComponentType; context: string }> = {
+const posts: Record<string, { title: string; description: string; kategori: string; Content: React.ComponentType; context: string }> = {
   'historien-bag-yay': {
     title: 'Far, må jeg se YouTube? Historien bag YAY!',
+    description: 'Albert spurgte næsten hver dag. YAY! startede som et weekendprojekt - og blev svaret på et spørgsmål en ni-årig stiller dagligt.',
     kategori: 'Om YAY!',
     Content: HistorienBagYay,
     context: `- YAY! startede som et weekendprojekt fordi svaret på "må jeg se YouTube?" næsten altid var nej
@@ -38,6 +40,7 @@ const posts: Record<string, { title: string; kategori: string; Content: React.Co
   },
   'lademanns-leksikon': {
     title: 'Er YouTube vores tids Lademanns Leksikon?',
+    description: 'Lademanns havde en redaktion. YouTube har en algoritme. Det er en vigtig forskel - og det er det, der gør YAY! nødvendig.',
     kategori: 'Om YouTube',
     Content: LademannsLeksikon,
     context: `- Lademanns Leksikon havde en redaktion der kuraterede indholdet - YouTube har en algoritme
@@ -49,6 +52,7 @@ const posts: Record<string, { title: string; kategori: string; Content: React.Co
   },
   'algoritmen': {
     title: 'Algoritmen er ikke på vores hold',
+    description: 'YouTubes algoritme måler ikke på om dit barn har lært noget eller har det godt. Den måler på om de fortsætter med at se. Det er ikke det samme.',
     kategori: 'Om algoritmen',
     Content: Algoritmen,
     context: `- YouTubes algoritme måler ikke på om dit barn har lært noget eller har det godt
@@ -62,6 +66,35 @@ const posts: Record<string, { title: string; kategori: string; Content: React.Co
 
 export function generateStaticParams() {
   return Object.keys(posts).map(slug => ({ slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const post = posts[slug]
+  if (!post) return {}
+
+  const url = `https://www.yayyoumay.dk/blog/${slug}`
+
+  return {
+    title: `${post.title} - YAY!`,
+    description: post.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url,
+      siteName: 'YAY!',
+      locale: 'da_DK',
+      type: 'article',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: ['/og-image.png'],
+    },
+  }
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {

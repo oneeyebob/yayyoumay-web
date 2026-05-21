@@ -1,5 +1,27 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { homeContent } from '../../content/home'
+
+export const metadata: Metadata = {
+  title: 'Blog om børn og skærm - YAY!',
+  description: 'Artikler om børn, YouTube, algoritmer og skærmtid. Skrevet af Jakob Edelfeldt, grundlæggeren af YAY! - YouTube-filter til børn.',
+  alternates: { canonical: 'https://www.yayyoumay.dk/blog' },
+  openGraph: {
+    title: 'Blog om børn og skærm - YAY!',
+    description: 'Artikler om børn, YouTube, algoritmer og skærmtid. Skrevet af Jakob Edelfeldt, grundlæggeren af YAY! - YouTube-filter til børn.',
+    url: 'https://www.yayyoumay.dk/blog',
+    siteName: 'YAY!',
+    locale: 'da_DK',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'YAY! Blog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog om børn og skærm - YAY!',
+    description: 'Artikler om børn, YouTube, algoritmer og skærmtid.',
+    images: ['/og-image.png'],
+  },
+}
 
 const c = homeContent
 
