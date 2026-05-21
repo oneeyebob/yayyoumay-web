@@ -91,7 +91,7 @@ export default function Home() {
         <button
           className="md:hidden"
           onClick={() => setMenuOpen(o => !o)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 5, width: 40, height: 40, padding: 4 }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', flexDirection: 'column', justifyContent: 'center', gap: 5, width: 40, height: 40, padding: 4 }}
           aria-label="Åbn menu"
         >
           <span style={{ display: 'block', width: 24, height: 2, background: 'white', borderRadius: 2 }} />
