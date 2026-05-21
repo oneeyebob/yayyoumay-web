@@ -98,13 +98,20 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
             rel="noopener noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: ai.bg, color: 'white',
+              background: 'transparent', color: 'rgba(255,255,255,0.7)',
+              border: '1px solid rgba(255,255,255,0.7)',
               padding: '10px 18px', borderRadius: 100,
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
-              transition: 'opacity 0.15s',
+              transition: 'color 0.15s, border-color 0.15s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = 'white'
+              e.currentTarget.style.borderColor = 'white'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)'
+            }}
           >
             {ai.icon}
             {ai.label}
