@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 const NAVY   = '#1B2A4A'
 const YELLOW = '#F5C842'
 const CREAM  = '#F7F3EB'
@@ -36,6 +38,12 @@ type Props = {
 }
 
 export default function AIPromptBox({ title, url }: Props) {
+  const [isIOS, setIsIOS] = useState(false)
+
+  useEffect(() => {
+    setIsIOS(/iPhone|iPad|iPod/i.test(navigator.userAgent))
+  }, [])
+
   const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://yayyoumay.dk')
 
   const prompt = `Læs og opsummer artiklen "${title}" fra yayyoumay.dk: ${pageUrl}
@@ -48,12 +56,14 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
 
   const encodedPrompt = encodeURIComponent(prompt)
 
-  const ais = [
+  const allAIs = [
     { label: 'ChatGPT',    icon: <ChatGPTIcon />,    href: `https://chatgpt.com/?q=${encodedPrompt}` },
     { label: 'Claude',     icon: <ClaudeIcon />,     href: `https://claude.ai/new?q=${encodedPrompt}` },
     { label: 'Perplexity', icon: <PerplexityIcon />, href: `https://www.perplexity.ai/?q=${encodedPrompt}` },
     { label: 'Gemini',     icon: <GeminiIcon />,     href: `https://gemini.google.com/app?q=${encodedPrompt}` },
   ]
+
+  const ais = isIOS ? allAIs.filter(ai => ai.label === 'ChatGPT' || ai.label === 'Perplexity') : allAIs
 
   return (
     <div style={{
