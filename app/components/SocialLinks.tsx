@@ -12,6 +12,8 @@ export default function SocialLinks({ links }: Props) {
           key={s.label}
           href={s.href}
           aria-label={s.label}
+          target="_blank"
+          rel="noopener noreferrer"
           style={{ color: 'rgba(255,255,255,0.35)', transition: 'color 0.15s' }}
           onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
