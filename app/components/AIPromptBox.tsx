@@ -38,10 +38,13 @@ type Props = {
 }
 
 export default function AIPromptBox({ title, url }: Props) {
-  const [isIOS, setIsIOS] = useState(false)
+  const [platform, setPlatform] = useState<'ios' | 'android' | 'desktop'>('desktop')
 
   useEffect(() => {
-    setIsIOS(/iPhone|iPad|iPod/i.test(navigator.userAgent))
+    const ua = navigator.userAgent
+    if (/iPhone|iPad|iPod/i.test(ua)) setPlatform('ios')
+    else if (/Android/i.test(ua)) setPlatform('android')
+    else setPlatform('desktop')
   }, [])
 
   const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://yayyoumay.dk')
@@ -63,7 +66,11 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
     { label: 'Gemini',     icon: <GeminiIcon />,     href: `https://gemini.google.com/app?q=${encodedPrompt}` },
   ]
 
-  const ais = isIOS ? allAIs.filter(ai => ai.label === 'ChatGPT' || ai.label === 'Perplexity') : allAIs
+  const ais = platform === 'ios'
+    ? allAIs.filter(ai => ai.label === 'ChatGPT' || ai.label === 'Perplexity')
+    : platform === 'android'
+    ? allAIs.filter(ai => ai.label !== 'Claude')
+    : allAIs.filter(ai => ai.label !== 'Gemini')
 
   return (
     <div style={{
