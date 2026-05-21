@@ -114,7 +114,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <Content />
           </article>
 
-          <AIPromptBox title={post.title} />
+          <AIPromptBox title={post.title} url={`https://www.yayyoumay.dk/blog/${slug}`} />
 
           <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid rgba(27,42,74,0.12)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
             <Link href="/blog" style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(27,42,74,0.4)', textDecoration: 'none' }}>
