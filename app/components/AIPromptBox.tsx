@@ -36,9 +36,10 @@ type Props = {
   title: string
   url?: string
   compact?: boolean
+  prompt?: string
 }
 
-export default function AIPromptBox({ title, url, compact = false }: Props) {
+export default function AIPromptBox({ title, url, compact = false, prompt: customPrompt }: Props) {
   const [platform, setPlatform] = useState<'ios' | 'android' | 'desktop'>('desktop')
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function AIPromptBox({ title, url, compact = false }: Props) {
 
   const pageUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://yayyoumay.dk')
 
-  const prompt = `Læs og opsummer artiklen "${title}" fra yayyoumay.dk: ${pageUrl}
+  const prompt = customPrompt ?? `Læs og opsummer artiklen "${title}" fra yayyoumay.dk: ${pageUrl}
 
 Fremhæv de vigtigste pointer for forældre i et kort, læsevenligt format.
 

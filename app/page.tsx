@@ -157,7 +157,12 @@ export default function Home() {
                 {c.hero.ctaSecondary}
               </a>
             </div>
-            <AIPromptBox title="Hvad er YAY!" url="https://www.yayyoumay.dk" compact />
+            <AIPromptBox
+              title="Hvad er YAY!"
+              url="https://www.yayyoumay.dk"
+              compact
+              prompt="Besøg yayyoumay.dk og forklar kort hvad YAY! er og hvilken problem det løser for forældre med børn der bruger YouTube."
+            />
           </div>
 
           {/* right: tablet mockup */}
