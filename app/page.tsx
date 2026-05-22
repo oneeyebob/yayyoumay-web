@@ -9,13 +9,14 @@ import SocialLinks from './components/SocialLinks'
 const c = homeContent
 
 /* ── colour tokens ─────────────────────────────── */
-const NAVY       = '#1B2A4A'
-const YELLOW     = '#F5C842'
-const RED        = '#E84C3D'
-const CREAM      = '#F7F3EB'
-const LIGHT_GRAY = '#F0EDE6'
-const GRAY       = '#6B7280'
-const FOOTER_BG  = '#0F1A30'
+const NAVY       = '#1B2A4A'   // kept for logo area + dark card
+const WARM       = '#ecd09a'   // warm yellow accent
+const ACCENT     = '#496a51'   // sage green CTA / step circles / bold accent
+const CREAM      = '#fffff5'   // page background
+const SOFT       = '#f7f3e7'   // soft section alt
+const MUTED      = '#6f6a5f'   // muted body text
+const TEXT       = '#22221e'   // primary text / footer bg
+const FOOTER_BG  = '#22221e'
 
 /* ── SVG logo ──────────────────────────────────── */
 const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: string }) => (
@@ -58,32 +59,33 @@ export default function Home() {
       {/* ── NAV ────────────────────────────────────────── */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        background: NAVY,
+        background: CREAM,
+        borderBottom: '1px solid rgba(34,34,30,0.08)',
         height: 64,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '0 40px',
       }}>
         <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', height: 36 }}>
-          <Logo height={36} color="#FFFFFF" />
+          <Logo height={36} color={TEXT} />
         </a>
 
         {/* desktop links */}
         <ul className="hidden md:flex" style={{ listStyle: 'none', alignItems: 'center', gap: 32 }}>
           {navLinks.map(l => (
             <li key={l.href}>
-              <a href={l.href} style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+              <a href={l.href} style={{ color: MUTED, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
                 {l.label}
               </a>
             </li>
           ))}
           <li>
-            <a href="https://play.yayyoumay.dk" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
-              Gå til YAY! Player
+            <a href="https://www.facebook.com/yayyoumay" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'rgba(34,34,30,0.35)', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/yayyoumay" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <a href="https://play.yayyoumay.dk/register" style={{ background: ACCENT, color: '#fffdf4', fontSize: 14, fontWeight: 700, padding: '9px 22px', borderRadius: 100, textDecoration: 'none', display: 'inline-block' }}>
+              Opret konto
             </a>
           </li>
         </ul>
@@ -92,13 +94,13 @@ export default function Home() {
       </nav>
 
       {/* ── HERO ───────────────────────────────────────── */}
-      <section style={{ minHeight: '100vh', background: NAVY, display: 'flex', alignItems: 'center', padding: '120px 40px 80px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ minHeight: '100vh', background: CREAM, display: 'flex', alignItems: 'center', padding: '120px 40px 80px', position: 'relative', overflow: 'hidden' }}>
         {/* bg text */}
         <div aria-hidden style={{
           position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
           fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400,
           fontSize: 'clamp(120px, 20vw, 280px)',
-          color: 'rgba(255,255,255,0.03)',
+          color: 'rgba(34,34,30,0.03)',
           whiteSpace: 'nowrap', pointerEvents: 'none', userSelect: 'none', letterSpacing: -8,
         }}>
           YAY!
@@ -109,21 +111,21 @@ export default function Home() {
 
           {/* left: text */}
           <div>
-            <div style={{ display: 'inline-block', background: 'rgba(245,200,66,0.15)', border: '1px solid rgba(245,200,66,0.3)', color: YELLOW, fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', padding: '6px 16px', borderRadius: 100, marginBottom: 28 }}>
+            <div style={{ display: 'inline-block', background: 'rgba(73,106,81,0.1)', border: '1px solid rgba(73,106,81,0.25)', color: ACCENT, fontSize: 12, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', padding: '6px 16px', borderRadius: 100, marginBottom: 28 }}>
               {c.hero.tag}
             </div>
-            <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(42px, 5vw, 72px)', lineHeight: 1.05, color: 'white', marginBottom: 28, letterSpacing: -2 }}>
+            <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(42px, 5vw, 72px)', lineHeight: 1.05, color: TEXT, marginBottom: 28, letterSpacing: -2 }}>
               {c.hero.h1}<br />
-              <em style={{ fontStyle: 'italic', color: YELLOW }}>{c.hero.h1em}</em>
+              <em style={{ fontStyle: 'italic', color: ACCENT }}>{c.hero.h1em}</em>
             </h1>
-            <p style={{ fontSize: 18, lineHeight: 1.65, color: 'rgba(255,255,255,0.65)', marginBottom: 44, maxWidth: 460 }}>
+            <p style={{ fontSize: 18, lineHeight: 1.65, color: MUTED, marginBottom: 44, maxWidth: 460 }}>
               {c.hero.body}
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, fontSize: 16, fontWeight: 700, padding: '16px 32px', borderRadius: 100, textDecoration: 'none', display: 'inline-block' }}>
+              <a href="https://play.yayyoumay.dk/register" style={{ background: ACCENT, color: '#fffdf4', fontSize: 16, fontWeight: 700, padding: '16px 32px', borderRadius: 100, textDecoration: 'none', display: 'inline-block' }}>
                 {c.hero.ctaPrimary}
               </a>
-              <a href="#saadan" style={{ background: 'transparent', color: 'rgba(255,255,255,0.7)', fontSize: 16, fontWeight: 500, padding: '16px 32px', borderRadius: 100, border: '1px solid rgba(255,255,255,0.2)', textDecoration: 'none', display: 'inline-block' }}>
+              <a href="#saadan" style={{ background: 'transparent', color: MUTED, fontSize: 16, fontWeight: 500, padding: '16px 32px', borderRadius: 100, border: '1px solid rgba(34,34,30,0.18)', textDecoration: 'none', display: 'inline-block' }}>
                 {c.hero.ctaSecondary}
               </a>
             </div>
@@ -149,10 +151,10 @@ export default function Home() {
               <div style={{ position: 'absolute', bottom: 25, left: '50%', transform: 'translateX(-50%)', width: 32, height: 4, borderRadius: 100, background: '#2e3650' }} />
               {/* app card */}
               <div style={{ background: 'white', borderRadius: 18, padding: '28px 28px 44px', overflow: 'hidden', width: '100%' }}>
-                <div style={{ display: 'inline-block', background: CREAM, color: NAVY, fontSize: 10, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', padding: '5px 12px', borderRadius: 100, marginBottom: 24 }}>
+                <div style={{ display: 'inline-block', background: '#eef4f0', color: ACCENT, fontSize: 10, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', padding: '5px 12px', borderRadius: 100, marginBottom: 24 }}>
                   Juniormode
                 </div>
-                <div className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(22px, 3vw, 36px)', color: NAVY, letterSpacing: -1, lineHeight: 1.1, marginBottom: 12 }}>
+                <div className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(22px, 3vw, 36px)', color: TEXT, letterSpacing: -1, lineHeight: 1.1, marginBottom: 12 }}>
                   Ingen algoritme, ingen shorts, ingen endeløst scroll.
                 </div>
                 <Image src="/devices.png" alt="YAY! app på tablet og telefon - YouTube-filter til børn" width={800} height={500} style={{ width: '100%', height: 'auto', display: 'block', marginTop: 24 }} priority />
@@ -165,22 +167,22 @@ export default function Home() {
       </section>
 
       {/* ── HVAD ER YAY ────────────────────────────────── */}
-      <section id="hvad" style={{ background: YELLOW, padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
+      <section id="hvad" style={{ background: WARM, padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
         {/* bg text */}
         <div aria-hidden style={{ position: 'absolute', top: 40, right: -20, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(80px, 12vw, 160px)', color: 'rgba(0,0,0,0.05)', letterSpacing: -4, pointerEvents: 'none', userSelect: 'none', lineHeight: 1 }}>
           ALGORITMEN
         </div>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: NAVY, opacity: 0.5, marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: '#5a4e35', opacity: 0.8, marginBottom: 20 }}>
             {c.why.tag}
           </div>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: 1.05, color: NAVY, letterSpacing: -2, maxWidth: 760, marginBottom: 60 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: 1.05, color: TEXT, letterSpacing: -2, maxWidth: 760, marginBottom: 60 }}>
             {c.why.h2}
           </h2>
           <div style={{ maxWidth: 760 }}>
             {c.why.paragraphs.map((p, i) => (
-              <p key={i} style={{ fontSize: 18, lineHeight: 1.7, color: 'rgba(27,42,74,0.75)', marginBottom: i < c.why.paragraphs.length - 1 ? 20 : 0 }}>
+              <p key={i} style={{ fontSize: 18, lineHeight: 1.7, color: '#5a4e35', marginBottom: i < c.why.paragraphs.length - 1 ? 20 : 0 }}>
                 {i === 0 ? (
                   <a href="/blog/lademanns-leksikon" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>{p}</a>
                 ) : p}
@@ -191,51 +193,51 @@ export default function Home() {
       </section>
 
       {/* ── SAADAN VIRKER DET ──────────────────────────── */}
-      <section id="saadan" style={{ background: NAVY, padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
+      <section id="saadan" style={{ background: SOFT, padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
         {/* bg text */}
-        <div aria-hidden style={{ position: 'absolute', bottom: -20, left: -10, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(150px, 22vw, 320px)', color: 'rgba(255,255,255,0.03)', letterSpacing: -8, pointerEvents: 'none', userSelect: 'none', lineHeight: 1 }}>
+        <div aria-hidden style={{ position: 'absolute', bottom: -20, left: -10, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(150px, 22vw, 320px)', color: 'rgba(34,34,30,0.035)', letterSpacing: -8, pointerEvents: 'none', userSelect: 'none', lineHeight: 1 }}>
           YAY
         </div>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 2 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 20 }}>
             {c.how.tag}
           </div>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: 1.05, color: 'white', letterSpacing: -2, maxWidth: 760, marginBottom: 72 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: 1.05, color: TEXT, letterSpacing: -2, maxWidth: 760, marginBottom: 72 }}>
             {c.how.h2line1}<br />{c.how.h2line2}
           </h2>
-          <p style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', maxWidth: 680, marginBottom: 56 }}>
+          <p style={{ fontSize: 17, lineHeight: 1.7, color: MUTED, maxWidth: 680, marginBottom: 56 }}>
             {c.how.intro}
           </p>
 
           <div className="grid md:grid-cols-4 grid-cols-1 gap-7">
             {c.how.steps.map((step, i) => {
               const isBarn    = step.badge === 'Barnet'
-              const badgeBg   = isBarn ? 'rgba(45,122,95,0.2)' : 'rgba(245,200,66,0.15)'
-              const badgeFg   = isBarn ? '#4CAF85'              : YELLOW
+              const badgeBg   = isBarn ? 'rgba(73,106,81,0.14)' : 'rgba(236,208,154,0.45)'
+              const badgeFg   = isBarn ? ACCENT                 : '#5a4e35'
               return (
                 <div key={i} style={{ textAlign: 'center', padding: '0 8px' }}>
                   {i === 0 || i === 1 || i === 2 ? (
-                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : i === 1 ? 'https://play.yayyoumay.dk/demo/curator/profiles/albert' : 'https://play.yayyoumay.dk/demo'} target={i > 0 ? '_blank' : undefined} rel={i > 0 ? 'noopener noreferrer' : undefined} className="step-link" style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
-                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
+                    <a href={i === 0 ? 'https://play.yayyoumay.dk/register' : i === 1 ? 'https://play.yayyoumay.dk/demo/curator/profiles/albert' : 'https://play.yayyoumay.dk/demo'} target={i > 0 ? '_blank' : undefined} rel={i > 0 ? 'noopener noreferrer' : undefined} className="step-link" style={{ width: 68, height: 68, background: ACCENT, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', textDecoration: 'none' }}>
+                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: '#fffdf4', lineHeight: 1 }}>{step.number}</span>
                     </a>
                   ) : (
-                    <div style={{ width: 68, height: 68, background: YELLOW, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: NAVY, lineHeight: 1 }}>{step.number}</span>
+                    <div style={{ width: 68, height: 68, background: ACCENT, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                      <span className="font-heading" style={{ fontWeight: 400, fontSize: 28, color: '#fffdf4', lineHeight: 1 }}>{step.number}</span>
                     </div>
                   )}
                   <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', padding: '4px 12px', borderRadius: 100, marginBottom: 12, background: badgeBg, color: badgeFg }}>
                     {step.badge}
                   </div>
-                  <p style={{ fontSize: 16, fontWeight: 700, color: 'white', marginBottom: 10 }}>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: TEXT, marginBottom: 10 }}>
                     {step.title}
                   </p>
-                  <p style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(255,255,255,0.45)' }}>
+                  <p style={{ fontSize: 14, lineHeight: 1.55, color: MUTED }}>
                     {step.body}
                   </p>
-                  {i === 0 && <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Opret konto</a>}
-                  {i === 1 && <a href="https://play.yayyoumay.dk/demo/curator/profiles/albert" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
-                  {i === 2 && <a href="https://play.yayyoumay.dk/demo" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: YELLOW, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
+                  {i === 0 && <a href="https://play.yayyoumay.dk/register" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: 3 }}>Opret konto</a>}
+                  {i === 1 && <a href="https://play.yayyoumay.dk/demo/curator/profiles/albert" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
+                  {i === 2 && <a href="https://play.yayyoumay.dk/demo" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 13, fontWeight: 700, color: ACCENT, textDecoration: 'underline', textUnderlineOffset: 3 }}>Se demo</a>}
                 </div>
               )
             })}
@@ -246,21 +248,21 @@ export default function Home() {
       {/* ── TO SIDER ───────────────────────────────────── */}
       <section id="biblioteket" style={{ background: CREAM, padding: '120px 40px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: NAVY, opacity: 0.5, marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 20 }}>
             {c.modes.tag}
           </div>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1.05, color: NAVY, letterSpacing: -2, maxWidth: 600, marginBottom: 64 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1.05, color: TEXT, letterSpacing: -2, maxWidth: 600, marginBottom: 64 }}>
             {c.modes.h2}
           </h2>
           <div className="grid md:grid-cols-2" style={{ gap: 24 }}>
             {c.modes.cards.map((card, i) => {
-              const isNavyCard  = i === 0
-              const cardBg      = isNavyCard ? NAVY   : YELLOW
-              const cardFg      = isNavyCard ? 'white'  : NAVY
-              const labelBg     = isNavyCard ? 'rgba(245,200,66,0.15)'  : 'rgba(27,42,74,0.12)'
-              const labelFg     = isNavyCard ? YELLOW                   : NAVY
+              const isDark      = i === 0
+              const cardBg      = isDark ? TEXT   : WARM
+              const cardFg      = isDark ? 'white'  : TEXT
+              const labelBg     = isDark ? 'rgba(236,208,154,0.2)'  : 'rgba(34,34,30,0.12)'
+              const labelFg     = isDark ? WARM                     : '#5a4e35'
               const bodyOpacity = 0.7
-              const bgTextColor = isNavyCard ? 'rgba(255,255,255,0.04)' : 'rgba(27,42,74,0.06)'
+              const bgTextColor = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(34,34,30,0.06)'
               return (
                 <div key={i} style={{ background: cardBg, borderRadius: 24, padding: '48px 44px', position: 'relative', overflow: 'hidden' }}>
                   <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', padding: '6px 14px', borderRadius: 100, marginBottom: 24, background: labelBg, color: labelFg }}>
@@ -283,25 +285,25 @@ export default function Home() {
       </section>
 
       {/* ── HISTORIEN ──────────────────────────────────── */}
-      <section style={{ background: RED, padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: '#eef4f0', padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
         {/* bg text */}
-        <div aria-hidden style={{ position: 'absolute', bottom: -30, right: -20, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(120px, 18vw, 240px)', color: 'rgba(255,255,255,0.05)', letterSpacing: -6, pointerEvents: 'none', userSelect: 'none', lineHeight: 1 }}>
+        <div aria-hidden style={{ position: 'absolute', bottom: -30, right: -20, fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(120px, 18vw, 240px)', color: 'rgba(73,106,81,0.07)', letterSpacing: -6, pointerEvents: 'none', userSelect: 'none', lineHeight: 1 }}>
           FAR?
         </div>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div className="grid md:grid-cols-2" style={{ gap: 80, alignItems: 'center' }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: ACCENT, opacity: 0.7, marginBottom: 20 }}>
                 {c.story.tag}
               </div>
-              <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', lineHeight: 1.1, color: 'white', letterSpacing: -1.5, marginBottom: 28 }}>
+              <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', lineHeight: 1.1, color: TEXT, letterSpacing: -1.5, marginBottom: 28 }}>
                 {c.story.h2}
               </h2>
               {c.story.paragraphs.map((p, i) => (
-                <p key={i} style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
+                <p key={i} style={{ fontSize: 17, lineHeight: 1.7, color: MUTED, marginBottom: 20 }}>
                   {i === c.story.paragraphs.length - 1 ? (
-                    <a href="/blog/historien-bag-yay" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>{p}</a>
+                    <a href="/blog/historien-bag-yay" style={{ color: ACCENT, textDecoration: 'underline', textUnderlineOffset: 3 }}>{p}</a>
                   ) : p}
                 </p>
               ))}
@@ -313,20 +315,20 @@ export default function Home() {
       </section>
 
       {/* ── BLOG ───────────────────────────────────────── */}
-      <section id="blog" style={{ background: LIGHT_GRAY, padding: '120px 40px' }}>
+      <section id="blog" style={{ background: SOFT, padding: '120px 40px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: NAVY, opacity: 0.5, marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 20 }}>
             {c.blog.tag}
           </div>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', color: NAVY, letterSpacing: -1.5, marginBottom: 48 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', color: TEXT, letterSpacing: -1.5, marginBottom: 48 }}>
             {c.blog.h2}
           </h2>
           <div className="grid md:grid-cols-3" style={{ gap: 24 }}>
             {c.blog.posts.map((post, i) => {
-              const bannerBgs  = [NAVY, YELLOW, RED]
-              const tagBgs     = ['rgba(245,200,66,0.2)', 'rgba(27,42,74,0.15)', 'rgba(255,255,255,0.2)']
-              const tagFgs     = [YELLOW, NAVY, 'white']
-              const numColors  = ['rgba(255,255,255,0.08)', 'rgba(0,0,0,0.06)', 'rgba(255,255,255,0.08)']
+              const bannerBgs  = [TEXT, WARM, ACCENT]
+              const tagBgs     = ['rgba(236,208,154,0.2)', 'rgba(34,34,30,0.12)', 'rgba(255,255,255,0.2)']
+              const tagFgs     = [WARM, '#5a4e35', 'white']
+              const numColors  = ['rgba(255,255,255,0.08)', 'rgba(34,34,30,0.07)', 'rgba(255,255,255,0.08)']
               return (
                 <Link key={i} href={post.href} style={{ display: 'flex', flexDirection: 'column', background: 'white', borderRadius: 20, overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}>
                   {/* banner */}
@@ -340,13 +342,13 @@ export default function Home() {
                   </div>
                   {/* body */}
                   <div style={{ padding: 28, flex: 1 }}>
-                    <h3 className="font-heading" style={{ fontWeight: 400, fontSize: 20, color: NAVY, letterSpacing: -0.5, marginBottom: 10, lineHeight: 1.25 }}>
+                    <h3 className="font-heading" style={{ fontWeight: 400, fontSize: 20, color: TEXT, letterSpacing: -0.5, marginBottom: 10, lineHeight: 1.25 }}>
                       {post.h3}
                     </h3>
-                    <p style={{ fontSize: 14, lineHeight: 1.6, color: GRAY }}>
+                    <p style={{ fontSize: 14, lineHeight: 1.6, color: MUTED }}>
                       {post.body}
                     </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: NAVY, marginTop: 20 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: ACCENT, marginTop: 20 }}>
                       Læs mere <span>→</span>
                     </div>
                   </div>
@@ -360,17 +362,17 @@ export default function Home() {
       {/* ── FAQ ────────────────────────────────────────── */}
       <section id="faq" style={{ background: CREAM, padding: '120px 40px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: NAVY, opacity: 0.5, marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 20 }}>
             {c.faq.tag}
           </div>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', lineHeight: 1.05, color: NAVY, letterSpacing: -1.5, maxWidth: 640, marginBottom: 56 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 4vw, 56px)', lineHeight: 1.05, color: TEXT, letterSpacing: -1.5, maxWidth: 640, marginBottom: 56 }}>
             {c.faq.h2}
           </h2>
 
           <FaqAccordion items={c.faq.items} />
 
           <div style={{ marginTop: 40 }}>
-            <Link href={c.faq.moreLink} style={{ fontSize: 15, fontWeight: 700, color: NAVY, textDecoration: 'none' }}>
+            <Link href={c.faq.moreLink} style={{ fontSize: 15, fontWeight: 700, color: ACCENT, textDecoration: 'none' }}>
               {c.faq.moreLinkLabel} →
             </Link>
           </div>
@@ -378,23 +380,23 @@ export default function Home() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────── */}
-      <section style={{ background: NAVY, padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ background: ACCENT, padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         {/* bg text */}
-        <div aria-hidden style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(200px, 30vw, 420px)', color: 'rgba(255,255,255,0.025)', letterSpacing: -10, pointerEvents: 'none', userSelect: 'none' }}>
+        <div aria-hidden style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'var(--font-fraunces), Georgia, serif', fontWeight: 400, fontSize: 'clamp(200px, 30vw, 420px)', color: 'rgba(255,255,255,0.06)', letterSpacing: -10, pointerEvents: 'none', userSelect: 'none' }}>
           JA!
         </div>
 
         <div style={{ position: 'relative', zIndex: 2 }}>
-          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(48px, 7vw, 96px)', lineHeight: 1.0, color: 'white', letterSpacing: -3, marginBottom: 24 }}>
+          <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(48px, 7vw, 96px)', lineHeight: 1.0, color: '#fffdf4', letterSpacing: -3, marginBottom: 24 }}>
             {c.cta.h2}
           </h2>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.5)', marginBottom: 48, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 18, color: 'rgba(255,253,244,0.65)', marginBottom: 48, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
             {c.cta.body}
           </p>
-          <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, fontSize: 16, fontWeight: 700, padding: '16px 32px', borderRadius: 100, textDecoration: 'none', display: 'inline-block' }}>
+          <a href="https://play.yayyoumay.dk/register" style={{ background: '#fffdf4', color: ACCENT, fontSize: 16, fontWeight: 700, padding: '16px 32px', borderRadius: 100, textDecoration: 'none', display: 'inline-block' }}>
             {c.cta.btn}
           </a>
-          <p style={{ marginTop: 20, fontSize: 13, color: 'rgba(255,255,255,0.3)' }}>
+          <p style={{ marginTop: 20, fontSize: 13, color: 'rgba(255,253,244,0.4)' }}>
             {c.cta.note}
           </p>
         </div>
