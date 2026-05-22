@@ -25,11 +25,13 @@ export const metadata: Metadata = {
 
 const c = homeContent
 
-const NAVY      = '#1B2A4A'
-const YELLOW    = '#F5C842'
-const RED       = '#E84C3D'
-const LIGHT_GRAY = '#F0EDE6'
-const FOOTER_BG = '#0F1A30'
+const TEXT      = '#22221e'
+const MUTED     = '#6f6a5f'
+const ACCENT    = '#496a51'
+const WARM      = '#ecd09a'
+const CREAM     = '#fffff5'
+const SOFT      = '#f7f3e7'
+const FOOTER_BG = '#22221e'
 
 const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color, width: 'auto', display: 'block' }}>
@@ -42,53 +44,53 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
   </svg>
 )
 
-const bannerBgs  = [NAVY, YELLOW, RED]
-const tagBgs     = ['rgba(245,200,66,0.2)', 'rgba(27,42,74,0.15)', 'rgba(255,255,255,0.2)']
-const tagFgs     = [YELLOW, NAVY, 'white']
-const numColors  = ['rgba(255,255,255,0.08)', 'rgba(0,0,0,0.06)', 'rgba(255,255,255,0.08)']
+const bannerBgs  = [TEXT, WARM, ACCENT]
+const tagBgs     = ['rgba(236,208,154,0.2)', 'rgba(34,34,30,0.12)', 'rgba(255,255,255,0.2)']
+const tagFgs     = [WARM, '#5a4e35', 'white']
+const numColors  = ['rgba(255,255,255,0.08)', 'rgba(34,34,30,0.07)', 'rgba(255,255,255,0.08)']
 
 export default function BlogPage() {
   return (
     <>
       {/* ── NAV ── */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: NAVY, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: CREAM, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(34,34,30,0.08)' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <Logo height={32} color="#FFFFFF" />
+          <Logo height={32} color={TEXT} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          <Link href="/" style={{ color: MUTED, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
             Forsiden
           </Link>
-          <Link href="/faq" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          <Link href="/faq" style={{ color: MUTED, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
             FAQ
           </Link>
-          <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, padding: '8px 20px', borderRadius: 100, fontWeight: 700, textDecoration: 'none', fontSize: 14 }}>
-            {c.nav.cta}
+          <a href="https://play.yayyoumay.dk/register" style={{ background: ACCENT, color: '#fffdf4', padding: '9px 22px', borderRadius: 100, fontWeight: 700, textDecoration: 'none', fontSize: 14 }}>
+            Opret konto
           </a>
         </div>
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{ background: NAVY, padding: '80px 40px 96px' }}>
+      <section style={{ background: SOFT, padding: '80px 40px 96px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 20 }}>
             {c.blog.tag}
           </div>
-          <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.05, color: 'white', letterSpacing: -2, marginBottom: 24 }}>
+          <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.05, color: TEXT, letterSpacing: -2, marginBottom: 24 }}>
             {c.blog.h2}
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.65, color: 'rgba(255,255,255,0.55)' }}>
+          <p style={{ fontSize: 18, lineHeight: 1.65, color: MUTED }}>
             Om børn, YouTube og algoritmerne.
           </p>
         </div>
       </section>
 
       {/* ── POSTS ── */}
-      <section style={{ background: LIGHT_GRAY, padding: '80px 40px 120px' }}>
+      <section style={{ background: CREAM, padding: '80px 40px 120px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           {c.blog.posts.map((post, i) => (
             <Link key={i} href={post.href} style={{ display: 'block', textDecoration: 'none', color: 'inherit', marginBottom: 24 }}>
-              <div style={{ background: 'white', borderRadius: 20, overflow: 'hidden' }}>
+              <div style={{ background: 'white', borderRadius: 20, overflow: 'hidden', boxShadow: '0 1px 3px rgba(34,34,30,0.06)' }}>
                 {/* banner */}
                 <div style={{ height: 120, display: 'flex', alignItems: 'flex-end', padding: 20, position: 'relative', overflow: 'hidden', background: bannerBgs[i] }}>
                   <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase', padding: '5px 12px', borderRadius: 100, background: tagBgs[i], color: tagFgs[i] }}>
@@ -100,13 +102,13 @@ export default function BlogPage() {
                 </div>
                 {/* body */}
                 <div style={{ padding: 28 }}>
-                  <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 22, color: NAVY, letterSpacing: -0.5, marginBottom: 10, lineHeight: 1.25 }}>
+                  <h2 className="font-heading" style={{ fontWeight: 400, fontSize: 22, color: TEXT, letterSpacing: -0.5, marginBottom: 10, lineHeight: 1.25 }}>
                     {post.h3}
                   </h2>
-                  <p style={{ fontSize: 15, lineHeight: 1.65, color: 'rgba(27,42,74,0.55)', marginBottom: 20 }}>
+                  <p style={{ fontSize: 15, lineHeight: 1.65, color: MUTED, marginBottom: 20 }}>
                     {post.body}
                   </p>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: NAVY }}>Læs mere →</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: ACCENT }}>Læs mere →</span>
                 </div>
               </div>
             </Link>

@@ -10,10 +10,12 @@ import Algoritmen from '../../../content/blog/algoritmen.mdx'
 
 const c = homeContent
 
-const NAVY      = '#1B2A4A'
-const YELLOW    = '#F5C842'
-const CREAM     = '#F7F3EB'
-const FOOTER_BG = '#0F1A30'
+const TEXT      = '#22221e'
+const MUTED     = '#6f6a5f'
+const ACCENT    = '#496a51'
+const CREAM     = '#fffff5'
+const SOFT      = '#f7f3e7'
+const FOOTER_BG = '#22221e'
 
 const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: string }) => (
   <svg height={height} viewBox="0 0 879.53 530.27" xmlns="http://www.w3.org/2000/svg" style={{ fill: color, width: 'auto', display: 'block' }}>
@@ -132,33 +134,33 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       />
 
       {/* ── NAV ── */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: NAVY, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: CREAM, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px', borderBottom: '1px solid rgba(34,34,30,0.08)' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <Logo height={32} color="#FFFFFF" />
+          <Logo height={32} color={TEXT} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          <Link href="/blog" style={{ color: MUTED, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
             Alle indlæg
           </Link>
-          <Link href="/faq" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
+          <Link href="/faq" style={{ color: MUTED, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}>
             FAQ
           </Link>
-          <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, padding: '8px 20px', borderRadius: 100, fontWeight: 700, textDecoration: 'none', fontSize: 14 }}>
-            {c.nav.cta}
+          <a href="https://play.yayyoumay.dk/register" style={{ background: ACCENT, color: '#fffdf4', padding: '9px 22px', borderRadius: 100, fontWeight: 700, textDecoration: 'none', fontSize: 14 }}>
+            Opret konto
           </a>
         </div>
       </nav>
 
       {/* ── HERO ── */}
-      <section style={{ background: NAVY, padding: '64px 40px 80px' }}>
+      <section style={{ background: SOFT, padding: '64px 40px 80px' }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', marginBottom: 32 }}>
+          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: MUTED, textDecoration: 'none', marginBottom: 32 }}>
             ← Alle indlæg
           </Link>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 16 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: ACCENT, opacity: 0.8, marginBottom: 16 }}>
             {post.kategori}
           </div>
-          <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(28px, 4vw, 48px)', lineHeight: 1.1, color: 'white', letterSpacing: -1.5 }}>
+          <h1 className="font-heading" style={{ fontWeight: 400, fontSize: 'clamp(28px, 4vw, 48px)', lineHeight: 1.1, color: TEXT, letterSpacing: -1.5 }}>
             {post.title}
           </h1>
           <ShareButtons title={post.title} />
@@ -168,17 +170,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* ── ARTICLE ── */}
       <section style={{ background: CREAM, padding: '72px 40px 120px' }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <article className="prose prose-lg max-w-none" style={{ color: NAVY }}>
+          <article className="prose prose-lg max-w-none" style={{ color: TEXT }}>
             <Content />
           </article>
 
           <AIPromptBox title={post.title} url={`https://www.yayyoumay.dk/blog/${slug}`} />
 
-          <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid rgba(27,42,74,0.12)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-            <Link href="/blog" style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: 'rgba(27,42,74,0.4)', textDecoration: 'none' }}>
+          <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid rgba(34,34,30,0.1)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+            <Link href="/blog" style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: MUTED, textDecoration: 'none' }}>
               ← Alle indlæg
             </Link>
-            <a href="https://play.yayyoumay.dk/register" style={{ background: YELLOW, color: NAVY, fontSize: 14, fontWeight: 700, padding: '12px 24px', borderRadius: 100, textDecoration: 'none' }}>
+            <a href="https://play.yayyoumay.dk/register" style={{ background: ACCENT, color: '#fffdf4', fontSize: 14, fontWeight: 700, padding: '12px 24px', borderRadius: 100, textDecoration: 'none' }}>
               Opret dig på YAY! - det er helt gratis
             </a>
           </div>

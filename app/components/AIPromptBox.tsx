@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 
-const NAVY   = '#1B2A4A'
-const YELLOW = '#F5C842'
-const CREAM  = '#F7F3EB'
+const TEXT   = '#22221e'
+const MUTED  = '#6f6a5f'
+const ACCENT = '#496a51'
+const SOFT   = '#f7f3e7'
 
 const ChatGPTIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -74,7 +75,7 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
 
   if (compact) return (
     <div style={{ marginTop: 28, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-      <span style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.35)', letterSpacing: 0.5, whiteSpace: 'nowrap' }}>
+      <span style={{ fontSize: 12, fontWeight: 600, color: MUTED, letterSpacing: 0.5, whiteSpace: 'nowrap' }}>
         Spørg din AI om YAY!
       </span>
       {ais.map(ai => (
@@ -85,19 +86,19 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
           rel="noopener noreferrer"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
-            background: 'transparent', color: 'rgba(255,255,255,0.5)',
-            border: '1px solid rgba(255,255,255,0.2)',
+            background: 'transparent', color: MUTED,
+            border: '1px solid rgba(34,34,30,0.2)',
             padding: '6px 12px', borderRadius: 100,
             fontSize: 12, fontWeight: 600, textDecoration: 'none',
             transition: 'color 0.15s, border-color 0.15s',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.color = 'white'
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'
+            e.currentTarget.style.color = TEXT
+            e.currentTarget.style.borderColor = 'rgba(34,34,30,0.5)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'
+            e.currentTarget.style.color = MUTED
+            e.currentTarget.style.borderColor = 'rgba(34,34,30,0.2)'
           }}
         >
           {ai.icon}
@@ -109,16 +110,17 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
 
   return (
     <div style={{
-      marginTop: 56, background: NAVY, borderRadius: 20,
-      padding: '32px 32px 28px', color: 'white',
+      marginTop: 56, background: SOFT, borderRadius: 20,
+      padding: '32px 32px 28px', color: TEXT,
+      border: '1px solid rgba(34,34,30,0.08)',
     }}>
-      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: 10 }}>
+      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: 2.5, textTransform: 'uppercase', color: MUTED, marginBottom: 10 }}>
         AI-opsummering
       </div>
-      <h3 style={{ fontFamily: 'var(--font-fraunces)', fontWeight: 400, fontSize: 22, letterSpacing: -0.5, lineHeight: 1.2, marginBottom: 8 }}>
+      <h3 style={{ fontFamily: 'var(--font-fraunces)', fontWeight: 400, fontSize: 22, letterSpacing: -0.5, lineHeight: 1.2, marginBottom: 8, color: TEXT }}>
         Få artiklen opsummeret af din AI
       </h3>
-      <p style={{ fontSize: 14, lineHeight: 1.6, color: 'rgba(255,255,255,0.55)', marginBottom: 24 }}>
+      <p style={{ fontSize: 14, lineHeight: 1.6, color: MUTED, marginBottom: 24 }}>
         Klik på din foretrukne AI og få de vigtigste pointer serveret direkte.
       </p>
       <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -130,19 +132,19 @@ Hvis du ser svagheder eller åbne spørgsmål i artiklens ræsonnement, må du g
             rel="noopener noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: 'transparent', color: 'rgba(255,255,255,0.7)',
-              border: '1px solid rgba(255,255,255,0.7)',
+              background: 'transparent', color: MUTED,
+              border: '1px solid rgba(34,34,30,0.25)',
               padding: '10px 18px', borderRadius: 100,
               fontSize: 14, fontWeight: 600, textDecoration: 'none',
               transition: 'color 0.15s, border-color 0.15s',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.color = 'white'
-              e.currentTarget.style.borderColor = 'white'
+              e.currentTarget.style.color = TEXT
+              e.currentTarget.style.borderColor = 'rgba(34,34,30,0.6)'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)'
+              e.currentTarget.style.color = MUTED
+              e.currentTarget.style.borderColor = 'rgba(34,34,30,0.25)'
             }}
           >
             {ai.icon}
