@@ -324,7 +324,7 @@ export default function Home() {
             {c.blog.h2}
           </h2>
           <div className="grid md:grid-cols-3" style={{ gap: 24 }}>
-            {c.blog.posts.map((post, i) => {
+            {c.blog.posts.slice(0, 3).map((post, i) => {
               const bannerBgs  = [TEXT, WARM, ACCENT]
               const tagBgs     = ['rgba(236,208,154,0.2)', 'rgba(34,34,30,0.12)', 'rgba(255,255,255,0.2)']
               const tagFgs     = [WARM, '#5a4e35', 'white']
@@ -440,9 +440,8 @@ export default function Home() {
           ))}
         </div>
 
-        <div style={{ maxWidth: 1200, margin: '0 auto', paddingTop: 32, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10, fontSize: 13 }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingTop: 32, fontSize: 13 }}>
           <span>© {c.footer.copyright}</span>
-          <span style={{ color: 'rgba(255,255,255,0.25)' }}>Vibe coded efter sengetid - ræk ud hvis du vil høre nærmere</span>
         </div>
       </footer>
     </>

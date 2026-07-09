@@ -7,6 +7,7 @@ import AIPromptBox from '../../components/AIPromptBox'
 import HistorienBagYay from '../../../content/blog/historien-bag-yay.mdx'
 import LademannsLeksikon from '../../../content/blog/lademanns-leksikon.mdx'
 import Algoritmen from '../../../content/blog/algoritmen.mdx'
+import TempoAnalyse from '../../../content/blog/tempo-analyse.mdx'
 
 const c = homeContent
 
@@ -64,6 +65,20 @@ const posts: Record<string, { title: string; description: string; kategori: stri
 - Forældre kan ikke konkurrere med algoritmen ved at sige nej - de har brug for et alternativ
 - YAY! fjerner algoritmen fra ligningen og lader forældre bestemme hvad der kommer næst`,
   },
+  'tempo-analyse': {
+    title: 'Selv de godkendte videoer kan være for meget. Så nu måler vi tempoet.',
+    description: 'Klip per minut, musik-tempo og lydstyrke bliver til én tempo-score fra 1 til 10 - og et AI-lag lærer af vores beslutninger. Sådan fanger YAY! de videoer, der er for hektiske, selv når kanalen allerede er godkendt.',
+    kategori: 'Om teknologien',
+    Content: TempoAnalyse,
+    context: `- Mange allerede godkendte videoer viste sig at være langt mere hektiske end forældrene regnede med
+- Man godkender en kanal ud fra få videoer, men det hektiske indhold kan smutte med ind ad bagdøren
+- YAY! måler nu automatisk tre ting på hver video: klip per minut (PySceneDetect), musik-tempo/BPM (librosa) og lydstyrke/LUFS (ffmpeg loudnorm)
+- De tre tal ganges til en tempo-score fra 1 (roligt) til 10 (hyperaktivt); analysen kører som batch-job én gang per video
+- Admin kan kalibrere formlen i rigtige enheder og sætte grænser for gennemsyn og karantæne; ændringer genberegner alle videoer øjeblikkeligt
+- Forældre kan justere grænsen per barn - en 3-årig kan have en strammere grænse end en 8-årig
+- Når admin overstyrer formlen, analyserer Claude (Opus 4.8) begrundelsen og udleder en generaliserbar regel; systemet lærer over tid af menneskelige beslutninger
+- Kombinerer objektiv måling med menneskelig dømmekraft - det er stadig forælderen der bestemmer`,
+  },
 }
 
 export function generateStaticParams() {
@@ -74,6 +89,7 @@ const postDates: Record<string, string> = {
   'historien-bag-yay':  '2025-04-07',
   'lademanns-leksikon': '2025-04-23',
   'algoritmen':         '2025-05-02',
+  'tempo-analyse':      '2026-07-09',
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

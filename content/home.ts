@@ -9,7 +9,7 @@ export const homeContent = {
     h1em: "et trygt rum på YouTube",
     body: "Med YAY! vælger du, hvad dit barn ser. Ingen algoritmer, ingen Shorts, ingen endeløst scroll - kun det indhold du godkender.",
     ctaPrimary: "Opret en konto - det er gratis",
-    ctaSecondary: "Sådan virker det"
+    ctaSecondary: "Prøv demoen (uden oprettelse)"
   },
   why: {
     tag: "Hvad er YAY!",
@@ -80,8 +80,15 @@ export const homeContent = {
   },
   blog: {
     tag: "Læs mere om børn og skærm",
-    h2: "Læs mere",
+    h2: "Blog om børn, YouTube og skærmtid",
     posts: [
+      {
+        tag: "Om teknologien",
+        number: "04",
+        h3: "Selv de godkendte videoer kan være for meget. Så nu måler vi tempoet.",
+        body: "Klip per minut, musik-tempo og lydstyrke bliver til én tempo-score fra 1 til 10 - og et AI-lag lærer af vores beslutninger. Sådan fanger vi de videoer, der er for hektiske.",
+        href: "/blog/tempo-analyse"
+      },
       {
         tag: "Om YAY!",
         number: "01",
@@ -178,6 +185,6 @@ export const homeContent = {
         ]
       }
     ],
-    copyright: "2025 YAY! - yayyoumay.dk"
+    copyright: "2026 YAY! - yayyoumay.dk"
   }
 }

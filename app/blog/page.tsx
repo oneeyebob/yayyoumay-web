@@ -44,10 +44,10 @@ const Logo = ({ height = 36, color = '#FFFFFF' }: { height?: number; color?: str
   </svg>
 )
 
-const bannerBgs  = [TEXT, WARM, ACCENT]
-const tagBgs     = ['rgba(236,208,154,0.2)', 'rgba(34,34,30,0.12)', 'rgba(255,255,255,0.2)']
-const tagFgs     = [WARM, '#5a4e35', 'white']
-const numColors  = ['rgba(255,255,255,0.08)', 'rgba(34,34,30,0.07)', 'rgba(255,255,255,0.08)']
+const bannerBgs  = [TEXT, WARM, ACCENT, '#3f5a44']
+const tagBgs     = ['rgba(236,208,154,0.2)', 'rgba(34,34,30,0.12)', 'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.2)']
+const tagFgs     = [WARM, '#5a4e35', 'white', 'white']
+const numColors  = ['rgba(255,255,255,0.08)', 'rgba(34,34,30,0.07)', 'rgba(255,255,255,0.08)', 'rgba(255,255,255,0.08)']
 
 export default function BlogPage() {
   return (

@@ -1,0 +1,55 @@
+Da vi byggede YAY!, gik vi ud fra en enkel idé: hvis en forælder har godkendt en kanal, er indholdet i orden. Forælderen har set efter. Forælderen bestemmer.
+
+Så begyndte vi at kigge nærmere på, hvad der egentlig lå bag de godkendte kanaler.
+
+En kanal kan have hundredvis af videoer. Du godkender den, fordi de tre-fire, du så, var fine. Men den femte er klippet så hurtigt, at billedet skifter to gange i sekundet, musikken kører i 140 slag i minuttet, og lyden er skruet helt op i rødt. Cocomelon-stil. Det er ikke farligt. Men det er meget - og meget mere, end du regnede med, da du sagde ja til kanalen.
+
+Ingen forælder har tid til at se hver eneste video på hver eneste kanal igennem. Det er hele pointen med at godkende en kanal frem for enkeltvideoer. Men det efterlod et hul: det hektiske indhold kunne smutte med ind ad bagdøren.
+
+Så vi lavede noget, der måler det.
+
+---
+
+## Hvordan man måler, hvor urolig en video er
+
+Vi ville ikke nøjes med en fornemmelse. Vi ville have tal. Tre af dem, helt konkret, målt på selve videoen:
+
+**Klip per minut.** Det vigtigste signal. En rolig fortællevideo har måske tre-fire klip i minuttet. En hyperaktiv unboxing-video kan have tredive. Vi tæller dem med et værktøj kaldet PySceneDetect, der kigger billede for billede og registrerer, hver gang scenen skifter.
+
+**Musik-tempo.** Hvor mange slag i minuttet kører lydsporet i? Vi trækker det ud med librosa, et bibliotek til lyd-analyse. Hurtig, insisterende musik er en stor del af, hvad der gør indhold anmassende.
+
+**Lydstyrke og dynamik.** Måles i LUFS med ffmpeg - den samme standard, som radio- og tv-branchen bruger til at sikre, at reklamerne ikke er højere end programmerne. En video, der er komprimeret til at være konstant høj uden pauser, er trættende at høre på, også selvom volumenknappen står det samme sted.
+
+De tre tal ganges sammen til én **tempo-score fra 1 til 10**. 1 er en stille godnathistorie. 10 er så hektisk, som det bliver.
+
+Det hele kører som et batch-job. Når en video tilføjes til kataloget, analyseres den én gang, og tallene gemmes. Det foregår i baggrunden - dit barn venter aldrig på det, og du mærker det ikke.
+
+---
+
+Bag kulisserne sidder vi med et værktøj, hvor vi kan se alle analyserede videoer sorteret efter score, kalibrere selve formlen i rigtige enheder - "tredive klip i minuttet er maksimalt stimulerende" i stedet for abstrakte procenter - og sætte to grænser: en, hvor en video flages til gennemsyn, og en, hvor den ryger i karantæne og kun kan slippes fri manuelt.
+
+Og fordi det hele bygger på gemte tal, genberegnes hver eneste video øjeblikkeligt, hver gang vi justerer formlen. Ingen ny analyse. Bare matematik på det, vi allerede har målt.
+
+Det sidste stykke er dit. Et 3-årigt barn tåler ikke det samme som et 8-årigt, så du kan sætte grænsen for netop dit barn på profilsiden. Gør du ikke noget, følger profilen bare platformens standard.
+
+---
+
+## Systemet lærer af vores fejl
+
+Her bliver det interessant.
+
+En formel tager fejl. Nogle gange sætter den en rolig video i karantæne, fordi musikken tilfældigvis er hurtig. Andre gange lader den en video slippe igennem, der er klippet, så taleren aldrig virker til at trække vejret - selvom hvert enkelt tal så pænt ud.
+
+Når vi overstyrer formlen - frigiver en karantæne-video eller blokerer en, den ikke fangede - bliver vi bedt om en kort begrundelse. Den læser Claude så. Modellen finder ud af to ting: hvad formlen misforstod ved præcis denne video, og en regel, der kan generalisere til lignende videoer fremover.
+
+Og der er en knap, der beder Claude gennemgå alt det, vi har rettet, på tværs og finde mønstre. "Du frigiver konsekvent videoer, hvor kun tempoet i musikken er højt - overvej at hæve BPM-grænsen." Den slags.
+
+Det betyder, at YAY! ikke er en fast formel, vi gættede os frem til én gang og låste fast. Det er et system, der bliver en smule klogere, hver gang et menneske træffer en beslutning, tallene ikke kunne træffe alene.
+
+---
+
+Objektiv måling kan fortælle dig, at en video har 28 klip i minuttet. Den kan ikke fortælle dig, om Albert bliver urolig af den. Det kan jeg.
+
+Det er stadig dig, der bestemmer. Vi giver dig bare bedre øjne - og et system, der lytter, når du bruger dem.
+
+*Af Jakob Edelfeldt*

@@ -13,7 +13,7 @@ export const faqContent = {
         },
         {
           q: "Er YouTube farligt?",
-          a: "Nej. YouTube er faktisk ret fantastisk. Det er der Albert lærer LEGO-teknikker, dykker ned i Star Wars-universet og finder svar på ting han ikke engang vidste han var nysgerrig på. Det er hans generations Lademanns Leksikon - et levende, søgbart, uendeligt opslagsvaerk på video. Problemet er ikke YouTube. Problemet er algoritmen."
+          a: "Nej. YouTube er faktisk ret fantastisk. Det er der Albert lærer LEGO-teknikker, dykker ned i Star Wars-universet og finder svar på ting han ikke engang vidste han var nysgerrig på. Det er hans generations Lademanns Leksikon - et levende, søgbart, uendeligt opslagsværk på video. Problemet er ikke YouTube. Problemet er algoritmen."
         },
         {
           q: "Hvad er der galt med algoritmen?",
@@ -100,11 +100,11 @@ export const faqContent = {
       items: [
         {
           q: "Hvordan tilføjer jeg en kanal?",
-          a: "Find kanalen på YouTube i din browser eller YouTube-app. Kopier URL'en og indsæt den i forældremodulet. Alle kanalens videoer er tilgaengelige for dit barn med det samme."
+          a: "Find kanalen på YouTube i din browser eller YouTube-app. Kopier URL'en og indsæt den i forældremodulet. Alle kanalens videoer er tilgængelige for dit barn med det samme."
         },
         {
           q: "Hvordan tilføjer jeg en enkelt video?",
-          a: "Find videoen på YouTube, kopier URL'en og indsæt den i forældremodulet. Videoen er tilgaengelig for dit barn med det samme."
+          a: "Find videoen på YouTube, kopier URL'en og indsæt den i forældremodulet. Videoen er tilgængelig for dit barn med det samme."
         },
         {
           q: "Kan jeg blokere en specifik video selvom kanalen er godkendt?",
@@ -112,7 +112,7 @@ export const faqContent = {
         },
         {
           q: "Hvad sker der hvis en kanal uploader noget nyt?",
-          a: "Nye videoer fra en godkendt kanal bliver automatisk tilgaengelige for dit barn. Du behøver ikke godkende hver enkelt video fra en kanal du allerede har godkendt."
+          a: "Nye videoer fra en godkendt kanal bliver automatisk tilgængelige for dit barn. Du behøver ikke godkende hver enkelt video fra en kanal du allerede har godkendt."
         },
         {
           q: "Kan mit barn søge i YAY!?",
@@ -191,7 +191,7 @@ export const faqContent = {
         },
         {
           q: "Hvad hvis YouTube ændrer deres API?",
-          a: "YAY! er afhangig af YouTubes API. Hvis YouTube ændrer eller lukker adgangen kan det påvirke YAY!s funktionalitet. Det er en reel risiko vi er åbne om."
+          a: "YAY! er afhængig af YouTubes API. Hvis YouTube ændrer eller lukker adgangen kan det påvirke YAY!s funktionalitet. Det er en reel risiko vi er åbne om."
         },
         {
           q: "Hvad er forskellen på YAY! og YouTube Kids?",
