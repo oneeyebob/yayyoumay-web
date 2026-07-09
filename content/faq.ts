@@ -125,6 +125,27 @@ export const faqContent = {
       ]
     },
     {
+      heading: "Tempo og stimulering",
+      items: [
+        {
+          q: "Kan YAY! opdage om en video er for hektisk?",
+          a: "Ja. YAY! måler automatisk hvor stimulerende hver video er - antal klip i minuttet, musikkens tempo og lydstyrken - og samler det i en tempo-score fra 1 til 10. Videoer over din grænse bliver flaget eller sat i karantæne, så et hyperaktivt klip ikke smutter med ind, bare fordi kanalen som helhed er godkendt."
+        },
+        {
+          q: "Hvordan måler YAY! hvor stimulerende en video er?",
+          a: "Vi analyserer tre ting på selve videoen: antal klip i minuttet, musikkens tempo og lydstyrke/dynamik. De tre tal bliver til én tempo-score fra 1 (roligt) til 10 (hyperaktivt). Analysen sker i baggrunden, én gang per video - dit barn venter aldrig på den."
+        },
+        {
+          q: "Kan jeg selv bestemme hvor rolige videoerne skal være?",
+          a: "Ja. Du kan sætte grænsen for tempo-scoren per barn på profilsiden. En 3-årig kan have en strammere grænse end en 8-årig. Gør du ikke noget, følger profilen platformens standard."
+        },
+        {
+          q: "Bliver systemet bedre over tid?",
+          a: "Ja. Når vi overstyrer en måling manuelt - fx frigiver en video formlen fejlagtigt satte i karantæne - lærer systemet af beslutningen og bliver mere præcist. Det er en kombination af objektiv måling og menneskelig dømmekraft."
+        }
+      ]
+    },
+    {
       heading: "Biblioteket",
       items: [
         {

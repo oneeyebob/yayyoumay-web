@@ -137,6 +137,10 @@ export const homeContent = {
         a: "YAY! er ikke et teknisk fængsel - det er en aftale. Barnet bliver i YAY! fordi det har alt det gode de ønsker. Vi anbefaler at du af og til sætter dig ned med dit barn og finder nyt indhold på YouTube sammen."
       },
       {
+        q: "Kan YAY! opdage om en video er for hektisk?",
+        a: "Ja. YAY! måler automatisk hvor stimulerende hver video er - klip per minut, musik-tempo og lydstyrke - og samler det i en tempo-score fra 1 til 10. Du kan sætte grænsen per barn, så et hyperaktivt klip ikke smutter med ind, bare fordi kanalen er godkendt."
+      },
+      {
         q: "Hvorfor ikke bare sige nej?",
         a: "Nej er en midlertidig løsning. YAY! er et ja med retning. Dit barn får adgang til det gode YouTube - og algoritmen får ikke adgang til dit barn."
       },
